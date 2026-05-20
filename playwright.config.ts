@@ -17,7 +17,7 @@ export default defineConfig({
 
   use: {
     baseURL: "https://www.amazon.com",
-    headless: false,
+    headless: !!process.env.CI,
     viewport: { width: 1366, height: 768 },
     actionTimeout: 15000,
     navigationTimeout: 30000,
