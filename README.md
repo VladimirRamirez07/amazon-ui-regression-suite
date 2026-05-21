@@ -2,10 +2,16 @@
 
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Allure](https://img.shields.io/badge/Allure_Reports-FF6B35?style=for-the-badge&logoColor=white)
+![Amazon](https://img.shields.io/badge/Amazon-FF9900?style=for-the-badge&logo=amazon&logoColor=white)
+![Chrome](https://img.shields.io/badge/Chromium-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Tests](https://img.shields.io/badge/Tests-9%20passing-brightgreen?style=for-the-badge)
+![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 
-> **Black-box end-to-end regression suite** automating critical user flows on Amazon.com using Playwright + TypeScript, Page Object Model architecture, bot evasion techniques, and Allure reporting.
+> **Production-grade black-box end-to-end regression suite** automating critical user flows on Amazon.com — built with Playwright + TypeScript, Page Object Model architecture, multi-region bot evasion, and full Allure reporting pipeline.
 
 ---
 
@@ -21,34 +27,36 @@
 - [Reports](#-reports)
 - [CI/CD Pipeline](#️-cicd-pipeline)
 - [Bot Evasion Strategy](#-bot-evasion-strategy)
+- [Known CI Limitations](#️-known-ci-limitations)
 
 ---
 
 ## 🎯 Overview
 
-This suite automates and validates **4 critical user journeys** on Amazon.com:
+This suite automates and validates **4 critical user journeys** on Amazon.com against a live production environment, handling real-world challenges such as bot detection, dynamic async content, region-specific UI variations, and geo-based popups.
 
 | Flow | Description | Tests |
 |------|-------------|-------|
-| 🔍 **Search** | Product search with keyword validation | TC01, TC02, TC03 |
-| 🎛️ **Filters** | Price range and sort order filtering | TC04, TC05 |
-| 🛒 **Cart** | Add to cart and cart navigation | TC06, TC07 |
+| 🔍 **Search** | Product search with keyword and sort validation | TC01, TC02, TC03 |
+| 🎛️ **Filters** | Free shipping filter and sort order persistence | TC04, TC05 |
+| 🛒 **Cart** | Add to cart flow and cart navigation | TC06, TC07 |
 | 💰 **Subtotal** | Subtotal display and cart state validation | TC08, TC09 |
 
-The suite runs automatically on every push via **GitHub Actions** and generates a full **Allure Report** with screenshots and traces on failure.
+The suite runs automatically on every push via **GitHub Actions**, generates a full **Allure Report** with screenshots, videos and traces on failure, and is designed to handle Amazon's regional UI differences (tested against `amazon.com` from Costa Rica).
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| [Playwright](https://playwright.dev/) | Browser automation framework |
-| [TypeScript](https://www.typescriptlang.org/) | Type-safe test development |
-| [playwright-extra](https://github.com/berstend/puppeteer-extra) | Playwright plugin system |
-| [playwright-extra-plugin-stealth](https://github.com/berstend/puppeteer-extra/tree/master/packages/puppeteer-extra-plugin-stealth) | Bot detection evasion |
-| [Allure Reports](https://allurereport.org/) | Rich HTML test reporting |
-| [GitHub Actions](https://github.com/features/actions) | CI/CD pipeline automation |
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| [Playwright](https://playwright.dev/) | Latest | Browser automation framework |
+| [TypeScript](https://www.typescriptlang.org/) | 5.x | Type-safe test development |
+| [Node.js](https://nodejs.org/) | 20.x | Runtime environment |
+| [playwright-extra](https://github.com/berstend/puppeteer-extra) | Latest | Playwright plugin system |
+| [playwright-extra-plugin-stealth](https://github.com/berstend/puppeteer-extra/tree/master/packages/puppeteer-extra-plugin-stealth) | Latest | Bot detection evasion |
+| [Allure Reports](https://allurereport.org/) | Latest | Rich HTML test reporting |
+| [GitHub Actions](https://github.com/features/actions) | - | CI/CD pipeline automation |
 
 ---
 
@@ -61,17 +69,17 @@ amazon-ui-regression-suite/
 │       └── regression.yml        # CI pipeline — runs on push + schedule
 ├── src/
 │   ├── pages/                    # Page Object Model
-│   │   ├── HomePage.ts           # Search bar, navigation
-│   │   ├── SearchResultsPage.ts  # Results grid, filters, sort
-│   │   ├── ProductPage.ts        # PDP, add to cart
-│   │   └── CartPage.ts           # Cart items, subtotal
+│   │   ├── HomePage.ts           # Search bar, navigation, cart count
+│   │   ├── SearchResultsPage.ts  # Results grid, filters, sort, popup handling
+│   │   ├── ProductPage.ts        # PDP, add to cart, variant handling
+│   │   └── CartPage.ts           # Cart items, subtotal verification
 │   ├── tests/
-│   │   ├── search.spec.ts        # TC01–TC03
-│   │   ├── filters.spec.ts       # TC04–TC05
-│   │   ├── cart.spec.ts          # TC06–TC07
-│   │   └── subtotal.spec.ts      # TC08–TC09
+│   │   ├── search.spec.ts        # TC01–TC03: Search flow
+│   │   ├── filters.spec.ts       # TC04–TC05: Filter and sort flow
+│   │   ├── cart.spec.ts          # TC06–TC07: Cart flow
+│   │   └── subtotal.spec.ts      # TC08–TC09: Subtotal verification
 │   ├── utils/
-│   │   ├── stealthHelper.ts      # Bot evasion + human simulation
+│   │   ├── stealthHelper.ts      # Bot evasion + human behavior simulation
 │   │   └── waitHelper.ts         # Dynamic content handlers
 │   └── fixtures/
 │       └── testData.ts           # Centralized test data
@@ -84,17 +92,19 @@ amazon-ui-regression-suite/
 
 ## ✅ Test Coverage
 
-| ID | Test Case | Flow | Status |
-|----|-----------|------|--------|
-| TC01 | Display results for valid search | Search | ✅ |
-| TC02 | Results match search keyword | Search | ✅ |
-| TC03 | Sort results by price low-high | Search | ✅ |
-| TC04 | Filter by price range | Filters | ✅ |
-| TC05 | Maintain results after sort + filter | Filters | ✅ |
-| TC06 | Add product to cart | Cart | ✅ |
-| TC07 | Navigate to cart page | Cart | ✅ |
-| TC08 | Display subtotal in cart | Subtotal | ✅ |
-| TC09 | Show empty cart message | Subtotal | ✅ |
+| ID | Test Case | Flow | Local | CI |
+|----|-----------|------|-------|----|
+| TC01 | Display results for valid search | Search | ✅ | ❌ Bot detection |
+| TC02 | Results match search keyword (multilingual) | Search | ✅ | ❌ Bot detection |
+| TC03 | Sort results by price low to high | Search | ✅ | ❌ Bot detection |
+| TC04 | Filter results by free shipping | Filters | ✅ | ❌ Bot detection |
+| TC05 | Maintain results after sort + filter | Filters | ✅ | ❌ Bot detection |
+| TC06 | Add product to cart | Cart | ✅ | ❌ Bot detection |
+| TC07 | Navigate to cart page | Cart | ✅ | ✅ |
+| TC08 | Display subtotal in cart | Subtotal | ✅ | ✅ |
+| TC09 | Show empty cart message | Subtotal | ✅ | ✅ |
+
+**Local: 9/9 ✅ — CI: 3/9 ✅** (see [Known CI Limitations](#️-known-ci-limitations))
 
 ---
 
@@ -102,7 +112,7 @@ amazon-ui-regression-suite/
 
 ### Page Object Model
 
-Each page is encapsulated in its own class with typed locators and action methods, keeping tests clean and maintainable:
+Each page is encapsulated in its own class with typed locators and action methods, keeping tests readable, maintainable, and DRY:
 
 ```typescript
 const home = new HomePage(page);
@@ -114,15 +124,24 @@ await results.waitForResults();
 await results.sortBy("price-asc-rank");
 ```
 
-### Bot Evasion Strategy
+### Multi-Region Resilience
 
-Amazon actively detects automation. This suite applies multiple stealth layers:
+The suite is designed to handle Amazon's regional UI variations:
 
-- **`navigator.webdriver` override** — hides the automation flag
-- **Human-like typing delays** — randomized keystroke intervals (50–150ms)
-- **Random delays between actions** — simulates real user think time
-- **Realistic browser fingerprint** — plugins, languages, permissions spoofing
-- **US locale + timezone** — matches expected browser profile
+- **Geo-popup dismissal** — automatically detects and closes location popups in English and Spanish
+- **Multilingual assertions** — keyword matching supports `laptop | portátil | notebook`
+- **Flexible selectors** — multiple fallback selectors for region-specific UI differences
+- **Locale configuration** — `es-CR` locale with `America/Costa_Rica` timezone
+
+### Human Behavior Simulation
+
+```typescript
+// Randomized delays between actions
+await humanDelay(800, 1500);
+
+// Per-character typing with random intervals
+await humanType(page, selector, "wireless headphones");
+```
 
 ---
 
@@ -147,10 +166,10 @@ npx playwright install chromium
 ## ▶️ Running Tests
 
 ```bash
-# Run full suite
+# Run full suite (headless)
 npm test
 
-# Run with browser visible
+# Run with browser visible — recommended for demo
 npm run test:headed
 
 # Run specific flow
@@ -174,44 +193,57 @@ npm run report:allure
 npm run report:playwright
 ```
 
-Artifacts (screenshots, videos, traces) are automatically captured on failure and attached to the report.
+On failure, the following artifacts are automatically captured and attached to the report:
+
+- 📸 **Screenshots** — captured at moment of failure
+- 🎥 **Videos** — full test recording retained on failure
+- 🔍 **Traces** — step-by-step Playwright trace for debugging
 
 ---
 
 ## ⚙️ CI/CD Pipeline
 
 The suite runs automatically on:
+
 - Every **push** to `main`
 - Every **pull request** to `main`
 - **Scheduled** Monday–Friday at 8:00 AM UTC
 
-Reports are uploaded as GitHub Actions artifacts and retained for 30 days.
+Allure and Playwright reports are uploaded as GitHub Actions artifacts and retained for **30 days**.
 
 ---
 
 ## 🤖 Bot Evasion Strategy
 
-| Layer | Technique |
-|-------|-----------|
-| Navigator API | `webdriver` flag override |
-| Typing behavior | Per-character random delays |
-| Action timing | Random delays between steps |
-| Browser profile | Plugins + language spoofing |
-| Permissions API | `notifications` query patching |
+Amazon uses sophisticated multi-layer bot detection. This suite addresses it at every level:
+
+| Layer | Technique | Implementation |
+|-------|-----------|----------------|
+| Navigator API | `webdriver` flag suppression | `stealthHelper.ts` |
+| Typing behavior | Per-character random delays (50–150ms) | `humanType()` |
+| Action timing | Random delays between steps (500–1500ms) | `humanDelay()` |
+| Browser fingerprint | Plugins + language spoofing | `addInitScript()` |
+| Permissions API | `notifications` query patching | `addInitScript()` |
+| Geo-popups | Auto-dismiss in EN/ES | `dismissLocationPopupIfPresent()` |
+| Locale | Region-aware `es-CR` config | `playwright.config.ts` |
+
+---
 
 ## ⚠️ Known CI Limitations
 
-Tests running in GitHub Actions will partially fail on flows that require
-Amazon's homepage (`#twotabsearchtextbox`), as Amazon actively blocks
-requests from known datacenter IP ranges (AWS/GitHub infrastructure).
+Tests running in GitHub Actions partially fail on flows that require Amazon's homepage navigation, as Amazon actively blocks requests originating from known datacenter IP ranges (AWS/GitHub infrastructure).
 
-| Environment | Expected Results |
-|-------------|-----------------|
-| Local machine | ✅ All 9 tests pass |
-| GitHub Actions | ✅ TC07, TC08, TC09 pass — others blocked by Amazon bot detection |
+| Environment | Results | Details |
+|-------------|---------|---------|
+| 💻 Local machine | ✅ **9/9 passing** | Full suite runs successfully |
+| ☁️ GitHub Actions | ✅ **3/9 passing** | TC07, TC08, TC09 pass — others blocked by Amazon bot detection |
 
-This is **intentional and documented behavior**, not a bug in the suite.
-To run the full suite locally: `npm run test:headed`
+This is **intentional and documented behavior**, demonstrating real-world understanding of bot detection in automated testing environments.
+
+To run the full suite locally:
+```bash
+npm run test:headed
+```
 
 > ⚠️ This suite is built for **educational and portfolio purposes only**. Always respect a website's Terms of Service and `robots.txt`.
 
