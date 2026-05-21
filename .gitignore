@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+allure-results/
+allure-report/
+playwright-report/
+test-results/
