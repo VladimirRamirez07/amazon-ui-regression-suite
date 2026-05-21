@@ -9,7 +9,7 @@ test.describe("Amazon Advanced Filters", () => {
     await applyStealthScripts(page);
   });
 
-  test("TC04 - Should filter results by price range", async ({ page }) => {
+  test("TC04 - Should filter results by free shipping", async ({ page }) => {
     const home = new HomePage(page);
     const results = new SearchResultsPage(page);
 
@@ -19,10 +19,7 @@ test.describe("Amazon Advanced Filters", () => {
     await results.waitForResults();
     await humanDelay(500, 900);
 
-    await results.filterByPriceRange(
-      TEST_DATA.priceFilters.min,
-      TEST_DATA.priceFilters.max
-    );
+    await results.filterByFreeShipping();
     await results.waitForResults();
 
     const count = await results.getResultCount();

@@ -1,0 +1,2857 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: filters.spec.ts >> Amazon Advanced Filters >> TC04 - Should filter results by free shipping
+- Location: src\tests\filters.spec.ts:12:7
+
+# Error details
+
+```
+Error: Free shipping filter not found.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "Menú de métodos abreviados" [ref=e3]:
+      - heading "Saltar a" [level=2] [ref=e4]
+      - list "Saltar a" [ref=e5]:
+        - listitem [ref=e6]:
+          - link "contenido principal" [ref=e7] [cursor=pointer]:
+            - /url: "#skippedLink"
+            - text: Contenido principal
+        - listitem [ref=e8]:
+          - link "Resultados" [ref=e9] [cursor=pointer]:
+            - /url: .s-asin a:has(h2)
+        - listitem [ref=e10]:
+          - link "Filtros" [ref=e11] [cursor=pointer]:
+            - /url: "#s-refinements > div.a-section > div:first-child"
+      - separator [ref=e12]
+      - heading "Métodos abreviados de teclado" [level=2] [ref=e13]
+      - list "Métodos abreviados de teclado" [ref=e14]:
+        - listitem [ref=e15]:
+          - link "Buscar, alt, barra inclinada" [ref=e16] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e17]:
+              - generic [ref=e18]: Buscar
+              - generic [ref=e19]:
+                - generic [ref=e20]: alt
+                - generic [ref=e21]: +
+                - generic [ref=e22]: /
+        - listitem [ref=e23]:
+          - link "Carrito, Shift, alt, c" [ref=e24] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e25]:
+              - generic [ref=e26]: Carrito
+              - generic [ref=e27]:
+                - generic [ref=e28]: shift
+                - generic [ref=e29]: +
+                - generic [ref=e30]: alt
+                - generic [ref=e31]: +
+                - generic [ref=e32]: C
+        - listitem [ref=e33]:
+          - link "Inicio, Shift, alt, h" [ref=e34] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e35]:
+              - generic [ref=e36]: Inicio
+              - generic [ref=e37]:
+                - generic [ref=e38]: shift
+                - generic [ref=e39]: +
+                - generic [ref=e40]: alt
+                - generic [ref=e41]: +
+                - generic [ref=e42]: H
+        - listitem [ref=e43]:
+          - link "Tus pedidos, Shift, alt, o" [ref=e44] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e45]:
+              - generic [ref=e46]: Pedidos
+              - generic [ref=e47]:
+                - generic [ref=e48]: shift
+                - generic [ref=e49]: +
+                - generic [ref=e50]: alt
+                - generic [ref=e51]: +
+                - generic [ref=e52]: O
+        - listitem [ref=e53]:
+          - button "Mostrar/ocultar métodos abreviados, Shift, alt, z" [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: Mostrar/ocultar métodos abreviados
+              - generic [ref=e57]:
+                - generic [ref=e58]: shift
+                - generic [ref=e59]: +
+                - generic [ref=e60]: alt
+                - generic [ref=e61]: +
+                - generic [ref=e62]: Z
+      - generic [ref=e68]: Para moverte entre elementos, usa las flechas arriba o abajo del teclado.
+    - banner [ref=e69]:
+      - navigation "Primary" [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - link "Amazon" [ref=e74] [cursor=pointer]:
+              - /url: /-/es/ref=nav_logo
+            - button "Enviar a Costa Rica" [ref=e77] [cursor=pointer]:
+              - generic [ref=e79]:
+                - generic [ref=e80]: Enviar a
+                - generic [ref=e81]: Costa Rica
+          - search [ref=e84]:
+            - generic [ref=e87]:
+              - generic [ref=e89]: Todos
+              - combobox "Selecciona el departamento donde deseas realizar tu búsqueda" [ref=e91] [cursor=pointer]:
+                - option "Todos los departamentos" [selected]
+                - option "Arte y artesanías"
+                - option "Automotriz"
+                - option "Bebé"
+                - option "Belleza y cuidado personal"
+                - option "Cine y TV"
+                - option "Computadoras"
+                - option "Deportes y actividades al aire libre"
+                - option "Electrónicos"
+                - option "Equipaje"
+                - option "Herramientas y mejoramiento del hogar"
+                - option "Hogar y cocina"
+                - option "Industria y Ciencia"
+                - option "Insumos para mascotas"
+                - option "Juguetes y juegos"
+                - option "Libros"
+                - option "Moda para Hombre"
+                - option "Moda para Mujer"
+                - option "Moda para Niñas"
+                - option "Moda para Niños"
+                - option "Música MP3"
+                - option "Música, CDs y Vinilos"
+                - option "Ofertas"
+                - option "Prime Video"
+                - option "Salud y Hogar"
+                - option "Software"
+                - option "Tienda Kindle"
+                - option "Videojuegos"
+            - searchbox "Buscar en Amazon" [ref=e94]: wireless headphones
+            - generic "Ir" [ref=e97] [cursor=pointer]:
+              - button "Ir" [ref=e98]
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - link "Elige un idioma para comprar en Amazon Estados Unidos. La selección actual es Español (ES)." [ref=e102] [cursor=pointer]:
+                - /url: /-/es/customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang_ais
+                - generic [ref=e105]:
+                  - img "Estados Unidos" [ref=e106]
+                  - generic [ref=e107]: ES
+              - button "Ampliar para cambiar el idioma o país" [ref=e108] [cursor=pointer]
+            - generic [ref=e109]:
+              - link "Hola, Identifícate Cuenta y Listas" [ref=e110] [cursor=pointer]:
+                - /url: https://www.amazon.com/-/es/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fs%3Fk%3Dwireless%2Bheadphones%26__mk_es_US%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26ref%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+                - generic [ref=e112]: Hola, Identifícate
+                - generic [ref=e113]: Cuenta y Listas
+              - button "Expandir cuenta y listas" [ref=e114] [cursor=pointer]
+            - link "Devoluciones y pedidos" [ref=e115] [cursor=pointer]:
+              - /url: /-/es/gp/css/order-history?ref_=nav_orders_first
+              - generic [ref=e116]: Devoluciones
+              - generic [ref=e117]: y pedidos
+            - link "0 artículos en el carrito" [ref=e118] [cursor=pointer]:
+              - /url: /-/es/gp/cart/view.html?ref_=nav_cart
+              - generic [ref=e120]: "0"
+              - generic [ref=e123]: Carrito
+        - alertdialog "Alerta de transición a compras internacionales" [ref=e124]:
+          - generic [ref=e125]:
+            - generic [ref=e129]:
+              - text: Te mostramos los productos que se envían a
+              - strong [ref=e130]: Costa Rica
+              - text: . Para ver productos que se envían a otro país, cambia tu dirección de envío.
+            - generic [ref=e131]:
+              - generic [ref=e133] [cursor=pointer]:
+                - button "Submit" [ref=e134]
+                - generic [ref=e135]: CONTINUAR
+              - generic [ref=e137] [cursor=pointer]:
+                - button "Submit" [ref=e138]
+                - generic [ref=e139]: CAMBIAR LA DIRECCIÓN
+        - generic [ref=e140]:
+          - button "Abrir menú de todas las categorías" [ref=e142] [cursor=pointer]:
+            - generic [ref=e144]: Todo
+          - list [ref=e148]:
+            - listitem [ref=e149]:
+              - link "Amazon Bazaar" [ref=e151] [cursor=pointer]:
+                - /url: /-/es/gp/browse.html?node=212706003011&ref_=nav_bazaar_nav_in_d
+            - listitem [ref=e152]:
+              - link "Ofertas del Día" [ref=e154] [cursor=pointer]:
+                - /url: /-/es/gp/goldbox?ref_=nav_cs_gb
+            - listitem [ref=e155]:
+              - link "Tarjetas de Regalo" [ref=e157] [cursor=pointer]:
+                - /url: /-/es/gift-cards/b/?ie=UTF8&node=2238192011&ref_=nav_cs_gc
+            - listitem [ref=e158]:
+              - link "Vender" [ref=e160] [cursor=pointer]:
+                - /url: /-/es/b/?_encoding=UTF8&ld=AZUSSOA-sell&node=12766669011&ref_=nav_cs_sell
+            - listitem [ref=e161]:
+              - link "Listas" [ref=e163] [cursor=pointer]:
+                - /url: /-/es/gp/browse.html?node=16115931011&ref_=nav_cs_registry
+            - listitem [ref=e164]:
+              - link "Prime Video" [ref=e166] [cursor=pointer]:
+                - /url: /-/es/Amazon-Video/b/?ie=UTF8&node=2858778011&ref_=nav_cs_prime_video
+            - listitem [ref=e167]:
+              - link "Servicio al Cliente" [ref=e169] [cursor=pointer]:
+                - /url: /-/es/gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_customerservice
+            - link "Haz clic para llamar a nuestra línea de servicio al cliente para discapacitados, o contáctanos directamente al 1-888-283-1678" [ref=e170] [cursor=pointer]:
+              - /url: /-/es/gp/help/customer/accessibility
+              - text: Servicio al cliente con discapacidad
+          - link "Descarga la app de Amazon Bazaar" [ref=e173] [cursor=pointer]:
+            - /url: /-/es/b/?_encoding=UTF8&_encoding=UTF8&node=212706003011&ref_=nav_swm_undefined&pf_rd_p=ca8c20d3-da06-4e41-8ba0-7d84d0c2da03&pf_rd_s=nav-sitewide-msg-text-export&pf_rd_t=4201&pf_rd_i=navbar-4201&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC
+        - dialog [ref=e174]
+    - generic [ref=e176]:
+      - 'heading "1 a 16 de más de 30,000 resultados para \"wireless headphones\" Ordenar por: Destacados" [level=1] [ref=e179]':
+        - generic [ref=e180]:
+          - heading "1 a 16 de más de 30,000 resultados para \"wireless headphones\"" [level=2] [ref=e183]
+          - generic [ref=e188]:
+            - generic [ref=e189]: "Ordenar por:"
+            - combobox "Ordenar por:" [ref=e190]:
+              - option "Destacados" [selected]
+              - 'option "Precio: Del más bajo al más alto"'
+              - 'option "Precio: Del más alto al más bajo"'
+              - option "Promedio Opinión del cliente"
+              - option "Llegadas más recientes"
+              - option "Los más vendidos"
+            - generic [ref=e193] [cursor=pointer]: Ordenar por:Destacados
+      - generic [ref=e195]:
+        - generic [ref=e197]:
+          - generic [ref=e199]:
+            - generic [ref=e201]:
+              - generic [ref=e204]:
+                - heading "Resultados" [level=2] [ref=e205]
+                - generic [ref=e206]: Consulta cada página del producto para ver otras opciones de compra.
+              - generic:
+                - list:
+                  - listitem [ref=e207]:
+                    - generic [ref=e213]:
+                      - generic [ref=e215]:
+                        - generic "Opción Amazon" [ref=e218]:
+                          - generic [ref=e227]: Selección general
+                        - link [ref=e232] [cursor=pointer]:
+                          - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0BS1PRC4L/ref=sr_1_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                          - img [ref=e234]
+                      - generic [ref=e237]:
+                        - link "Sony WH-CH520 - Auriculares inalámbricos Bluetooth con micrófono y hasta 50 horas de duración de la batería con carga rápida, color negro" [ref=e239] [cursor=pointer]:
+                          - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0BS1PRC4L/ref=sr_1_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                          - heading "Sony WH-CH520 - Auriculares inalámbricos Bluetooth con micrófono y hasta 50 horas de duración de la batería con carga rápida, color negro" [level=2] [ref=e240]
+                        - generic [ref=e241]:
+                          - generic [ref=e242]:
+                            - text: "4.5"
+                            - button "4.5 de 5 estrellas, detalles de la calificación" [ref=e244] [cursor=pointer]:
+                              - generic [ref=e246]: 4.5 de 5 estrellas
+                            - link "32,186 valoraciones" [ref=e250] [cursor=pointer]:
+                              - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0BS1PRC4L/ref=sr_1_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1#customerReviews
+                              - text: (32.1 K)
+                          - generic [ref=e251]: 7 K+ comprados el mes pasado
+                        - generic [ref=e254]:
+                          - generic [ref=e257]:
+                            - generic [ref=e258]: Precio y página del producto
+                            - 'link "CRC 17,203.74 PVPR: CRC 31,686.57 PVPR: CRC 31,686.57" [ref=e259] [cursor=pointer]':
+                              - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0BS1PRC4L/ref=sr_1_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                              - generic [ref=e260]:
+                                - generic [ref=e261]: CRC 17,203.74
+                                - generic [ref=e262]:
+                                  - text: CRC
+                                  - generic [ref=e263]:
+                                    - text: 17,203
+                                    - generic [ref=e264]: .
+                                  - text: "74"
+                              - generic [ref=e265]: "PVPR: CRC 31,686.57"
+                              - generic [ref=e266]:
+                                - text: "PVPR:"
+                                - generic [ref=e267]:
+                                  - generic [ref=e268]: CRC 31,686.57
+                                  - text: CRC31,686.57
+                          - generic [ref=e269]:
+                            - generic [ref=e275]: Entrega por CRC 8,447.94 el jue, 4 de jun
+                            - generic [ref=e276]: Se envía a Costa Rica
+                            - generic "Solo queda(n) 8 en stock (hay más unidades en camino)." [ref=e278]
+                          - button "Agregar al carrito" [ref=e292] [cursor=pointer]
+                          - generic [ref=e294]:
+                            - text: Más opciones de compra
+                            - text: CRC 15,845.55
+                            - link "(10+ ofertas de artículos nuevos y usados)" [ref=e296] [cursor=pointer]:
+                              - /url: /-/es/gp/offer-listing/B0BS1PRC4L/ref=sr_1_1_olp?keywords=wireless+headphones&dib_tag=se&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&sr=8-1
+                          - group "colores disponibles" [ref=e298]:
+                            - list [ref=e299]:
+                              - generic [ref=e300]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0BS1PRC4L/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                              - generic [ref=e303]:
+                                - listitem:
+                                  - link "Azul":
+                                    - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0BS1RT9S2/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                              - generic [ref=e306]:
+                                - listitem:
+                                  - link "Capuccino":
+                                    - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0BSGQL41X/ref=cs_sr_dp_loc_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                              - generic [ref=e309]:
+                                - listitem:
+                                  - link "Rosa":
+                                    - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DY918NGN/ref=cs_sr_dp_loc_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                              - generic [ref=e312]:
+                                - listitem:
+                                  - link "Blanco":
+                                    - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0BS1QB15L/ref=cs_sr_dp_loc_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                              - generic [ref=e315]:
+                                - listitem:
+                                  - link "Amarillo":
+                                    - /url: /-/es/Sony-WH-CH520-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DY8XNFP9/ref=cs_sr_dp_loc_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-1
+                  - listitem [ref=e320]:
+                    - generic [ref=e326]:
+                      - link [ref=e332] [cursor=pointer]:
+                        - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B09LYF2ST7/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                        - img [ref=e334]
+                      - generic [ref=e337]:
+                        - link "BERIBES Auriculares Bluetooth sobre la oreja, tiempo de reproducción de 65 horas y 6 modos de música ecualizados, auriculares inalámbricos con micrófono, estéreo de alta fidelidad plegables y ligeros, graves profundos para el hogar, oficina, teléfono celular, PC, etc." [ref=e339] [cursor=pointer]:
+                          - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B09LYF2ST7/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                          - heading "BERIBES Auriculares Bluetooth sobre la oreja, tiempo de reproducción de 65 horas y 6 modos de música ecualizados, auriculares inalámbricos con micrófono, estéreo de alta fidelidad plegables y ligeros, graves profundos para el hogar, oficina, teléfono celular, PC, etc." [level=2] [ref=e340]
+                        - generic [ref=e341]:
+                          - generic [ref=e342]:
+                            - text: "4.5"
+                            - button "4.5 de 5 estrellas, detalles de la calificación" [ref=e344] [cursor=pointer]:
+                              - generic [ref=e346]: 4.5 de 5 estrellas
+                            - link "54,489 valoraciones" [ref=e350] [cursor=pointer]:
+                              - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B09LYF2ST7/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2#customerReviews
+                              - text: (54.4 K)
+                          - generic [ref=e351]: 10 K+ comprados el mes pasado
+                        - generic [ref=e354]:
+                          - generic [ref=e357]:
+                            - generic [ref=e358]: Precio y página del producto
+                            - 'link "CRC 9,041.02 PVPR: CRC 13,124.64 PVPR: CRC 13,124.64" [ref=e359] [cursor=pointer]':
+                              - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B09LYF2ST7/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                              - generic [ref=e360]:
+                                - generic [ref=e361]: CRC 9,041.02
+                                - generic [ref=e362]:
+                                  - text: CRC
+                                  - generic [ref=e363]:
+                                    - text: 9,041
+                                    - generic [ref=e364]: .
+                                  - text: "02"
+                              - generic [ref=e365]: "PVPR: CRC 13,124.64"
+                              - generic [ref=e366]:
+                                - text: "PVPR:"
+                                - generic [ref=e367]:
+                                  - generic [ref=e368]: CRC 13,124.64
+                                  - text: CRC13,124.64
+                          - generic [ref=e369]:
+                            - generic [ref=e375]: Entrega por CRC 8,348.34
+                            - generic [ref=e376]: Se envía a Costa Rica
+                          - button "Agregar al carrito" [ref=e390] [cursor=pointer]
+                          - group "colores disponibles" [ref=e392]:
+                            - list [ref=e393]:
+                              - generic [ref=e394]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B09LYF2ST7/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                              - generic [ref=e397]:
+                                - listitem:
+                                  - link "Verde":
+                                    - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B0BV9F196L/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                              - generic [ref=e400]:
+                                - listitem:
+                                  - link "Rojo anaranjado":
+                                    - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B0C6F5ZBJX/ref=cs_sr_dp_loc_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                              - generic [ref=e403]:
+                                - listitem:
+                                  - link "Rosa":
+                                    - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B0B8YKH8PZ/ref=cs_sr_dp_loc_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                              - generic [ref=e406]:
+                                - listitem:
+                                  - link "Púrpura":
+                                    - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B0GGBXTW4C/ref=cs_sr_dp_loc_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                              - generic [ref=e409]:
+                                - listitem:
+                                  - link "Blanco":
+                                    - /url: /-/es/BERIBES-Auriculares-reproducci%C3%B3n-ecualizados-inal%C3%A1mbricos/dp/B0B8YNRS6D/ref=cs_sr_dp_loc_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-2
+                  - listitem [ref=e414]:
+                    - generic [ref=e420]:
+                      - link [ref=e426] [cursor=pointer]:
+                        - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0G633S569/ref=sr_1_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-3
+                        - img [ref=e428]
+                      - generic [ref=e431]:
+                        - link "Auriculares Bluetooth híbridos con cancelación activa de ruido, Bluetooth 6.0 sobre la oreja inalámbricos con tiempo de reproducción de 60 horas, audio de alta resolución, graves profundos" [ref=e433] [cursor=pointer]:
+                          - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0G633S569/ref=sr_1_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-3
+                          - heading "Auriculares Bluetooth híbridos con cancelación activa de ruido, Bluetooth 6.0 sobre la oreja inalámbricos con tiempo de reproducción de 60 horas, audio de alta resolución, graves profundos" [level=2] [ref=e434]
+                        - generic [ref=e435]:
+                          - generic [ref=e436]:
+                            - text: "4.3"
+                            - button "4.3 de 5 estrellas, detalles de la calificación" [ref=e438] [cursor=pointer]:
+                              - generic [ref=e440]: 4.3 de 5 estrellas
+                            - link "219 valoraciones" [ref=e444] [cursor=pointer]:
+                              - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0G633S569/ref=sr_1_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-3#customerReviews
+                              - text: (219)
+                          - generic [ref=e445]: 6 K+ comprados el mes pasado
+                        - generic [ref=e448]:
+                          - generic [ref=e451]:
+                            - generic [ref=e452]: Precio y página del producto
+                            - link "CRC 13,577.37" [ref=e453] [cursor=pointer]:
+                              - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0G633S569/ref=sr_1_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-3
+                              - generic [ref=e454]:
+                                - generic [ref=e455]: CRC 13,577.37
+                                - generic [ref=e456]:
+                                  - text: CRC
+                                  - generic [ref=e457]:
+                                    - text: 13,577
+                                    - generic [ref=e458]: .
+                                  - text: "37"
+                          - generic [ref=e459]:
+                            - generic [ref=e465]: Entrega por CRC 8,651.67 el mar, 2 de jun
+                            - generic [ref=e466]: Se envía a Costa Rica
+                          - button "Agregar al carrito" [ref=e480] [cursor=pointer]
+                          - generic [ref=e482]:
+                            - text: Más opciones de compra
+                            - text: CRC 12,898.28
+                            - link "(6 ofertas de artículos nuevos y usados)" [ref=e484] [cursor=pointer]:
+                              - /url: /-/es/gp/offer-listing/B0G633S569/ref=sr_1_3_olp?keywords=wireless+headphones&dib_tag=se&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&sr=8-3
+            - generic [ref=e494]:
+              - link "Video patrocinado, haz clic para ir a la página del producto destacado. Gabba Goods Auriculares inalámbricos Bluetooth con micrófono - Auriculares inalámbricos - Reducción de ruido - Bluetooth, con cable, micro SD integrado para viajes, hogar, trabajo, TV, PC, juegos, teléfono celular (menta)" [ref=e498] [cursor=pointer]:
+                - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JDLnDz70lx7_oKdhTYv1tNUAAAGeSMuqAgEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICAG6QKY/clv1c_ek-YBfvXbcbSXg5XYxuhG4DZJ4NYjoPTal52-4NzPUPbFFL9oYEAoR6K5n1UnDHs3hhLStiC29CdO9tGwWLybNaZMMGL8hL870HwEnNb15iz20RKAvBJvo9i6_BSxpJzUNmC5oLX_n7PiN-CGXexNVj-kt80VlfrplRwGGeKDIQZTFMt3kLcP9k5t09wDgOQFh5U_9f7clVQxYS8MIVE9EIDi3OUDgbaIsRmkiV6ZvEWhTqjzwI5UzCxEgO9ltmZETk-tAwhJYkK97ehb6jin5FW37fTYCGAJbRIZkdPmk6DGcQOWnBIogn3UlODmDMDBcw2nWzAHuwE73HAhZflLfQkFU4jNekxvibYdRQVNRpjAu0yUZPR8RBKLItiSRDhRVuTiE_FaCpbXCPqEuykXxsD7YaGodqmSQve8Wqkd-GZzJKTkdHX5w65m--cOXMoTli0PFyPvNsb6K5m0DLhihpvS15KcFEz0IModaQgDbkSIQM0NqivPZHhgWTDwfDw4_DkaC1ACjMEYY6yEgkTIkMHWYyBZ_QB6mfS9MlR2nL-W01Wkgh7efl3sw28k1-v0bGQDzsEIeziE3MzNZMwQDkfBrmX0SVXsF0HXbvEGSVhI2LJY0G4XE4L8WcrBTElU1ZTK8hUfAJ2ELMJPd90BBZYFDPCFt_yi-LYjvK18YODhs8hwup4chOjzduO4A5uuTxQqUEXukTwKLAN5irxkPlAFUvpXBCH7g8iTVBxiA_81U3QZ3XPCrSo4k1gzSHvSMc5RNbUdIWh81MORVRVujSo065he7tvfQuIh-WnCKXMD_3NPSE6_gVZKQsE9O-05zArYx-ghDgSS77eaq17-8EEf6lHv_Ig7yhqvN14pmf7P0iiJh5ySzlKhFZvtUq6loZNilYgkvpx1kNXpqPT29c0zIlIVswzi0f4_UUZxddctCoqXiWgz68S3XxRlRgDG58VPkFkrDB4RnXsnSZlyiw_BG0efTAqo8QJrm6hwVWvGJiLiQDm0RjykvvwFWa_nCosERhIu2by3001bfUXtvAX0wKL35brvJzcwXYzrMw7E0NsTZrRh_FxgXNgqh1ECr8YiMe4yJMdKwhFxSk9PoG5xwEGmjmt79-b0w316VSwvE_UmC9NSjpbeU2WuJfE3iDut-adibxYR3cGRjOCoLKm9GRRrmsc6--IiIfTuoYHJqQNO9Y3c2QMzY1LQIbOSCjEt2mbLf80UfgKbqSXHWP1wmQj7T7Srgn-16FN2o-kCeyJ2fRFLYeLIDEQayF1rfmuxF65XEE3JPbX0z34uuOtBwtjXNt3DrghD3tSx9cQDds-7gyBwiyGijPLatlmaJfRswIDHQ6xgYfGWQmdXigU-cWT7ROmos_hTjWXiccXEjGQ3j6YgreQqyplxC1ctoIiAIgjh6hUy_UTpXg3MNwQgR4MQLjWLOKUS7JRJzoCSqVMA5Esv6k3ty19FNh6t7xOJ0PZxoMrixyQ6S_lXc1KFycvDhMcFMBCA_-4VBUw93e_att7EcRznI8b7j1N3M-HvbxJTEVGcuj2HhU1ktGADo2nr0zN7PiMcz9Hv3_4Uhk0TREPajdFjRljYeVsLlxegmSTVYdg1ics7bRb9lyyS8V7q4bccboG_jVIPmJ3YGKhrA/https://www.amazon.com/dp/B0DGMHKDWQ?pd_rd_i=B0DGMHKDWQ&pf_rd_p=35e6d4d3-057a-48a3-8acb-93514f30ad57&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_w=aVKGJ&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                - generic "Video patrocinado, haz clic para ir a la página del producto destacado. Gabba Goods Auriculares inalámbricos Bluetooth con micrófono - Auriculares inalámbricos - Reducción de ruido - Bluetooth, con cable, micro SD integrado para viajes, hogar, trabajo, TV, PC, juegos, teléfono celular (menta)" [ref=e499]
+              - generic [ref=e507]:
+                - link [ref=e513] [cursor=pointer]:
+                  - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JDLnDz70lx7_oKdhTYv1tNUAAAGeSMuqAgEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICAG6QKY/clv1c_ek-YBfvXbcbSXg5XYxuhG4DZJ4NYjoPTal52-4NzPUPbFFL9oYEAoR6K5n1UnDHs3hhLStiC29CdO9tGwWLybNaZMMGL8hL870HwEnNb15iz20RKAvBJvo9i6_BSxpJzUNmC5oLX_n7PiN-CGXexNVj-kt80VlfrplRwGGeKDIQZTFMt3kLcP9k5t09wDgOQFh5U_9f7clVQxYS8MIVE9EIDi3OUDgbaIsRmkiV6ZvEWhTqjzwI5UzCxEgO9ltmZETk-tAwhJYkK97ehb6jin5FW37fTYCGAJbRIZkdPmk6DGcQOWnBIogn3UlODmDMDBcw2nWzAHuwE73HAhZflLfQkFU4jNekxvibYdRQVNRpjAu0yUZPR8RBKLItiSRDhRVuTiE_FaCpbXCPqEuykXxsD7YaGodqmSQve8Wqkd-GZzJKTkdHX5w65m--cOXMoTli0PFyPvNsb6K5m0DLhihpvS15KcFEz0IModaQgDbkSIQM0NqivPZHhgWTDwfDw4_DkaC1ACjMEYY6yEgkTIkMHWYyBZ_QB6mfS9MlR2nL-W01Wkgh7efl3sw28k1-v0bGQDzsEIeziE3MzNZMwQDkfBrmX0SVXsF0HXbvEGSVhI2LJY0G4XE4L8WcrBTElU1ZTK8hUfAJ2ELMJPd90BBZYFDPCFt_yi-LYjvK18YODhs8hwup4chOjzduO4A5uuTxQqUEXukTwKLAN5irxkPlAFUvpXBCH7g8iTVBxiA_81U3QZ3XPCrSo4k1gzSHvSMc5RNbUdIWh81MORVRVujSo065he7tvfQuIh-WnCKXMD_3NPSE6_gVZKQsE9O-05zArYx-ghDgSS77eaq17-8EEf6lHv_Ig7yhqvN14pmf7P0iiJh5ySzlKhFZvtUq6loZNilYgkvpx1kNXpqPT29c0zIlIVswzi0f4_UUZxddctCoqXiWgz68S3XxRlRgDG58VPkFkrDB4RnXsnSZlyiw_BG0efTAqo8QJrm6hwVWvGJiLiQDm0RjykvvwFWa_nCosERhIu2by3001bfUXtvAX0wKL35brvJzcwXYzrMw7E0NsTZrRh_FxgXNgqh1ECr8YiMe4yJMdKwhFxSk9PoG5xwEGmjmt79-b0w316VSwvE_UmC9NSjpbeU2WuJfE3iDut-adibxYR3cGRjOCoLKm9GRRrmsc6--IiIfTuoYHJqQNO9Y3c2QMzY1LQIbOSCjEt2mbLf80UfgKbqSXHWP1wmQj7T7Srgn-16FN2o-kCeyJ2fRFLYeLIDEQayF1rfmuxF65XEE3JPbX0z34uuOtBwtjXNt3DrghD3tSx9cQDds-7gyBwiyGijPLatlmaJfRswIDHQ6xgYfGWQmdXigU-cWT7ROmos_hTjWXiccXEjGQ3j6YgreQqyplxC1ctoIiAIgjh6hUy_UTpXg3MNwQgR4MQLjWLOKUS7JRJzoCSqVMA5Esv6k3ty19FNh6t7xOJ0PZxoMrixyQ6S_lXc1KFycvDhMcFMBCA_-4VBUw93e_att7EcRznI8b7j1N3M-HvbxJTEVGcuj2HhU1ktGADo2nr0zN7PiMcz9Hv3_4Uhk0TREPajdFjRljYeVsLlxegmSTVYdg1ics7bRb9lyyS8V7q4bccboG_jVIPmJ3YGKhrA/https://www.amazon.com/Gabba-Goods-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DGMHKDWQ/ref=sxin_17_sbv_search_btf?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.35e6d4d3-057a-48a3-8acb-93514f30ad57%3Aamzn1.sym.35e6d4d3-057a-48a3-8acb-93514f30ad57&cv_ct_cx=wireless+headphones&keywords=wireless+headphones&pd_rd_i=B0DGMHKDWQ&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed&pd_rd_w=aVKGJ&pd_rd_wg=Ng2SF&pf_rd_p=35e6d4d3-057a-48a3-8acb-93514f30ad57&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&qid=1779337767&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-4eea1ee8-398e-4043-ac4a-e7624459ce18
+                  - img [ref=e515]
+                - generic [ref=e518]:
+                  - generic [ref=e519]:
+                    - generic [ref=e522] [cursor=pointer]: Patrocinado
+                    - link "Gabba Goods Auriculares inalámbricos Bluetooth con micrófono - Auriculares inalámbricos - Reducción de ruido - Bluetooth, con cable, micro SD integrado para viajes, hogar, trabajo, TV, PC, juegos, teléfono celular (menta)" [ref=e524] [cursor=pointer]:
+                      - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JDLnDz70lx7_oKdhTYv1tNUAAAGeSMuqAgEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICAG6QKY/clv1c_ek-YBfvXbcbSXg5XYxuhG4DZJ4NYjoPTal52-4NzPUPbFFL9oYEAoR6K5n1UnDHs3hhLStiC29CdO9tGwWLybNaZMMGL8hL870HwEnNb15iz20RKAvBJvo9i6_BSxpJzUNmC5oLX_n7PiN-CGXexNVj-kt80VlfrplRwGGeKDIQZTFMt3kLcP9k5t09wDgOQFh5U_9f7clVQxYS8MIVE9EIDi3OUDgbaIsRmkiV6ZvEWhTqjzwI5UzCxEgO9ltmZETk-tAwhJYkK97ehb6jin5FW37fTYCGAJbRIZkdPmk6DGcQOWnBIogn3UlODmDMDBcw2nWzAHuwE73HAhZflLfQkFU4jNekxvibYdRQVNRpjAu0yUZPR8RBKLItiSRDhRVuTiE_FaCpbXCPqEuykXxsD7YaGodqmSQve8Wqkd-GZzJKTkdHX5w65m--cOXMoTli0PFyPvNsb6K5m0DLhihpvS15KcFEz0IModaQgDbkSIQM0NqivPZHhgWTDwfDw4_DkaC1ACjMEYY6yEgkTIkMHWYyBZ_QB6mfS9MlR2nL-W01Wkgh7efl3sw28k1-v0bGQDzsEIeziE3MzNZMwQDkfBrmX0SVXsF0HXbvEGSVhI2LJY0G4XE4L8WcrBTElU1ZTK8hUfAJ2ELMJPd90BBZYFDPCFt_yi-LYjvK18YODhs8hwup4chOjzduO4A5uuTxQqUEXukTwKLAN5irxkPlAFUvpXBCH7g8iTVBxiA_81U3QZ3XPCrSo4k1gzSHvSMc5RNbUdIWh81MORVRVujSo065he7tvfQuIh-WnCKXMD_3NPSE6_gVZKQsE9O-05zArYx-ghDgSS77eaq17-8EEf6lHv_Ig7yhqvN14pmf7P0iiJh5ySzlKhFZvtUq6loZNilYgkvpx1kNXpqPT29c0zIlIVswzi0f4_UUZxddctCoqXiWgz68S3XxRlRgDG58VPkFkrDB4RnXsnSZlyiw_BG0efTAqo8QJrm6hwVWvGJiLiQDm0RjykvvwFWa_nCosERhIu2by3001bfUXtvAX0wKL35brvJzcwXYzrMw7E0NsTZrRh_FxgXNgqh1ECr8YiMe4yJMdKwhFxSk9PoG5xwEGmjmt79-b0w316VSwvE_UmC9NSjpbeU2WuJfE3iDut-adibxYR3cGRjOCoLKm9GRRrmsc6--IiIfTuoYHJqQNO9Y3c2QMzY1LQIbOSCjEt2mbLf80UfgKbqSXHWP1wmQj7T7Srgn-16FN2o-kCeyJ2fRFLYeLIDEQayF1rfmuxF65XEE3JPbX0z34uuOtBwtjXNt3DrghD3tSx9cQDds-7gyBwiyGijPLatlmaJfRswIDHQ6xgYfGWQmdXigU-cWT7ROmos_hTjWXiccXEjGQ3j6YgreQqyplxC1ctoIiAIgjh6hUy_UTpXg3MNwQgR4MQLjWLOKUS7JRJzoCSqVMA5Esv6k3ty19FNh6t7xOJ0PZxoMrixyQ6S_lXc1KFycvDhMcFMBCA_-4VBUw93e_att7EcRznI8b7j1N3M-HvbxJTEVGcuj2HhU1ktGADo2nr0zN7PiMcz9Hv3_4Uhk0TREPajdFjRljYeVsLlxegmSTVYdg1ics7bRb9lyyS8V7q4bccboG_jVIPmJ3YGKhrA/https://www.amazon.com/Gabba-Goods-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DGMHKDWQ/ref=sxin_17_sbv_search_btf?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.35e6d4d3-057a-48a3-8acb-93514f30ad57%3Aamzn1.sym.35e6d4d3-057a-48a3-8acb-93514f30ad57&cv_ct_cx=wireless+headphones&keywords=wireless+headphones&pd_rd_i=B0DGMHKDWQ&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed&pd_rd_w=aVKGJ&pd_rd_wg=Ng2SF&pf_rd_p=35e6d4d3-057a-48a3-8acb-93514f30ad57&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&qid=1779337767&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-4eea1ee8-398e-4043-ac4a-e7624459ce18
+                      - heading "Gabba Goods Auriculares inalámbricos Bluetooth con micrófono - Auriculares inalámbricos - Reducción de ruido - Bluetooth, con cable, micro SD integrado para viajes, hogar, trabajo, TV, PC, juegos, teléfono celular (menta)" [level=2] [ref=e525]
+                  - generic [ref=e526]:
+                    - generic [ref=e527]:
+                      - text: "4.0"
+                      - button "4.0 de 5 estrellas, detalles de la calificación" [ref=e529] [cursor=pointer]:
+                        - generic [ref=e531]: 4.0 de 5 estrellas
+                      - link "1,530 valoraciones" [ref=e535] [cursor=pointer]:
+                        - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JDLnDz70lx7_oKdhTYv1tNUAAAGeSMuqAgEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICAG6QKY/clv1c_ek-YBfvXbcbSXg5XYxuhG4DZJ4NYjoPTal52-4NzPUPbFFL9oYEAoR6K5n1UnDHs3hhLStiC29CdO9tGwWLybNaZMMGL8hL870HwEnNb15iz20RKAvBJvo9i6_BSxpJzUNmC5oLX_n7PiN-CGXexNVj-kt80VlfrplRwGGeKDIQZTFMt3kLcP9k5t09wDgOQFh5U_9f7clVQxYS8MIVE9EIDi3OUDgbaIsRmkiV6ZvEWhTqjzwI5UzCxEgO9ltmZETk-tAwhJYkK97ehb6jin5FW37fTYCGAJbRIZkdPmk6DGcQOWnBIogn3UlODmDMDBcw2nWzAHuwE73HAhZflLfQkFU4jNekxvibYdRQVNRpjAu0yUZPR8RBKLItiSRDhRVuTiE_FaCpbXCPqEuykXxsD7YaGodqmSQve8Wqkd-GZzJKTkdHX5w65m--cOXMoTli0PFyPvNsb6K5m0DLhihpvS15KcFEz0IModaQgDbkSIQM0NqivPZHhgWTDwfDw4_DkaC1ACjMEYY6yEgkTIkMHWYyBZ_QB6mfS9MlR2nL-W01Wkgh7efl3sw28k1-v0bGQDzsEIeziE3MzNZMwQDkfBrmX0SVXsF0HXbvEGSVhI2LJY0G4XE4L8WcrBTElU1ZTK8hUfAJ2ELMJPd90BBZYFDPCFt_yi-LYjvK18YODhs8hwup4chOjzduO4A5uuTxQqUEXukTwKLAN5irxkPlAFUvpXBCH7g8iTVBxiA_81U3QZ3XPCrSo4k1gzSHvSMc5RNbUdIWh81MORVRVujSo065he7tvfQuIh-WnCKXMD_3NPSE6_gVZKQsE9O-05zArYx-ghDgSS77eaq17-8EEf6lHv_Ig7yhqvN14pmf7P0iiJh5ySzlKhFZvtUq6loZNilYgkvpx1kNXpqPT29c0zIlIVswzi0f4_UUZxddctCoqXiWgz68S3XxRlRgDG58VPkFkrDB4RnXsnSZlyiw_BG0efTAqo8QJrm6hwVWvGJiLiQDm0RjykvvwFWa_nCosERhIu2by3001bfUXtvAX0wKL35brvJzcwXYzrMw7E0NsTZrRh_FxgXNgqh1ECr8YiMe4yJMdKwhFxSk9PoG5xwEGmjmt79-b0w316VSwvE_UmC9NSjpbeU2WuJfE3iDut-adibxYR3cGRjOCoLKm9GRRrmsc6--IiIfTuoYHJqQNO9Y3c2QMzY1LQIbOSCjEt2mbLf80UfgKbqSXHWP1wmQj7T7Srgn-16FN2o-kCeyJ2fRFLYeLIDEQayF1rfmuxF65XEE3JPbX0z34uuOtBwtjXNt3DrghD3tSx9cQDds-7gyBwiyGijPLatlmaJfRswIDHQ6xgYfGWQmdXigU-cWT7ROmos_hTjWXiccXEjGQ3j6YgreQqyplxC1ctoIiAIgjh6hUy_UTpXg3MNwQgR4MQLjWLOKUS7JRJzoCSqVMA5Esv6k3ty19FNh6t7xOJ0PZxoMrixyQ6S_lXc1KFycvDhMcFMBCA_-4VBUw93e_att7EcRznI8b7j1N3M-HvbxJTEVGcuj2HhU1ktGADo2nr0zN7PiMcz9Hv3_4Uhk0TREPajdFjRljYeVsLlxegmSTVYdg1ics7bRb9lyyS8V7q4bccboG_jVIPmJ3YGKhrA/https://www.amazon.com/Gabba-Goods-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DGMHKDWQ/ref=sxin_17_sbv_search_btf?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.35e6d4d3-057a-48a3-8acb-93514f30ad57%3Aamzn1.sym.35e6d4d3-057a-48a3-8acb-93514f30ad57&cv_ct_cx=wireless+headphones&keywords=wireless+headphones&pd_rd_i=B0DGMHKDWQ&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed&pd_rd_w=aVKGJ&pd_rd_wg=Ng2SF&pf_rd_p=35e6d4d3-057a-48a3-8acb-93514f30ad57&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&qid=1779337767&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-4eea1ee8-398e-4043-ac4a-e7624459ce18#customerReviews
+                        - text: (1.5 K)
+                    - generic [ref=e536]: 500+ comprados el mes pasado
+                  - generic [ref=e539]:
+                    - generic [ref=e542]:
+                      - generic [ref=e543]: Precio y página del producto
+                      - link "CRC 13,124.64" [ref=e544] [cursor=pointer]:
+                        - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JDLnDz70lx7_oKdhTYv1tNUAAAGeSMuqAgEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICAG6QKY/clv1c_ek-YBfvXbcbSXg5XYxuhG4DZJ4NYjoPTal52-4NzPUPbFFL9oYEAoR6K5n1UnDHs3hhLStiC29CdO9tGwWLybNaZMMGL8hL870HwEnNb15iz20RKAvBJvo9i6_BSxpJzUNmC5oLX_n7PiN-CGXexNVj-kt80VlfrplRwGGeKDIQZTFMt3kLcP9k5t09wDgOQFh5U_9f7clVQxYS8MIVE9EIDi3OUDgbaIsRmkiV6ZvEWhTqjzwI5UzCxEgO9ltmZETk-tAwhJYkK97ehb6jin5FW37fTYCGAJbRIZkdPmk6DGcQOWnBIogn3UlODmDMDBcw2nWzAHuwE73HAhZflLfQkFU4jNekxvibYdRQVNRpjAu0yUZPR8RBKLItiSRDhRVuTiE_FaCpbXCPqEuykXxsD7YaGodqmSQve8Wqkd-GZzJKTkdHX5w65m--cOXMoTli0PFyPvNsb6K5m0DLhihpvS15KcFEz0IModaQgDbkSIQM0NqivPZHhgWTDwfDw4_DkaC1ACjMEYY6yEgkTIkMHWYyBZ_QB6mfS9MlR2nL-W01Wkgh7efl3sw28k1-v0bGQDzsEIeziE3MzNZMwQDkfBrmX0SVXsF0HXbvEGSVhI2LJY0G4XE4L8WcrBTElU1ZTK8hUfAJ2ELMJPd90BBZYFDPCFt_yi-LYjvK18YODhs8hwup4chOjzduO4A5uuTxQqUEXukTwKLAN5irxkPlAFUvpXBCH7g8iTVBxiA_81U3QZ3XPCrSo4k1gzSHvSMc5RNbUdIWh81MORVRVujSo065he7tvfQuIh-WnCKXMD_3NPSE6_gVZKQsE9O-05zArYx-ghDgSS77eaq17-8EEf6lHv_Ig7yhqvN14pmf7P0iiJh5ySzlKhFZvtUq6loZNilYgkvpx1kNXpqPT29c0zIlIVswzi0f4_UUZxddctCoqXiWgz68S3XxRlRgDG58VPkFkrDB4RnXsnSZlyiw_BG0efTAqo8QJrm6hwVWvGJiLiQDm0RjykvvwFWa_nCosERhIu2by3001bfUXtvAX0wKL35brvJzcwXYzrMw7E0NsTZrRh_FxgXNgqh1ECr8YiMe4yJMdKwhFxSk9PoG5xwEGmjmt79-b0w316VSwvE_UmC9NSjpbeU2WuJfE3iDut-adibxYR3cGRjOCoLKm9GRRrmsc6--IiIfTuoYHJqQNO9Y3c2QMzY1LQIbOSCjEt2mbLf80UfgKbqSXHWP1wmQj7T7Srgn-16FN2o-kCeyJ2fRFLYeLIDEQayF1rfmuxF65XEE3JPbX0z34uuOtBwtjXNt3DrghD3tSx9cQDds-7gyBwiyGijPLatlmaJfRswIDHQ6xgYfGWQmdXigU-cWT7ROmos_hTjWXiccXEjGQ3j6YgreQqyplxC1ctoIiAIgjh6hUy_UTpXg3MNwQgR4MQLjWLOKUS7JRJzoCSqVMA5Esv6k3ty19FNh6t7xOJ0PZxoMrixyQ6S_lXc1KFycvDhMcFMBCA_-4VBUw93e_att7EcRznI8b7j1N3M-HvbxJTEVGcuj2HhU1ktGADo2nr0zN7PiMcz9Hv3_4Uhk0TREPajdFjRljYeVsLlxegmSTVYdg1ics7bRb9lyyS8V7q4bccboG_jVIPmJ3YGKhrA/https://www.amazon.com/Gabba-Goods-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DGMHKDWQ/ref=sxin_17_sbv_search_btf?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.35e6d4d3-057a-48a3-8acb-93514f30ad57%3Aamzn1.sym.35e6d4d3-057a-48a3-8acb-93514f30ad57&cv_ct_cx=wireless+headphones&keywords=wireless+headphones&pd_rd_i=B0DGMHKDWQ&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed&pd_rd_w=aVKGJ&pd_rd_wg=Ng2SF&pf_rd_p=35e6d4d3-057a-48a3-8acb-93514f30ad57&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&qid=1779337767&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-4eea1ee8-398e-4043-ac4a-e7624459ce18
+                        - generic [ref=e545]:
+                          - generic [ref=e546]: CRC 13,124.64
+                          - generic [ref=e547]:
+                            - text: CRC
+                            - generic [ref=e548]:
+                              - text: 13,124
+                              - generic [ref=e549]: .
+                            - text: "64"
+                    - generic [ref=e552]:
+                      - generic [ref=e556]: Entrega por CRC 10,666.32 el mar, 2 de jun
+                      - generic [ref=e558]: O entrega más rápida el jue, 28 de may
+            - generic [ref=e561]:
+              - link "Anuncio patrocinado de Uliptz. \"Auriculares inalámbricos Bluetooth para colocar sobre la oreja.\" Comprar Uliptz." [ref=e562] [cursor=pointer]:
+                - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/stores/page/625D2D38-102C-4445-A352-D01FEF579B98/?_encoding=UTF8&store_ref=SB_A003846531PN93EPRG3XG-A00041653E60IQFQZE8XT&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&lp_asins=B09NNBBY8F%2CB0BP6QFPP6%2CB0C4SPVGTJ&lp_query=wireless%20headphones&lp_slot=desktop-inline&ref_=sbx__sbtcd2_bkgd&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+              - generic [ref=e563]:
+                - generic [ref=e565]:
+                  - link "Uliptz" [ref=e567] [cursor=pointer]:
+                    - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/stores/page/625D2D38-102C-4445-A352-D01FEF579B98/?_encoding=UTF8&store_ref=SB_A003846531PN93EPRG3XG-A00041653E60IQFQZE8XT&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&lp_asins=B09NNBBY8F%2CB0BP6QFPP6%2CB0C4SPVGTJ&lp_query=wireless%20headphones&lp_slot=desktop-inline&ref_=sbx__sbtcd2_logo&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                    - img "Uliptz" [ref=e569]
+                  - generic [ref=e571]:
+                    - link "Auriculares inalámbricos Bluetooth para colocar sobre la oreja" [ref=e572] [cursor=pointer]:
+                      - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/stores/page/625D2D38-102C-4445-A352-D01FEF579B98/?_encoding=UTF8&store_ref=SB_A003846531PN93EPRG3XG-A00041653E60IQFQZE8XT&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&lp_asins=B09NNBBY8F%2CB0BP6QFPP6%2CB0C4SPVGTJ&lp_query=wireless%20headphones&lp_slot=desktop-inline&ref_=sbx__sbtcd2_hl&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                      - generic [ref=e573]:
+                        - generic [ref=e574]: Auriculares inalámbricos Bluetooth para colocar sobre la oreja
+                        - generic [ref=e575]: Auriculares inalámbricos Bluetooth para colocar sobre la oreja
+                    - generic [ref=e576]:
+                      - button "Leave feedback on Sponsored ad" [ref=e580] [cursor=pointer]: Patrocinado
+                      - generic [ref=e582]: "|"
+                      - generic [ref=e583]: Más de 8K+ mil compras de esta marca el mes pasado
+                      - generic [ref=e584]: "|"
+                      - link "Comprar Uliptz" [ref=e586] [cursor=pointer]:
+                        - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/stores/page/625D2D38-102C-4445-A352-D01FEF579B98/?_encoding=UTF8&store_ref=SB_A003846531PN93EPRG3XG-A00041653E60IQFQZE8XT&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&lp_asins=B09NNBBY8F%2CB0BP6QFPP6%2CB0C4SPVGTJ&lp_query=wireless%20headphones&lp_slot=desktop-inline&ref_=sbx__sbtcd2_cta&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                        - generic [ref=e589]:
+                          - text: Comprar
+                          - generic [ref=e590]:
+                            - text: Uliptz
+                            - img [ref=e591]
+                - group [ref=e594]:
+                  - group [ref=e598]:
+                    - list [ref=e599]:
+                      - listitem [ref=e600]:
+                        - generic [ref=e602]:
+                          - link [ref=e603] [cursor=pointer]:
+                            - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B09NNBBY8F/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-1-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_0_bkgd&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                          - link "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, 6 modos de sonido EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 5.3" [ref=e604] [cursor=pointer]:
+                            - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B09NNBBY8F/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-1-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_0_img&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                            - img "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, 6 modos de sonido EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 5.3" [ref=e607]
+                          - generic [ref=e608]:
+                            - link [ref=e609] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B09NNBBY8F/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-1-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_0_bkgd&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                            - link "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, 6 modos de sonido EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 5.3" [ref=e611] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B09NNBBY8F/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-1-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_0_title&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                              - generic [ref=e612]:
+                                - generic [ref=e613]: Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, 6 modos de sonido EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 5.3
+                                - generic [ref=e614]: Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, 6 modos de sonido EQ, auriculares estéreo de alta fidelidad so…
+                            - link "Con calificación 4.6 de 5 estrellas según 14460 reseñas. Ir a la sección de reseñas." [ref=e615] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B09NNBBY8F/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-1-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_0_rating&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed#customerReviews
+                              - generic [ref=e616]:
+                                - generic [ref=e617]: "4.6"
+                                - generic [ref=e619]: 4.6 de un máximo de 5 estrellas.
+                                - generic [ref=e620]: 14,460
+                            - link "-20% US$15.99" [ref=e622] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B09NNBBY8F/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-1-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_0_price&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                              - generic [ref=e623]:
+                                - generic [ref=e624]: "-20%"
+                                - generic [ref=e625]:
+                                  - generic [ref=e626]: US$15.99
+                                  - generic [ref=e627]:
+                                    - text: US$
+                                    - generic [ref=e628]:
+                                      - text: "15"
+                                      - generic [ref=e629]: .
+                                    - text: "99"
+                            - generic [ref=e632]: US$19.99
+                      - listitem [ref=e633]:
+                        - generic [ref=e635]:
+                          - link [ref=e636] [cursor=pointer]:
+                            - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0BP6QFPP6/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-2-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_1_bkgd&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                          - link "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 6.0 plegables para viajes, oficina, teléfono móvil/PC (oro rosa)" [ref=e637] [cursor=pointer]:
+                            - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0BP6QFPP6/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-2-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_1_img&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                            - img "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 6.0 plegables para viajes, oficina, teléfono móvil/PC (oro rosa)" [ref=e640]
+                          - generic [ref=e641]:
+                            - link [ref=e642] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0BP6QFPP6/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-2-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_1_bkgd&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                            - link "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 6.0 plegables para viajes, oficina, teléfono móvil/PC (oro rosa)" [ref=e644] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0BP6QFPP6/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-2-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_1_title&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                              - generic [ref=e645]:
+                                - generic [ref=e646]: Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 6.0 plegables para viajes, oficina, teléfono móvil/PC (oro rosa)
+                                - generic [ref=e647]: Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad so…
+                            - link "Con calificación 4.6 de 5 estrellas según 14460 reseñas. Ir a la sección de reseñas." [ref=e648] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0BP6QFPP6/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-2-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_1_rating&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed#customerReviews
+                              - generic [ref=e649]:
+                                - generic [ref=e650]: "4.6"
+                                - generic [ref=e652]: 4.6 de un máximo de 5 estrellas.
+                                - generic [ref=e653]: 14,460
+                            - link "-34% US$18.99" [ref=e655] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0BP6QFPP6/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-2-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_1_price&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                              - generic [ref=e656]:
+                                - generic [ref=e657]: "-34%"
+                                - generic [ref=e658]:
+                                  - generic [ref=e659]: US$18.99
+                                  - generic [ref=e660]:
+                                    - text: US$
+                                    - generic [ref=e661]:
+                                      - text: "18"
+                                      - generic [ref=e662]: .
+                                    - text: "99"
+                            - generic [ref=e665]: US$28.99
+                      - listitem [ref=e666]:
+                        - generic [ref=e668]:
+                          - link [ref=e669] [cursor=pointer]:
+                            - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0C4SPVGTJ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-3-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_2_bkgd&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                          - link "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 5.3" [ref=e670] [cursor=pointer]:
+                            - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0C4SPVGTJ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-3-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_2_img&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                            - img "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 5.3" [ref=e673]
+                          - generic [ref=e674]:
+                            - link [ref=e675] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0C4SPVGTJ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-3-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_2_bkgd&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                            - link "Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 5.3" [ref=e677] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0C4SPVGTJ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-3-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_2_title&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                              - generic [ref=e678]:
+                                - generic [ref=e679]: Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad sobre la oreja con micrófono, auriculares Bluetooth 5.3
+                                - generic [ref=e680]: Uliptz Auriculares Bluetooth inalámbricos, tiempo de reproducción de 65 horas, modos de sonido 6EQ, auriculares estéreo de alta fidelidad so…
+                            - link "Con calificación 4.6 de 5 estrellas según 14460 reseñas. Ir a la sección de reseñas." [ref=e681] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0C4SPVGTJ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-3-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_2_rating&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed#customerReviews
+                              - generic [ref=e682]:
+                                - generic [ref=e683]: "4.6"
+                                - generic [ref=e685]: 4.6 de un máximo de 5 estrellas.
+                                - generic [ref=e686]: 14,460
+                            - link "-30% US$20.99" [ref=e688] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JPM1B4BOFlP-4eAsFVrJW_IAAAGeSMup-gEAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDEgICDvl-5n/clv1c_ek-wBIfXIrTanndycGdTI8haohqSErVqrckU6sTyBbR6QmQ37NNSsqBNkS4ayxf6daR1izO32z-J96OgcGwI76Zs_w9gpzc1Uwsg_9juvsBUFwmHznnR2Gz2znm0JX63eAwfw9naXliSzole5kL6X5C_ItuQNhXolLT5yD_-bBce3mkrBrDRhkuNhKRur6kz1HN9tNFAGAze9bTcNIfE5zKzq3OUDgY-HKRId6ir1Djxs7BPH7BUMMFo0mVCCmcyuGZcEvt1hK1Y3G2uiip_v5lb9H8NfyiIszNNUiEC6V7ulXbS4DqxTd34FXDsddlQ9m6muCga9RfSemeNU47w9sZEapPu9lC0HPLRSIUrHeHOFWM7_7oVp7F2vklfEe2Etzgi6lZuwCqh3ER6XTAv6CNTjF3mRHCi2vcnW-FSSoHU6LrgefiEH01jlP23ZJ8KTJDtUieGBy-YEa-wWf3c4gG5jdR67DaZ1NBvFPyh-KtsPoY9h4jpEaRsb8bhmqY6OBCY2nOFHsGdLhfUtsB1XZW9Zz_Mz8dv9hdyrlPI70fJwYfvZJSZJm5IITiS-TdLRq64KaB0c-ZC64yGd63zAPYUh1dqMdOm25I9qokp41lQ2FrGrFp9i5J3p4DGB83uXaGNKY6dRIbmLtqxBfJVoCAb1tSQG_cy52Zqj3ffqcK2s20FeytFwXyXiy5Se4Fr57kYfZhcalCjf5BV0GVoawR4eo4pxRsxUrDr67Rec63e_I6aZ95MIHsGSuUuq38r8PZvJ0jBJyQ4UfdyC7253NK7oGfKsq5QlC4uYcgXlv3CGMw4Q9Rpa2fbNX9AJ0erd8UxFZWElLD2Fj8GNxN-eydTqF_bujgctWMwmzRR3kDWHw46D42oa_adKi3XtOoHLcmgJawQM7OjeGjOAT0WEt7CAknkpSBdZx3vKDxhQ-TbcxaG0B7wSDZb81hcSUWRgPRFqQ_U0KN65fYrrU0XAOz3Tg4kLnT7qyuyPYq-eA3T96SmfWhEpSvWQeupbpUIF-i__C69FX41s5VPfshm3Hyaa3AkkCjrpyPHsZd2T9-aXD2Kaux0RocJ4pPlSG5uQ10v_AzcR-TMqbauFpZy8jAd_JX8A6Ojuv6EpWMFE8Je6kH3t_Q7louhtiKN0N18xKBpJ9QYCR8dGnfDtHwc-O-l-JeI15SeK_FQCTWp9V7ycuitUjVIzGOf-cs5TUJmFJLxpOFMRTDtfY7mN_tFtMb50_8_2hcS-GXBLyK1AzDqkkzLuumsR5wsHlLOJHQxaHRwlJNjFnbBqzKYBl1Bn8_GUgaWCKJ2cIXN-sAFaYCfSrHDgrYLV0HzIsJFYpjuPBCabcln9AijyBvFyy2aAWC0m1ZTtZRo0p94HSp4tPpNSBidAJuDDBDtUsYRi62wZHwQz5w5cqtY8IQE1Qerhf7FXTsaLvnvOXfPgKh91ocA0tEWfTsPibxssWXnqVNSpvn9NqECfFweaHuERKk1dRKuBZ3AFTPjKyO2OSYtaRlNgJ-enSA8io-5-q7aOoURxLu-hHMgdIz6vf2c5tuYrDPUzVQfSM9y_Mda7i-T4ZGyk0CYS6_OHtoQHq_5i6CO1hUO90X5mWZsnJdvROSP4Yn4KE4BApqikLlCFbSUGE8ffy8_gh81E7ORXAr2IFeJQvT3efP9pj5D-11CmovCaKtH/https://www.amazon.com/gp/aw/d/B0C4SPVGTJ/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=b67d6bf3d227e074d9d2af3cbef46a24&hsa_cr_id=0&qid=1779337767&sr=1-3-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_2_price&pd_rd_w=Qim8T&content-id=amzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9%3Aamzn1.sym.d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_p=d3360101-5266-4e0e-8e4a-de7eb0be6ed9&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=Ng2SF&pd_rd_r=99827c6d-613e-46f9-baf3-7a90b3ee41ed
+                              - generic [ref=e689]:
+                                - generic [ref=e690]: "-30%"
+                                - generic [ref=e691]:
+                                  - generic [ref=e692]: US$20.99
+                                  - generic [ref=e693]:
+                                    - text: US$
+                                    - generic [ref=e694]:
+                                      - text: "20"
+                                      - generic [ref=e695]: .
+                                    - text: "99"
+                            - generic [ref=e698]: US$29.99
+            - generic [ref=e700]:
+              - heading "Más resultados" [level=2] [ref=e704]
+              - generic:
+                - list:
+                  - listitem [ref=e705]:
+                    - generic [ref=e711]:
+                      - link [ref=e717] [cursor=pointer]:
+                        - /url: /-/es/HAOYUYAN-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n-alimentaci%C3%B3n/dp/B0GSFPWHVV/ref=sr_1_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-4
+                        - img [ref=e719]
+                      - generic [ref=e722]:
+                        - link "HAOYUYAN Auriculares inalámbricos, auriculares Bluetooth deportivos, auriculares deportivos con 80 horas de reproducción, con pantalla de alimentación LED, auriculares con cancelación de ruido" [ref=e724] [cursor=pointer]:
+                          - /url: /-/es/HAOYUYAN-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n-alimentaci%C3%B3n/dp/B0GSFPWHVV/ref=sr_1_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-4
+                          - heading "HAOYUYAN Auriculares inalámbricos, auriculares Bluetooth deportivos, auriculares deportivos con 80 horas de reproducción, con pantalla de alimentación LED, auriculares con cancelación de ruido" [level=2] [ref=e725]
+                        - generic [ref=e726]:
+                          - generic [ref=e727]:
+                            - text: "4.7"
+                            - button "4.7 de 5 estrellas, detalles de la calificación" [ref=e729] [cursor=pointer]:
+                              - generic [ref=e731]: 4.7 de 5 estrellas
+                            - link "237 valoraciones" [ref=e735] [cursor=pointer]:
+                              - /url: /-/es/HAOYUYAN-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n-alimentaci%C3%B3n/dp/B0GSFPWHVV/ref=sr_1_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-4#customerReviews
+                              - text: (237)
+                          - generic [ref=e736]: 4 K+ comprados el mes pasado
+                        - generic [ref=e739]:
+                          - generic [ref=e742]:
+                            - generic [ref=e743]: Precio y página del producto
+                            - 'link "CRC 11,309.20 Precio típico: CRC 135,814.47 Precio típico: CRC 135,814.47" [ref=e744] [cursor=pointer]':
+                              - /url: /-/es/HAOYUYAN-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n-alimentaci%C3%B3n/dp/B0GSFPWHVV/ref=sr_1_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-4
+                              - generic [ref=e745]:
+                                - generic [ref=e746]: CRC 11,309.20
+                                - generic [ref=e747]:
+                                  - text: CRC
+                                  - generic [ref=e748]:
+                                    - text: 11,309
+                                    - generic [ref=e749]: .
+                                  - text: "20"
+                              - generic [ref=e750]: "Precio típico: CRC 135,814.47"
+                              - generic [ref=e751]:
+                                - text: "Precio típico:"
+                                - generic [ref=e752]:
+                                  - generic [ref=e753]: CRC 135,814.47
+                                  - text: CRC135,814.47
+                          - generic [ref=e754]:
+                            - generic [ref=e760]: Entrega por CRC 7,845.81 el mar, 2 de jun
+                            - generic [ref=e761]: Se envía a Costa Rica
+                          - link "Ver opciones" [ref=e767] [cursor=pointer]:
+                            - /url: /-/es/HAOYUYAN-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n-alimentaci%C3%B3n/dp/B0GSFPWHVV/ref=sr_1_4_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-4
+                  - listitem [ref=e770]:
+                    - generic [ref=e776]:
+                      - link [ref=e782] [cursor=pointer]:
+                        - /url: /-/es/Auriculares-cancelaci%C3%B3n-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B0GSD4KRC3/ref=sr_1_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-5
+                        - img [ref=e784]
+                      - generic [ref=e787]:
+                        - link "Auriculares híbridos con cancelación activa de ruido, 120 horas de reproducción, auriculares inalámbricos Bluetooth 6.0 sobre la oreja con 6 micrófonos ENC HD, audio espacial de alta resolución de 360" [ref=e789] [cursor=pointer]:
+                          - /url: /-/es/Auriculares-cancelaci%C3%B3n-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B0GSD4KRC3/ref=sr_1_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-5
+                          - heading "Auriculares híbridos con cancelación activa de ruido, 120 horas de reproducción, auriculares inalámbricos Bluetooth 6.0 sobre la oreja con 6 micrófonos ENC HD, audio espacial de alta resolución de 360" [level=2] [ref=e790]
+                        - generic [ref=e791]:
+                          - generic [ref=e792]:
+                            - text: "4.9"
+                            - button "4.9 de 5 estrellas, detalles de la calificación" [ref=e794] [cursor=pointer]:
+                              - generic [ref=e796]: 4.9 de 5 estrellas
+                            - link "160 valoraciones" [ref=e800] [cursor=pointer]:
+                              - /url: /-/es/Auriculares-cancelaci%C3%B3n-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B0GSD4KRC3/ref=sr_1_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-5#customerReviews
+                              - text: (160)
+                          - generic [ref=e801]: 9 K+ comprados el mes pasado
+                        - generic [ref=e804]:
+                          - generic [ref=e805]:
+                            - generic [ref=e807]:
+                              - generic [ref=e808]: Precio y página del producto
+                              - link "CRC 40,741.17" [ref=e809] [cursor=pointer]:
+                                - /url: /-/es/Auriculares-cancelaci%C3%B3n-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B0GSD4KRC3/ref=sr_1_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-5
+                                - generic [ref=e810]:
+                                  - generic [ref=e811]: CRC 40,741.17
+                                  - generic [ref=e812]:
+                                    - text: CRC
+                                    - generic [ref=e813]:
+                                      - text: 40,741
+                                      - generic [ref=e814]: .
+                                    - text: "17"
+                            - generic [ref=e817]:
+                              - generic [ref=e818]: Ahorra 50 %
+                              - text: con cupón
+                          - generic [ref=e819]:
+                            - generic [ref=e825]: Entrega por CRC 8,687.89 el mar, 2 de jun
+                            - generic [ref=e826]: Se envía a Costa Rica
+                          - button "Agregar al carrito" [ref=e840] [cursor=pointer]
+                          - generic [ref=e842]:
+                            - text: Más opciones de compra
+                            - text: CRC 34,887.37
+                            - link "(2+ ofertas de artículos nuevos y usados)" [ref=e844] [cursor=pointer]:
+                              - /url: /-/es/gp/offer-listing/B0GSD4KRC3/ref=sr_1_5_olp?keywords=wireless+headphones&dib_tag=se&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&sr=8-5
+                  - listitem [ref=e847]:
+                    - generic [ref=e853]:
+                      - link [ref=e859] [cursor=pointer]:
+                        - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B09BF64J55/ref=sr_1_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                        - img [ref=e861]
+                      - generic [ref=e864]:
+                        - link "KVIDIO Auriculares Bluetooth sobre la oreja, 65 horas de reproducción, auriculares inalámbricos con micrófono, auriculares ligeros plegables con graves profundos, sonido estéreo de alta fidelidad de" [ref=e866] [cursor=pointer]:
+                          - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B09BF64J55/ref=sr_1_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                          - heading "KVIDIO Auriculares Bluetooth sobre la oreja, 65 horas de reproducción, auriculares inalámbricos con micrófono, auriculares ligeros plegables con graves profundos, sonido estéreo de alta fidelidad de" [level=2] [ref=e867]
+                        - generic [ref=e868]:
+                          - generic [ref=e869]:
+                            - text: "4.5"
+                            - button "4.5 de 5 estrellas, detalles de la calificación" [ref=e871] [cursor=pointer]:
+                              - generic [ref=e873]: 4.5 de 5 estrellas
+                            - link "33,203 valoraciones" [ref=e877] [cursor=pointer]:
+                              - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B09BF64J55/ref=sr_1_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6#customerReviews
+                              - text: (33.2 K)
+                          - generic [ref=e878]: 9 K+ comprados el mes pasado
+                        - generic [ref=e881]:
+                          - generic [ref=e884]:
+                            - generic [ref=e885]: Precio y página del producto
+                            - 'link "CRC 8,588.29 PVPR: CRC 11,119.05 PVPR: CRC 11,119.05" [ref=e886] [cursor=pointer]':
+                              - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B09BF64J55/ref=sr_1_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                              - generic [ref=e887]:
+                                - generic [ref=e888]: CRC 8,588.29
+                                - generic [ref=e889]:
+                                  - text: CRC
+                                  - generic [ref=e890]:
+                                    - text: 8,588
+                                    - generic [ref=e891]: .
+                                  - text: "29"
+                              - generic [ref=e892]: "PVPR: CRC 11,119.05"
+                              - generic [ref=e893]:
+                                - text: "PVPR:"
+                                - generic [ref=e894]:
+                                  - generic [ref=e895]: CRC 11,119.05
+                                  - text: CRC11,119.05
+                          - generic [ref=e896]:
+                            - generic [ref=e902]: Entrega por CRC 8,357.40
+                            - generic [ref=e903]: Se envía a Costa Rica
+                          - button "Agregar al carrito" [ref=e917] [cursor=pointer]
+                          - generic [ref=e919]:
+                            - text: Más opciones de compra
+                            - text: CRC 8,502.27
+                            - link "(3+ ofertas de artículos nuevos y usados)" [ref=e921] [cursor=pointer]:
+                              - /url: /-/es/gp/offer-listing/B09BF64J55/ref=sr_1_6_olp?keywords=wireless+headphones&dib_tag=se&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&sr=8-6
+                          - group "colores disponibles" [ref=e923]:
+                            - list [ref=e924]:
+                              - generic [ref=e925]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B09BF64J55/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                              - generic [ref=e928]:
+                                - listitem:
+                                  - link "Beige":
+                                    - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B0GC62HHJK/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                              - generic [ref=e931]:
+                                - listitem:
+                                  - link "Azul":
+                                    - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B09HC479WB/ref=cs_sr_dp_loc_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                              - generic [ref=e934]:
+                                - listitem:
+                                  - link "Verde":
+                                    - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B0C3LNV52V/ref=cs_sr_dp_loc_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                              - generic [ref=e937]:
+                                - listitem:
+                                  - link "Rosa":
+                                    - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B09HC4441Y/ref=cs_sr_dp_loc_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                              - generic [ref=e940]:
+                                - listitem:
+                                  - link "Blanco":
+                                    - /url: /-/es/Auriculares-Bluetooth-reproducci%C3%B3n-auriculares-inal%C3%A1mbricos/dp/B0BPL7RQNX/ref=cs_sr_dp_loc_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-6
+                  - listitem [ref=e945]:
+                    - generic [ref=e951]:
+                      - link [ref=e957] [cursor=pointer]:
+                        - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0DZHR44J9/ref=sr_1_7?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                        - img [ref=e959]
+                      - generic [ref=e962]:
+                        - link "Bose QuietComfort Auriculares - Auriculares inalámbricos Bluetooth, cancelación activa de ruido sobre la oreja y micrófono, carga USB-C, graves profundos, hasta 24 horas de tiempo de reproducción" [ref=e964] [cursor=pointer]:
+                          - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0DZHR44J9/ref=sr_1_7?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                          - heading "Bose QuietComfort Auriculares - Auriculares inalámbricos Bluetooth, cancelación activa de ruido sobre la oreja y micrófono, carga USB-C, graves profundos, hasta 24 horas de tiempo de reproducción" [level=2] [ref=e965]
+                        - generic [ref=e966]:
+                          - generic [ref=e967]:
+                            - text: "4.6"
+                            - button "4.6 de 5 estrellas, detalles de la calificación" [ref=e969] [cursor=pointer]:
+                              - generic [ref=e971]: 4.6 de 5 estrellas
+                            - link "19,806 valoraciones" [ref=e975] [cursor=pointer]:
+                              - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0DZHR44J9/ref=sr_1_7?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7#customerReviews
+                              - text: (19.8 K)
+                          - generic [ref=e976]: 1 K+ comprados el mes pasado
+                        - generic [ref=e979]:
+                          - link "Ver opciones" [ref=e987] [cursor=pointer]:
+                            - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0DZHR44J9/ref=sr_1_7_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                          - generic [ref=e989]:
+                            - text: No hay ofertas destacadas disponibles
+                            - text: CRC 103,675.17
+                            - link "(13 ofertas de artículos nuevos y usados)" [ref=e991] [cursor=pointer]:
+                              - /url: /-/es/gp/offer-listing/B0DZHR44J9/ref=sr_1_7_olp?keywords=wireless+headphones&dib_tag=se&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&sr=8-7
+                          - group "colores disponibles" [ref=e993]:
+                            - list [ref=e994]:
+                              - generic [ref=e995]:
+                                - listitem:
+                                  - link "Azul (Twilight Blue)":
+                                    - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0DZHR44J9/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                              - generic [ref=e998]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0CCZ26B5V/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                              - generic [ref=e1001]:
+                                - listitem:
+                                  - link "Azul (Blue Dusk)":
+                                    - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0D4Z9BZV2/ref=cs_sr_dp_loc_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                              - generic [ref=e1004]:
+                                - listitem:
+                                  - link "Lila refrigerada":
+                                    - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0D4Z9HG1X/ref=cs_sr_dp_loc_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                              - generic [ref=e1007]:
+                                - listitem:
+                                  - link "Verde ciprés":
+                                    - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0CCZ1SQ8G/ref=cs_sr_dp_loc_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                              - generic [ref=e1010]:
+                                - listitem:
+                                  - link "Azul hielo":
+                                    - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0FLYG9C4N/ref=cs_sr_dp_loc_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                            - link "+5 otros colores/patrones" [ref=e1014] [cursor=pointer]:
+                              - /url: /-/es/Bose-QuietComfort-Auriculares-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0DZHR44J9/ref=cs_sr_dp_loc_n?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-7
+                              - text: "+5"
+                  - listitem [ref=e1017]:
+                    - generic [ref=e1023]:
+                      - link [ref=e1029] [cursor=pointer]:
+                        - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0GLPGFHQF/ref=sr_1_8?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-8
+                        - img [ref=e1031]
+                      - generic [ref=e1034]:
+                        - link "Auriculares Bluetooth híbridos con cancelación activa de ruido, Bluetooth 6.0 sobre la oreja inalámbricos con tiempo de reproducción de 60 horas, audio de alta resolución, graves profundos" [ref=e1036] [cursor=pointer]:
+                          - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0GLPGFHQF/ref=sr_1_8?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-8
+                          - heading "Auriculares Bluetooth híbridos con cancelación activa de ruido, Bluetooth 6.0 sobre la oreja inalámbricos con tiempo de reproducción de 60 horas, audio de alta resolución, graves profundos" [level=2] [ref=e1037]
+                        - generic [ref=e1039]:
+                          - text: "4.8"
+                          - button "4.8 de 5 estrellas, detalles de la calificación" [ref=e1041] [cursor=pointer]:
+                            - generic [ref=e1043]: 4.8 de 5 estrellas
+                          - link "142 valoraciones" [ref=e1047] [cursor=pointer]:
+                            - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0GLPGFHQF/ref=sr_1_8?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-8#customerReviews
+                            - text: (142)
+                        - generic [ref=e1050]:
+                          - generic [ref=e1053]:
+                            - generic [ref=e1054]: Precio y página del producto
+                            - 'link "CRC 13,577.37 Precio típico: CRC 117,705.27 Precio típico: CRC 117,705.27" [ref=e1055] [cursor=pointer]':
+                              - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0GLPGFHQF/ref=sr_1_8?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-8
+                              - generic [ref=e1056]:
+                                - generic [ref=e1057]: CRC 13,577.37
+                                - generic [ref=e1058]:
+                                  - text: CRC
+                                  - generic [ref=e1059]:
+                                    - text: 13,577
+                                    - generic [ref=e1060]: .
+                                  - text: "37"
+                              - generic [ref=e1061]: "Precio típico: CRC 117,705.27"
+                              - generic [ref=e1062]:
+                                - text: "Precio típico:"
+                                - generic [ref=e1063]:
+                                  - generic [ref=e1064]: CRC 117,705.27
+                                  - text: CRC117,705.27
+                          - generic [ref=e1065]:
+                            - generic [ref=e1071]: Entrega por CRC 8,660.72 el lun, 1 de jun
+                            - generic [ref=e1072]: Se envía a Costa Rica
+                          - link "Ver opciones" [ref=e1078] [cursor=pointer]:
+                            - /url: /-/es/MMWOWARTS-Auriculares-cancelaci%C3%B3n-inal%C3%A1mbricos-reproducci%C3%B3n/dp/B0GLPGFHQF/ref=sr_1_8_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-8
+                  - listitem [ref=e1081]:
+                    - generic [ref=e1087]:
+                      - link [ref=e1093] [cursor=pointer]:
+                        - /url: /-/es/T21/dp/B0GPD2H4GN/ref=sr_1_9?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-9
+                        - img [ref=e1095]
+                      - generic [ref=e1098]:
+                        - link "ZIUTY Wireless Earbuds Bluetooth Headphones, Ear Buds with Touch Screen, ANC ENC Noise Cancelling Transparency Mode, 40H Stereo Deep Bass, IPX7 Waterproof, Clear Calls, 5 EQ for iOS Android, Coal" [ref=e1100] [cursor=pointer]:
+                          - /url: /-/es/T21/dp/B0GPD2H4GN/ref=sr_1_9?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-9
+                          - heading "ZIUTY Wireless Earbuds Bluetooth Headphones, Ear Buds with Touch Screen, ANC ENC Noise Cancelling Transparency Mode, 40H Stereo Deep Bass, IPX7 Waterproof, Clear Calls, 5 EQ for iOS Android, Coal" [level=2] [ref=e1101]
+                        - generic [ref=e1103]:
+                          - text: "4.5"
+                          - button "4.5 de 5 estrellas, detalles de la calificación" [ref=e1105] [cursor=pointer]:
+                            - generic [ref=e1107]: 4.5 de 5 estrellas
+                          - link "11 valoraciones" [ref=e1111] [cursor=pointer]:
+                            - /url: /-/es/T21/dp/B0GPD2H4GN/ref=sr_1_9?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-9#customerReviews
+                            - text: (11)
+                        - generic [ref=e1114]:
+                          - generic [ref=e1117]:
+                            - generic [ref=e1118]: Precio y página del producto
+                            - 'link "CRC 7,691.88 Precio típico: CRC 72,432.27 Precio típico: CRC 72,432.27" [ref=e1119] [cursor=pointer]':
+                              - /url: /-/es/T21/dp/B0GPD2H4GN/ref=sr_1_9?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-9
+                              - generic [ref=e1120]:
+                                - generic [ref=e1121]: CRC 7,691.88
+                                - generic [ref=e1122]:
+                                  - text: CRC
+                                  - generic [ref=e1123]:
+                                    - text: 7,691
+                                    - generic [ref=e1124]: .
+                                  - text: "88"
+                              - generic [ref=e1125]: "Precio típico: CRC 72,432.27"
+                              - generic [ref=e1126]:
+                                - text: "Precio típico:"
+                                - generic [ref=e1127]:
+                                  - generic [ref=e1128]: CRC 72,432.27
+                                  - text: CRC72,432.27
+                          - generic [ref=e1129]:
+                            - generic [ref=e1135]: Entrega por CRC 7,741.68 el mar, 2 de jun
+                            - generic [ref=e1136]: Se envía a Costa Rica
+                          - link "Ver opciones" [ref=e1142] [cursor=pointer]:
+                            - /url: /-/es/T21/dp/B0GPD2H4GN/ref=sr_1_9_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-9
+                  - listitem [ref=e1145]:
+                    - generic [ref=e1151]:
+                      - link [ref=e1157] [cursor=pointer]:
+                        - /url: /-/es/Auriculares-cancelaci%C3%B3n-auriculares-inal%C3%A1mbricos-viscoel%C3%A1stica/dp/B0GTLTF26K/ref=sr_1_10?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-10
+                        - img [ref=e1159]
+                      - generic [ref=e1162]:
+                        - link "Auriculares híbridos con cancelación activa de ruido de 120 horas de duración, 6 micrófonos ENC, auriculares inalámbricos Bluetooth 6.0, audio de alta resolución, auriculares de espuma viscoelástica" [ref=e1164] [cursor=pointer]:
+                          - /url: /-/es/Auriculares-cancelaci%C3%B3n-auriculares-inal%C3%A1mbricos-viscoel%C3%A1stica/dp/B0GTLTF26K/ref=sr_1_10?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-10
+                          - heading "Auriculares híbridos con cancelación activa de ruido de 120 horas de duración, 6 micrófonos ENC, auriculares inalámbricos Bluetooth 6.0, audio de alta resolución, auriculares de espuma viscoelástica" [level=2] [ref=e1165]
+                        - generic [ref=e1167]:
+                          - text: "4.6"
+                          - button "4.6 de 5 estrellas, detalles de la calificación" [ref=e1169] [cursor=pointer]:
+                            - generic [ref=e1171]: 4.6 de 5 estrellas
+                          - link "135 valoraciones" [ref=e1175] [cursor=pointer]:
+                            - /url: /-/es/Auriculares-cancelaci%C3%B3n-auriculares-inal%C3%A1mbricos-viscoel%C3%A1stica/dp/B0GTLTF26K/ref=sr_1_10?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-10#customerReviews
+                            - text: (135)
+                        - generic [ref=e1178]:
+                          - generic [ref=e1179]:
+                            - generic [ref=e1181]:
+                              - generic [ref=e1182]: Precio y página del producto
+                              - 'link "CRC 32,592.03 Precio recomendado: CRC 81,486.87 Precio recomendado: CRC 81,486.87" [ref=e1183] [cursor=pointer]':
+                                - /url: /-/es/Auriculares-cancelaci%C3%B3n-auriculares-inal%C3%A1mbricos-viscoel%C3%A1stica/dp/B0GTLTF26K/ref=sr_1_10?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-10
+                                - generic [ref=e1184]:
+                                  - generic [ref=e1185]: CRC 32,592.03
+                                  - generic [ref=e1186]:
+                                    - text: CRC
+                                    - generic [ref=e1187]:
+                                      - text: 32,592
+                                      - generic [ref=e1188]: .
+                                    - text: "03"
+                                - generic [ref=e1189]: "Precio recomendado: CRC 81,486.87"
+                                - generic [ref=e1190]:
+                                  - text: "Precio recomendado:"
+                                  - generic [ref=e1191]:
+                                    - generic [ref=e1192]: CRC 81,486.87
+                                    - text: CRC81,486.87
+                            - generic [ref=e1195]:
+                              - generic [ref=e1196]: Ahorra CRC 13,581.90
+                              - text: con cupón
+                          - generic [ref=e1197]:
+                            - generic [ref=e1203]: Entrega por CRC 8,882.56 el lun, 1 de jun
+                            - generic [ref=e1204]: Se envía a Costa Rica
+                          - link "Ver opciones" [ref=e1210] [cursor=pointer]:
+                            - /url: /-/es/Auriculares-cancelaci%C3%B3n-auriculares-inal%C3%A1mbricos-viscoel%C3%A1stica/dp/B0GTLTF26K/ref=sr_1_10_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-10
+                          - group "colores disponibles" [ref=e1212]:
+                            - list [ref=e1213]:
+                              - generic [ref=e1214]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/Auriculares-cancelaci%C3%B3n-auriculares-inal%C3%A1mbricos-viscoel%C3%A1stica/dp/B0GTLTF26K/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-10
+                              - generic [ref=e1217]:
+                                - listitem:
+                                  - link "Rose Gold":
+                                    - /url: /-/es/Auriculares-cancelaci%C3%B3n-auriculares-inal%C3%A1mbricos-viscoel%C3%A1stica/dp/B0GYWQJ7ZH/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-10
+                  - listitem [ref=e1222]:
+                    - generic [ref=e1228]:
+                      - link [ref=e1234] [cursor=pointer]:
+                        - /url: /-/es/Sony-Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-incorporado/dp/B0BS1QCFHX/ref=sr_1_11?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-11
+                        - img [ref=e1236]
+                      - generic [ref=e1239]:
+                        - link "Sony WH-CH720N Auriculares inalámbricos con cancelación de ruido Bluetooth sobre la oreja con micrófono y Alexa incorporado, Negro Nuevo" [ref=e1241] [cursor=pointer]:
+                          - /url: /-/es/Sony-Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-incorporado/dp/B0BS1QCFHX/ref=sr_1_11?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-11
+                          - heading "Sony WH-CH720N Auriculares inalámbricos con cancelación de ruido Bluetooth sobre la oreja con micrófono y Alexa incorporado, Negro Nuevo" [level=2] [ref=e1242]
+                        - generic [ref=e1243]:
+                          - generic [ref=e1244]:
+                            - text: "4.4"
+                            - button "4.4 de 5 estrellas, detalles de la calificación" [ref=e1246] [cursor=pointer]:
+                              - generic [ref=e1248]: 4.4 de 5 estrellas
+                            - link "15,420 valoraciones" [ref=e1252] [cursor=pointer]:
+                              - /url: /-/es/Sony-Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-incorporado/dp/B0BS1QCFHX/ref=sr_1_11?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-11#customerReviews
+                              - text: (15.4 K)
+                          - generic [ref=e1253]: 5 K+ comprados el mes pasado
+                        - generic [ref=e1256]:
+                          - link "Haz clic para ver el precio" [ref=e1259] [cursor=pointer]:
+                            - /url: /-/es/Sony-Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-incorporado/dp/B0BS1QCFHX/ref=sr_1_11?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-11
+                          - generic [ref=e1260]:
+                            - generic [ref=e1266]: Entrega por CRC 8,796.54 el lun, 1 de jun
+                            - generic [ref=e1267]: Se envía a Costa Rica
+                          - button "Alexa Integrada" [ref=e1274] [cursor=pointer]:
+                            - generic [ref=e1275]: Alexa Integrada
+                          - button "Agregar al carrito" [ref=e1290] [cursor=pointer]
+                          - group "colores disponibles" [ref=e1292]:
+                            - list [ref=e1293]:
+                              - generic [ref=e1294]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/Sony-Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-incorporado/dp/B0BS1QCFHX/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-11
+                              - generic [ref=e1297]:
+                                - listitem:
+                                  - link "Rosa":
+                                    - /url: /-/es/Sony-Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-incorporado/dp/B0DY8TS92J/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-11
+                              - generic [ref=e1300]:
+                                - listitem:
+                                  - link "Blanco":
+                                    - /url: /-/es/Sony-Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-incorporado/dp/B0BS74M665/ref=cs_sr_dp_loc_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-11
+                  - listitem [ref=e1305]:
+                    - generic [ref=e1311]:
+                      - link [ref=e1317] [cursor=pointer]:
+                        - /url: /-/es/TRAUSI-i27/dp/B0GF8WS3LM/ref=sr_1_12?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-12
+                        - img [ref=e1319]
+                      - generic [ref=e1322]:
+                        - link "Wireless Earbuds Bluetooth 5.4 Headphones, 54H Playtime Stereo Earphones with Noise Cancelling Mic, IPX7 Waterproof, Fast Charging and Comfort Fit Ear Buds for Fitness/Sports/Workouts/Travel Black" [ref=e1324] [cursor=pointer]:
+                          - /url: /-/es/TRAUSI-i27/dp/B0GF8WS3LM/ref=sr_1_12?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-12
+                          - heading "Wireless Earbuds Bluetooth 5.4 Headphones, 54H Playtime Stereo Earphones with Noise Cancelling Mic, IPX7 Waterproof, Fast Charging and Comfort Fit Ear Buds for Fitness/Sports/Workouts/Travel Black" [level=2] [ref=e1325]
+                        - generic [ref=e1327]:
+                          - text: "4.8"
+                          - button "4.8 de 5 estrellas, detalles de la calificación" [ref=e1329] [cursor=pointer]:
+                            - generic [ref=e1331]: 4.8 de 5 estrellas
+                          - link "78 valoraciones" [ref=e1335] [cursor=pointer]:
+                            - /url: /-/es/TRAUSI-i27/dp/B0GF8WS3LM/ref=sr_1_12?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-12#customerReviews
+                            - text: (78)
+                        - generic [ref=e1338]:
+                          - generic [ref=e1341]:
+                            - generic [ref=e1342]: Precio y página del producto
+                            - 'link "CRC 9,050.07 ( CRC 4,527.30 /unidad) Precio típico: CRC 104,123.37 Precio típico: CRC 104,123.37" [ref=e1343] [cursor=pointer]':
+                              - /url: /-/es/TRAUSI-i27/dp/B0GF8WS3LM/ref=sr_1_12?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-12
+                              - generic [ref=e1344]:
+                                - generic [ref=e1345]: CRC 9,050.07
+                                - generic [ref=e1346]:
+                                  - text: CRC
+                                  - generic [ref=e1347]:
+                                    - text: 9,050
+                                    - generic [ref=e1348]: .
+                                  - text: "07"
+                              - generic [ref=e1349]:
+                                - text: (
+                                - generic [ref=e1350]:
+                                  - generic [ref=e1351]: CRC 4,527.30
+                                  - text: CRC4,527.30
+                                - text: /unidad)
+                              - generic [ref=e1352]: "Precio típico: CRC 104,123.37"
+                              - generic [ref=e1353]:
+                                - text: "Precio típico:"
+                                - generic [ref=e1354]:
+                                  - generic [ref=e1355]: CRC 104,123.37
+                                  - text: CRC104,123.37
+                          - generic [ref=e1356]:
+                            - generic [ref=e1362]: Entrega por CRC 7,845.81 el mar, 2 de jun
+                            - generic [ref=e1363]: Se envía a Costa Rica
+                          - link "Ver opciones" [ref=e1369] [cursor=pointer]:
+                            - /url: /-/es/TRAUSI-i27/dp/B0GF8WS3LM/ref=sr_1_12_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-12
+                          - group "colores disponibles" [ref=e1371]:
+                            - list [ref=e1372]:
+                              - generic [ref=e1373]:
+                                - listitem:
+                                  - link "Coal Black":
+                                    - /url: /-/es/TRAUSI-i27/dp/B0GF8WS3LM/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-12
+                              - generic [ref=e1376]:
+                                - listitem:
+                                  - link "Azul oscuro":
+                                    - /url: /-/es/TRAUSI-i27/dp/B0GHZ4X4FG/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-12
+                  - listitem [ref=e1381]:
+                    - generic [ref=e1387]:
+                      - link [ref=e1393] [cursor=pointer]:
+                        - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTR3PMF/ref=sr_1_13?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13
+                        - img [ref=e1395]
+                      - generic [ref=e1398]:
+                        - link "Auriculares inalámbricos Soundcore P30i de Anker con cancelación de ruido, cancelación de ruido fuerte e inteligente, graves potentes, 45H de reproducción, estuche 2-en-1 y soporte para teléfono, IP54" [ref=e1400] [cursor=pointer]:
+                          - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTR3PMF/ref=sr_1_13?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13
+                          - heading "Auriculares inalámbricos Soundcore P30i de Anker con cancelación de ruido, cancelación de ruido fuerte e inteligente, graves potentes, 45H de reproducción, estuche 2-en-1 y soporte para teléfono, IP54" [level=2] [ref=e1401]
+                        - generic [ref=e1402]:
+                          - generic [ref=e1403]:
+                            - text: "4.4"
+                            - button "4.4 de 5 estrellas, detalles de la calificación" [ref=e1405] [cursor=pointer]:
+                              - generic [ref=e1407]: 4.4 de 5 estrellas
+                            - link "33,313 valoraciones" [ref=e1411] [cursor=pointer]:
+                              - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTR3PMF/ref=sr_1_13?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13#customerReviews
+                              - text: (33.3 K)
+                          - generic [ref=e1412]: 10 K+ comprados el mes pasado
+                        - generic [ref=e1415]:
+                          - generic [ref=e1418]:
+                            - generic [ref=e1419]: Precio y página del producto
+                            - link "CRC 12,671.91" [ref=e1420] [cursor=pointer]:
+                              - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTR3PMF/ref=sr_1_13?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13
+                              - generic [ref=e1421]:
+                                - generic [ref=e1422]: CRC 12,671.91
+                                - generic [ref=e1423]:
+                                  - text: CRC
+                                  - generic [ref=e1424]:
+                                    - text: 12,671
+                                    - generic [ref=e1425]: .
+                                  - text: "91"
+                          - generic [ref=e1426]:
+                            - generic [ref=e1432]: Entrega por CRC 7,786.96 el mar, 2 de jun
+                            - generic [ref=e1433]: Se envía a Costa Rica
+                          - button "Impacto ambiental" [ref=e1440] [cursor=pointer]:
+                            - generic [ref=e1441]: Impacto ambiental
+                          - button "Agregar al carrito" [ref=e1456] [cursor=pointer]
+                          - group "colores disponibles" [ref=e1458]:
+                            - list [ref=e1459]:
+                              - generic [ref=e1460]:
+                                - listitem:
+                                  - link "Verde":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTR3PMF/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13
+                              - generic [ref=e1463]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTYZG5C/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13
+                              - generic [ref=e1466]:
+                                - listitem:
+                                  - link "Azul":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTPF7CZ/ref=cs_sr_dp_loc_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13
+                              - generic [ref=e1469]:
+                                - listitem:
+                                  - link "Rosa":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTF579W/ref=cs_sr_dp_loc_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13
+                              - generic [ref=e1472]:
+                                - listitem:
+                                  - link "Blanco":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-cancelaci%C3%B3n-inteligente-reproducci%C3%B3n/dp/B0CRTN7C8C/ref=cs_sr_dp_loc_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-13
+                  - listitem [ref=e1477]:
+                    - generic [ref=e1483]:
+                      - link [ref=e1489] [cursor=pointer]:
+                        - /url: /-/es/JBL-Tune-510BT-Auriculares-compatibles/dp/B08WM3LMJF/ref=sr_1_14?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-14
+                        - img [ref=e1491]
+                      - generic [ref=e1494]:
+                        - link "JBL Tune 510BT - Auriculares Bluetooth con hasta 40 horas de batería, micrófono para llamadas, plegables y cómodos, compatibles con Android e iOS (Negro)" [ref=e1496] [cursor=pointer]:
+                          - /url: /-/es/JBL-Tune-510BT-Auriculares-compatibles/dp/B08WM3LMJF/ref=sr_1_14?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-14
+                          - heading "JBL Tune 510BT - Auriculares Bluetooth con hasta 40 horas de batería, micrófono para llamadas, plegables y cómodos, compatibles con Android e iOS (Negro)" [level=2] [ref=e1497]
+                        - generic [ref=e1498]:
+                          - generic [ref=e1499]:
+                            - text: "4.5"
+                            - button "4.5 de 5 estrellas, detalles de la calificación" [ref=e1501] [cursor=pointer]:
+                              - generic [ref=e1503]: 4.5 de 5 estrellas
+                            - link "91,481 valoraciones" [ref=e1507] [cursor=pointer]:
+                              - /url: /-/es/JBL-Tune-510BT-Auriculares-compatibles/dp/B08WM3LMJF/ref=sr_1_14?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-14#customerReviews
+                              - text: (91.4 K)
+                          - generic [ref=e1508]: 4 K+ comprados el mes pasado
+                        - generic [ref=e1511]:
+                          - link "Ver opciones" [ref=e1519] [cursor=pointer]:
+                            - /url: /-/es/JBL-Tune-510BT-Auriculares-compatibles/dp/B08WM3LMJF/ref=sr_1_14_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-14
+                          - generic [ref=e1521]:
+                            - text: No hay ofertas destacadas disponibles
+                            - text: CRC 13,228.77
+                            - link "(2 ofertas de artículos nuevos y usados)" [ref=e1523] [cursor=pointer]:
+                              - /url: /-/es/gp/offer-listing/B08WM3LMJF/ref=sr_1_14_olp?keywords=wireless+headphones&dib_tag=se&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&sr=8-14
+                          - group "colores disponibles" [ref=e1525]:
+                            - list [ref=e1526]:
+                              - generic [ref=e1527]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/JBL-Tune-510BT-Auriculares-compatibles/dp/B08WM3LMJF/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-14
+                              - generic [ref=e1530]:
+                                - listitem:
+                                  - link "Azul":
+                                    - /url: /-/es/JBL-Tune-510BT-Auriculares-compatibles/dp/B08WM1V5P1/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-14
+                              - generic [ref=e1533]:
+                                - listitem:
+                                  - link "Rosa":
+                                    - /url: /-/es/JBL-Tune-510BT-Auriculares-compatibles/dp/B0GX59XP9V/ref=cs_sr_dp_loc_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-14
+                              - generic [ref=e1536]:
+                                - listitem:
+                                  - link "Blanco":
+                                    - /url: /-/es/JBL-Tune-510BT-Auriculares-compatibles/dp/B08WM298TV/ref=cs_sr_dp_loc_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-14
+                  - listitem [ref=e1541]:
+                    - generic [ref=e1547]:
+                      - link [ref=e1553] [cursor=pointer]:
+                        - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWGB7FW/ref=sr_1_15?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                        - img [ref=e1555]
+                      - generic [ref=e1558]:
+                        - link "Auriculares inalámbricos, auriculares Bluetooth 5.4 con graves estéreo, auriculares intrauriculares con micrófono de cancelación de ruido, pantalla LED, auriculares intrauriculares con llamadas claras" [ref=e1560] [cursor=pointer]:
+                          - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWGB7FW/ref=sr_1_15?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                          - heading "Auriculares inalámbricos, auriculares Bluetooth 5.4 con graves estéreo, auriculares intrauriculares con micrófono de cancelación de ruido, pantalla LED, auriculares intrauriculares con llamadas claras" [level=2] [ref=e1561]
+                        - generic [ref=e1562]:
+                          - generic [ref=e1563]:
+                            - text: "4.5"
+                            - button "4.5 de 5 estrellas, detalles de la calificación" [ref=e1565] [cursor=pointer]:
+                              - generic [ref=e1567]: 4.5 de 5 estrellas
+                            - link "56,894 valoraciones" [ref=e1571] [cursor=pointer]:
+                              - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWGB7FW/ref=sr_1_15?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15#customerReviews
+                              - text: (56.8 K)
+                          - generic [ref=e1572]: 10 K+ comprados el mes pasado
+                        - generic [ref=e1575]:
+                          - generic [ref=e1578]:
+                            - generic [ref=e1579]: Precio y página del producto
+                            - 'link "CRC 9,457.53 Precio típico: CRC 9,955.53 Precio típico: CRC 9,955.53" [ref=e1580] [cursor=pointer]':
+                              - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWGB7FW/ref=sr_1_15?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                              - generic [ref=e1581]:
+                                - generic [ref=e1582]: CRC 9,457.53
+                                - generic [ref=e1583]:
+                                  - text: CRC
+                                  - generic [ref=e1584]:
+                                    - text: 9,457
+                                    - generic [ref=e1585]: .
+                                  - text: "53"
+                              - generic [ref=e1586]: "Precio típico: CRC 9,955.53"
+                              - generic [ref=e1587]:
+                                - text: "Precio típico:"
+                                - generic [ref=e1588]:
+                                  - generic [ref=e1589]: CRC 9,955.53
+                                  - text: CRC9,955.53
+                          - generic [ref=e1590]:
+                            - generic [ref=e1596]: Entrega por CRC 7,764.32
+                            - generic [ref=e1597]: Se envía a Costa Rica
+                          - link "Ver opciones" [ref=e1603] [cursor=pointer]:
+                            - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWGB7FW/ref=sr_1_15_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                          - group "colores disponibles" [ref=e1605]:
+                            - list [ref=e1606]:
+                              - generic [ref=e1607]:
+                                - listitem:
+                                  - link "Negro":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWGB7FW/ref=cs_sr_dp_loc_1?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                              - generic [ref=e1610]:
+                                - listitem:
+                                  - link "Azul":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWJCMJX/ref=cs_sr_dp_loc_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                              - generic [ref=e1613]:
+                                - listitem:
+                                  - link "Marrón":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWKZ7F3/ref=cs_sr_dp_loc_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                              - generic [ref=e1616]:
+                                - listitem:
+                                  - link "Azul oscuro":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWMYFX8/ref=cs_sr_dp_loc_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                              - generic [ref=e1619]:
+                                - listitem:
+                                  - link "Gris (Graphite Gray)":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0CX1TYYBM/ref=cs_sr_dp_loc_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                              - generic [ref=e1622]:
+                                - listitem:
+                                  - link "Verde hierba":
+                                    - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWBD5G5/ref=cs_sr_dp_loc_6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                            - link "+10 otros colores/patrones" [ref=e1626] [cursor=pointer]:
+                              - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-intrauriculares-cancelaci%C3%B3n/dp/B0FHWGB7FW/ref=cs_sr_dp_loc_n?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-15
+                              - text: "+10"
+                  - listitem [ref=e1629]:
+                    - generic [ref=e1635]:
+                      - link [ref=e1641] [cursor=pointer]:
+                        - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-impermeables-reproducci%C3%B3n/dp/B0GS1QXF36/ref=sr_1_16?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-16
+                        - img [ref=e1643]
+                      - generic [ref=e1646]:
+                        - link "Auriculares inalámbricos, auriculares Bluetooth 5.4, auriculares deportivos con ganchos para los oídos, auriculares Bluetooth impermeables IPX7, auriculares de reproducción de 80 horas, peso de 0.28" [ref=e1648] [cursor=pointer]:
+                          - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-impermeables-reproducci%C3%B3n/dp/B0GS1QXF36/ref=sr_1_16?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-16
+                          - heading "Auriculares inalámbricos, auriculares Bluetooth 5.4, auriculares deportivos con ganchos para los oídos, auriculares Bluetooth impermeables IPX7, auriculares de reproducción de 80 horas, peso de 0.28" [level=2] [ref=e1649]
+                        - generic [ref=e1650]:
+                          - generic [ref=e1651]:
+                            - text: "4.6"
+                            - button "4.6 de 5 estrellas, detalles de la calificación" [ref=e1653] [cursor=pointer]:
+                              - generic [ref=e1655]: 4.6 de 5 estrellas
+                            - link "310 valoraciones" [ref=e1659] [cursor=pointer]:
+                              - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-impermeables-reproducci%C3%B3n/dp/B0GS1QXF36/ref=sr_1_16?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-16#customerReviews
+                              - text: (310)
+                          - generic [ref=e1660]: 2 K+ comprados el mes pasado
+                        - generic [ref=e1663]:
+                          - generic [ref=e1666]:
+                            - generic [ref=e1667]: Precio y página del producto
+                            - 'link "CRC 8,597.34 Precio típico: CRC 71,526.81 Precio típico: CRC 71,526.81" [ref=e1668] [cursor=pointer]':
+                              - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-impermeables-reproducci%C3%B3n/dp/B0GS1QXF36/ref=sr_1_16?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-16
+                              - generic [ref=e1669]:
+                                - generic [ref=e1670]: CRC 8,597.34
+                                - generic [ref=e1671]:
+                                  - text: CRC
+                                  - generic [ref=e1672]:
+                                    - text: 8,597
+                                    - generic [ref=e1673]: .
+                                  - text: "34"
+                              - generic [ref=e1674]: "Precio típico: CRC 71,526.81"
+                              - generic [ref=e1675]:
+                                - text: "Precio típico:"
+                                - generic [ref=e1676]:
+                                  - generic [ref=e1677]: CRC 71,526.81
+                                  - text: CRC71,526.81
+                          - generic [ref=e1678]:
+                            - generic [ref=e1684]: Entrega por CRC 7,845.81 el mar, 2 de jun
+                            - generic [ref=e1685]: Se envía a Costa Rica
+                          - link "Ver opciones" [ref=e1691] [cursor=pointer]:
+                            - /url: /-/es/Auriculares-inal%C3%A1mbricos-auriculares-impermeables-reproducci%C3%B3n/dp/B0GS1QXF36/ref=sr_1_16_so_HEADPHONES?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.ZjrzgfhuJxdbxK9HhbPRzSRWwTWOvNJynO5BlJBketGQwgxB3Pz3QlPkTL2JEVCEdknydqMZixRTRQqTHQsGOCHUxKiTexfw7d6ErdzG3ZlrO90jnYvseDb-0DNiV_2eKH8vg44wKNKUqdnzAjC3wwrWopQOIyxFAZzNIZkUOa5PFzcXJ9Tq1CvVGNMexX6AlppIpaEgkMbQ3aiGByBeyWj_fwm69HeWvpW0jT8o8Ps.S_LtkFdW9Ro4HzABzVrHwHWNgYcp8OEeVtgLzqNwFEw&dib_tag=se&keywords=wireless+headphones&qid=1779337767&sr=8-16
+            - generic [ref=e1701]:
+              - link "Video patrocinado, haz clic para ir a la página del producto destacado. Gabba Goods Auriculares inalámbricos Bluetooth con micrófono - Auriculares inalámbricos - Reducción de ruido - Bluetooth, con cable, micro SD integrado para viajes, hogar, trabajo, TV, PC, juegos, teléfono celular (menta)" [ref=e1705] [cursor=pointer]:
+                - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JD52CRfz5CIkgmqHPJdpDYgAAAGeSMup8gEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICCkH3K6/clv1c_ek-YxfXXYsTWTYP2fAP_m2Tk9KAj7WqxxdfpJOOvE2K7G0e21IHOgItw_xwcY9teKWbo3YQ45Pn9Ac7CFq8BnyHlmW6Jn3hbj-1ahyIbopzxywEv8rCd-b2IN_llurIRVRkNsYpZEFWOjkXc6QnpWVFfXxnGMNbrjlQwzzLuxZMNFQvMn8e6sno4si8HzjPkTmdXwEbj8mx_BiV8s1vGNh5zndxYFEYEkKRsAnWbGvBapUWTW7WsA1lQVKdZcRzzmt-uqMxRJzqXGLPhe2NRkHXEOOhsQZdTmbdAxgapMyXRsh-BcACBAwBm55Y_c4p4JYXdNvBp8Ok9XKDyTbhl0cODPeKF9kiKB8ebia1GgmPh8piAIPN5qsG6vrk_slfNODd3iwnzWOoMkjFQzpT2j35OmUu6pkefJ7P1ghbFjRdk3vy6jPTc1BouCYIXpP6MHc7-ZexKa_ApZjcOAf6QzpMuCL00ByCgQ8kmlu35YtsdQ1sQ9dukk-Zs9kxKEmBJoXrrCs6Duw8p0nBvdBx1vIO6kiznW-F_gLVHCmg5xxQxv6qZUv4y526RbD-CJZ7GdVok5PQesyxzINZ4rkRjx70EIMZSPte429Jd8b8hHSeS3uIKvMDKghTDwSwyPMaECXD4A4mA1VLweEDEDBkL-3WFG8T5aMFBIMvg63vx7e_Wx4nVblgI5z52brqIMrWTqIIrLHNUCq35Y6c_15Y2rBTHNEAkOA7OXAx9P-pLD-GOEdAIF074y3yKW71E0KC9zeiNzX4rIQ0woh-egtgjYA4tg2La4RFnjqGY7g-hLhQR-UAVNo5XEU26PEZCOkcSZ-hmxzWf5bMM19dKRpOJuPwoEMFVbTOPGgDM9wsYdX9GfCb7UImO3eA2wa3nFWyOAylXRkjvunhhV3_0nMgk8wjJZ6rNxBPR93c-UBX5jLqRwrV1gbyBjyaNZrfkbjJgNiOyVcKLu_MSH6IYGTPTxTCgUIgtmrnrULlKpHOYpT-FhqnQgxzhSuxYX_eyJ990gZa7LhtqMmH88jGLJkbbfrYIMOBqQLBA2gPG2e9RKtaQ5Xtf6I8dzAj-5SJFGKO2f87OeGFXWAHWBtwfD5B0FDRMlH917ufV0D5zjZ1tCyya-kGLXqR6-l7ytFps3MXeUXEI0anvgMCJy0EJr_Dvh0XCKgiULCAIP66U_AuYqkx-DgKtZy1-LW-LCB0zeDvM9piI7R6x2p1w2KBEjAwaxFSfG2mHYBOKr_Ymb29dpoWVVuus3EK4jROatDeYOTvCvH-Qm310XpMkzBFR-4rKVuisBu-uKZkGhHKEwq-n80XvAxXx9TVFdWrfkTKXLM53x9ughkydayQBDQxLxZvTMC35-ougtWqvIX9wgFdDmv8b3OFKNfjKi-0kSV1tGXp0mXP2Kkwg3tjmpdpdz_dqcigCsDT196AGjBBtWGjrMX_dzVoywk1TxCA-n3sRudvuzkrm7MpYT96IHitFO-l6bxsJx8Xhk9N0LLt-v3Qj0mKoJ1UJv3yc4_4uDMWSzWA_b2pma9O9wcd3ko8HcQvJnBLE_mlokRXS57fGLDtDLWprFqAIrh3yUa73NFXFS-t48MpsG9JrFp3sUiNc7JQ7s7DFZ1VAVBVFvhnqxQT9qKWnwUOZMgDr5bFkYB8/https://www.amazon.com/dp/B0DGMHKDWQ?pd_rd_i=B0DGMHKDWQ&pf_rd_p=3bcd40df-eebb-4483-854d-08e1b22be161&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=LpVOq&pd_rd_w=mvLkR&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39
+                - generic "Video patrocinado, haz clic para ir a la página del producto destacado. Gabba Goods Auriculares inalámbricos Bluetooth con micrófono - Auriculares inalámbricos - Reducción de ruido - Bluetooth, con cable, micro SD integrado para viajes, hogar, trabajo, TV, PC, juegos, teléfono celular (menta)" [ref=e1706]
+              - generic [ref=e1714]:
+                - link [ref=e1720] [cursor=pointer]:
+                  - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JD52CRfz5CIkgmqHPJdpDYgAAAGeSMup8gEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICCkH3K6/clv1c_ek-YxfXXYsTWTYP2fAP_m2Tk9KAj7WqxxdfpJOOvE2K7G0e21IHOgItw_xwcY9teKWbo3YQ45Pn9Ac7CFq8BnyHlmW6Jn3hbj-1ahyIbopzxywEv8rCd-b2IN_llurIRVRkNsYpZEFWOjkXc6QnpWVFfXxnGMNbrjlQwzzLuxZMNFQvMn8e6sno4si8HzjPkTmdXwEbj8mx_BiV8s1vGNh5zndxYFEYEkKRsAnWbGvBapUWTW7WsA1lQVKdZcRzzmt-uqMxRJzqXGLPhe2NRkHXEOOhsQZdTmbdAxgapMyXRsh-BcACBAwBm55Y_c4p4JYXdNvBp8Ok9XKDyTbhl0cODPeKF9kiKB8ebia1GgmPh8piAIPN5qsG6vrk_slfNODd3iwnzWOoMkjFQzpT2j35OmUu6pkefJ7P1ghbFjRdk3vy6jPTc1BouCYIXpP6MHc7-ZexKa_ApZjcOAf6QzpMuCL00ByCgQ8kmlu35YtsdQ1sQ9dukk-Zs9kxKEmBJoXrrCs6Duw8p0nBvdBx1vIO6kiznW-F_gLVHCmg5xxQxv6qZUv4y526RbD-CJZ7GdVok5PQesyxzINZ4rkRjx70EIMZSPte429Jd8b8hHSeS3uIKvMDKghTDwSwyPMaECXD4A4mA1VLweEDEDBkL-3WFG8T5aMFBIMvg63vx7e_Wx4nVblgI5z52brqIMrWTqIIrLHNUCq35Y6c_15Y2rBTHNEAkOA7OXAx9P-pLD-GOEdAIF074y3yKW71E0KC9zeiNzX4rIQ0woh-egtgjYA4tg2La4RFnjqGY7g-hLhQR-UAVNo5XEU26PEZCOkcSZ-hmxzWf5bMM19dKRpOJuPwoEMFVbTOPGgDM9wsYdX9GfCb7UImO3eA2wa3nFWyOAylXRkjvunhhV3_0nMgk8wjJZ6rNxBPR93c-UBX5jLqRwrV1gbyBjyaNZrfkbjJgNiOyVcKLu_MSH6IYGTPTxTCgUIgtmrnrULlKpHOYpT-FhqnQgxzhSuxYX_eyJ990gZa7LhtqMmH88jGLJkbbfrYIMOBqQLBA2gPG2e9RKtaQ5Xtf6I8dzAj-5SJFGKO2f87OeGFXWAHWBtwfD5B0FDRMlH917ufV0D5zjZ1tCyya-kGLXqR6-l7ytFps3MXeUXEI0anvgMCJy0EJr_Dvh0XCKgiULCAIP66U_AuYqkx-DgKtZy1-LW-LCB0zeDvM9piI7R6x2p1w2KBEjAwaxFSfG2mHYBOKr_Ymb29dpoWVVuus3EK4jROatDeYOTvCvH-Qm310XpMkzBFR-4rKVuisBu-uKZkGhHKEwq-n80XvAxXx9TVFdWrfkTKXLM53x9ughkydayQBDQxLxZvTMC35-ougtWqvIX9wgFdDmv8b3OFKNfjKi-0kSV1tGXp0mXP2Kkwg3tjmpdpdz_dqcigCsDT196AGjBBtWGjrMX_dzVoywk1TxCA-n3sRudvuzkrm7MpYT96IHitFO-l6bxsJx8Xhk9N0LLt-v3Qj0mKoJ1UJv3yc4_4uDMWSzWA_b2pma9O9wcd3ko8HcQvJnBLE_mlokRXS57fGLDtDLWprFqAIrh3yUa73NFXFS-t48MpsG9JrFp3sUiNc7JQ7s7DFZ1VAVBVFvhnqxQT9qKWnwUOZMgDr5bFkYB8/https://www.amazon.com/Gabba-Goods-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DGMHKDWQ/ref=sxbs_sbv_search_btf?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.3bcd40df-eebb-4483-854d-08e1b22be161%3Aamzn1.sym.3bcd40df-eebb-4483-854d-08e1b22be161&cv_ct_cx=wireless+headphones&keywords=wireless+headphones&pd_rd_i=B0DGMHKDWQ&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&pd_rd_w=mvLkR&pd_rd_wg=LpVOq&pf_rd_p=3bcd40df-eebb-4483-854d-08e1b22be161&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&qid=1779337767&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-73f7de28-3352-42ec-892a-2cfe411ee715
+                  - img [ref=e1722]
+                - generic [ref=e1725]:
+                  - generic [ref=e1726]:
+                    - generic [ref=e1729] [cursor=pointer]: Patrocinado
+                    - link "Gabba Goods Auriculares inalámbricos Bluetooth con micrófono - Auriculares inalámbricos - Reducción de ruido - Bluetooth, con cable, micro SD integrado para viajes, hogar, trabajo, TV, PC, juegos, teléfono celular (menta)" [ref=e1731] [cursor=pointer]:
+                      - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JD52CRfz5CIkgmqHPJdpDYgAAAGeSMup8gEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICCkH3K6/clv1c_ek-YxfXXYsTWTYP2fAP_m2Tk9KAj7WqxxdfpJOOvE2K7G0e21IHOgItw_xwcY9teKWbo3YQ45Pn9Ac7CFq8BnyHlmW6Jn3hbj-1ahyIbopzxywEv8rCd-b2IN_llurIRVRkNsYpZEFWOjkXc6QnpWVFfXxnGMNbrjlQwzzLuxZMNFQvMn8e6sno4si8HzjPkTmdXwEbj8mx_BiV8s1vGNh5zndxYFEYEkKRsAnWbGvBapUWTW7WsA1lQVKdZcRzzmt-uqMxRJzqXGLPhe2NRkHXEOOhsQZdTmbdAxgapMyXRsh-BcACBAwBm55Y_c4p4JYXdNvBp8Ok9XKDyTbhl0cODPeKF9kiKB8ebia1GgmPh8piAIPN5qsG6vrk_slfNODd3iwnzWOoMkjFQzpT2j35OmUu6pkefJ7P1ghbFjRdk3vy6jPTc1BouCYIXpP6MHc7-ZexKa_ApZjcOAf6QzpMuCL00ByCgQ8kmlu35YtsdQ1sQ9dukk-Zs9kxKEmBJoXrrCs6Duw8p0nBvdBx1vIO6kiznW-F_gLVHCmg5xxQxv6qZUv4y526RbD-CJZ7GdVok5PQesyxzINZ4rkRjx70EIMZSPte429Jd8b8hHSeS3uIKvMDKghTDwSwyPMaECXD4A4mA1VLweEDEDBkL-3WFG8T5aMFBIMvg63vx7e_Wx4nVblgI5z52brqIMrWTqIIrLHNUCq35Y6c_15Y2rBTHNEAkOA7OXAx9P-pLD-GOEdAIF074y3yKW71E0KC9zeiNzX4rIQ0woh-egtgjYA4tg2La4RFnjqGY7g-hLhQR-UAVNo5XEU26PEZCOkcSZ-hmxzWf5bMM19dKRpOJuPwoEMFVbTOPGgDM9wsYdX9GfCb7UImO3eA2wa3nFWyOAylXRkjvunhhV3_0nMgk8wjJZ6rNxBPR93c-UBX5jLqRwrV1gbyBjyaNZrfkbjJgNiOyVcKLu_MSH6IYGTPTxTCgUIgtmrnrULlKpHOYpT-FhqnQgxzhSuxYX_eyJ990gZa7LhtqMmH88jGLJkbbfrYIMOBqQLBA2gPG2e9RKtaQ5Xtf6I8dzAj-5SJFGKO2f87OeGFXWAHWBtwfD5B0FDRMlH917ufV0D5zjZ1tCyya-kGLXqR6-l7ytFps3MXeUXEI0anvgMCJy0EJr_Dvh0XCKgiULCAIP66U_AuYqkx-DgKtZy1-LW-LCB0zeDvM9piI7R6x2p1w2KBEjAwaxFSfG2mHYBOKr_Ymb29dpoWVVuus3EK4jROatDeYOTvCvH-Qm310XpMkzBFR-4rKVuisBu-uKZkGhHKEwq-n80XvAxXx9TVFdWrfkTKXLM53x9ughkydayQBDQxLxZvTMC35-ougtWqvIX9wgFdDmv8b3OFKNfjKi-0kSV1tGXp0mXP2Kkwg3tjmpdpdz_dqcigCsDT196AGjBBtWGjrMX_dzVoywk1TxCA-n3sRudvuzkrm7MpYT96IHitFO-l6bxsJx8Xhk9N0LLt-v3Qj0mKoJ1UJv3yc4_4uDMWSzWA_b2pma9O9wcd3ko8HcQvJnBLE_mlokRXS57fGLDtDLWprFqAIrh3yUa73NFXFS-t48MpsG9JrFp3sUiNc7JQ7s7DFZ1VAVBVFvhnqxQT9qKWnwUOZMgDr5bFkYB8/https://www.amazon.com/Gabba-Goods-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DGMHKDWQ/ref=sxbs_sbv_search_btf?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.3bcd40df-eebb-4483-854d-08e1b22be161%3Aamzn1.sym.3bcd40df-eebb-4483-854d-08e1b22be161&cv_ct_cx=wireless+headphones&keywords=wireless+headphones&pd_rd_i=B0DGMHKDWQ&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&pd_rd_w=mvLkR&pd_rd_wg=LpVOq&pf_rd_p=3bcd40df-eebb-4483-854d-08e1b22be161&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&qid=1779337767&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-73f7de28-3352-42ec-892a-2cfe411ee715
+                      - heading "Gabba Goods Auriculares inalámbricos Bluetooth con micrófono - Auriculares inalámbricos - Reducción de ruido - Bluetooth, con cable, micro SD integrado para viajes, hogar, trabajo, TV, PC, juegos, teléfono celular (menta)" [level=2] [ref=e1732]
+                  - generic [ref=e1733]:
+                    - generic [ref=e1734]:
+                      - text: "4.0"
+                      - button "4.0 de 5 estrellas, detalles de la calificación" [ref=e1736] [cursor=pointer]:
+                        - generic [ref=e1738]: 4.0 de 5 estrellas
+                      - link "1,530 valoraciones" [ref=e1742] [cursor=pointer]:
+                        - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JD52CRfz5CIkgmqHPJdpDYgAAAGeSMup8gEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICCkH3K6/clv1c_ek-YxfXXYsTWTYP2fAP_m2Tk9KAj7WqxxdfpJOOvE2K7G0e21IHOgItw_xwcY9teKWbo3YQ45Pn9Ac7CFq8BnyHlmW6Jn3hbj-1ahyIbopzxywEv8rCd-b2IN_llurIRVRkNsYpZEFWOjkXc6QnpWVFfXxnGMNbrjlQwzzLuxZMNFQvMn8e6sno4si8HzjPkTmdXwEbj8mx_BiV8s1vGNh5zndxYFEYEkKRsAnWbGvBapUWTW7WsA1lQVKdZcRzzmt-uqMxRJzqXGLPhe2NRkHXEOOhsQZdTmbdAxgapMyXRsh-BcACBAwBm55Y_c4p4JYXdNvBp8Ok9XKDyTbhl0cODPeKF9kiKB8ebia1GgmPh8piAIPN5qsG6vrk_slfNODd3iwnzWOoMkjFQzpT2j35OmUu6pkefJ7P1ghbFjRdk3vy6jPTc1BouCYIXpP6MHc7-ZexKa_ApZjcOAf6QzpMuCL00ByCgQ8kmlu35YtsdQ1sQ9dukk-Zs9kxKEmBJoXrrCs6Duw8p0nBvdBx1vIO6kiznW-F_gLVHCmg5xxQxv6qZUv4y526RbD-CJZ7GdVok5PQesyxzINZ4rkRjx70EIMZSPte429Jd8b8hHSeS3uIKvMDKghTDwSwyPMaECXD4A4mA1VLweEDEDBkL-3WFG8T5aMFBIMvg63vx7e_Wx4nVblgI5z52brqIMrWTqIIrLHNUCq35Y6c_15Y2rBTHNEAkOA7OXAx9P-pLD-GOEdAIF074y3yKW71E0KC9zeiNzX4rIQ0woh-egtgjYA4tg2La4RFnjqGY7g-hLhQR-UAVNo5XEU26PEZCOkcSZ-hmxzWf5bMM19dKRpOJuPwoEMFVbTOPGgDM9wsYdX9GfCb7UImO3eA2wa3nFWyOAylXRkjvunhhV3_0nMgk8wjJZ6rNxBPR93c-UBX5jLqRwrV1gbyBjyaNZrfkbjJgNiOyVcKLu_MSH6IYGTPTxTCgUIgtmrnrULlKpHOYpT-FhqnQgxzhSuxYX_eyJ990gZa7LhtqMmH88jGLJkbbfrYIMOBqQLBA2gPG2e9RKtaQ5Xtf6I8dzAj-5SJFGKO2f87OeGFXWAHWBtwfD5B0FDRMlH917ufV0D5zjZ1tCyya-kGLXqR6-l7ytFps3MXeUXEI0anvgMCJy0EJr_Dvh0XCKgiULCAIP66U_AuYqkx-DgKtZy1-LW-LCB0zeDvM9piI7R6x2p1w2KBEjAwaxFSfG2mHYBOKr_Ymb29dpoWVVuus3EK4jROatDeYOTvCvH-Qm310XpMkzBFR-4rKVuisBu-uKZkGhHKEwq-n80XvAxXx9TVFdWrfkTKXLM53x9ughkydayQBDQxLxZvTMC35-ougtWqvIX9wgFdDmv8b3OFKNfjKi-0kSV1tGXp0mXP2Kkwg3tjmpdpdz_dqcigCsDT196AGjBBtWGjrMX_dzVoywk1TxCA-n3sRudvuzkrm7MpYT96IHitFO-l6bxsJx8Xhk9N0LLt-v3Qj0mKoJ1UJv3yc4_4uDMWSzWA_b2pma9O9wcd3ko8HcQvJnBLE_mlokRXS57fGLDtDLWprFqAIrh3yUa73NFXFS-t48MpsG9JrFp3sUiNc7JQ7s7DFZ1VAVBVFvhnqxQT9qKWnwUOZMgDr5bFkYB8/https://www.amazon.com/Gabba-Goods-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DGMHKDWQ/ref=sxbs_sbv_search_btf?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.3bcd40df-eebb-4483-854d-08e1b22be161%3Aamzn1.sym.3bcd40df-eebb-4483-854d-08e1b22be161&cv_ct_cx=wireless+headphones&keywords=wireless+headphones&pd_rd_i=B0DGMHKDWQ&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&pd_rd_w=mvLkR&pd_rd_wg=LpVOq&pf_rd_p=3bcd40df-eebb-4483-854d-08e1b22be161&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&qid=1779337767&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-73f7de28-3352-42ec-892a-2cfe411ee715#customerReviews
+                        - text: (1.5 K)
+                    - generic [ref=e1743]: 500+ comprados el mes pasado
+                  - generic [ref=e1746]:
+                    - generic [ref=e1749]:
+                      - generic [ref=e1750]: Precio y página del producto
+                      - link "CRC 13,124.64" [ref=e1751] [cursor=pointer]:
+                        - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JD52CRfz5CIkgmqHPJdpDYgAAAGeSMup8gEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICCkH3K6/clv1c_ek-YxfXXYsTWTYP2fAP_m2Tk9KAj7WqxxdfpJOOvE2K7G0e21IHOgItw_xwcY9teKWbo3YQ45Pn9Ac7CFq8BnyHlmW6Jn3hbj-1ahyIbopzxywEv8rCd-b2IN_llurIRVRkNsYpZEFWOjkXc6QnpWVFfXxnGMNbrjlQwzzLuxZMNFQvMn8e6sno4si8HzjPkTmdXwEbj8mx_BiV8s1vGNh5zndxYFEYEkKRsAnWbGvBapUWTW7WsA1lQVKdZcRzzmt-uqMxRJzqXGLPhe2NRkHXEOOhsQZdTmbdAxgapMyXRsh-BcACBAwBm55Y_c4p4JYXdNvBp8Ok9XKDyTbhl0cODPeKF9kiKB8ebia1GgmPh8piAIPN5qsG6vrk_slfNODd3iwnzWOoMkjFQzpT2j35OmUu6pkefJ7P1ghbFjRdk3vy6jPTc1BouCYIXpP6MHc7-ZexKa_ApZjcOAf6QzpMuCL00ByCgQ8kmlu35YtsdQ1sQ9dukk-Zs9kxKEmBJoXrrCs6Duw8p0nBvdBx1vIO6kiznW-F_gLVHCmg5xxQxv6qZUv4y526RbD-CJZ7GdVok5PQesyxzINZ4rkRjx70EIMZSPte429Jd8b8hHSeS3uIKvMDKghTDwSwyPMaECXD4A4mA1VLweEDEDBkL-3WFG8T5aMFBIMvg63vx7e_Wx4nVblgI5z52brqIMrWTqIIrLHNUCq35Y6c_15Y2rBTHNEAkOA7OXAx9P-pLD-GOEdAIF074y3yKW71E0KC9zeiNzX4rIQ0woh-egtgjYA4tg2La4RFnjqGY7g-hLhQR-UAVNo5XEU26PEZCOkcSZ-hmxzWf5bMM19dKRpOJuPwoEMFVbTOPGgDM9wsYdX9GfCb7UImO3eA2wa3nFWyOAylXRkjvunhhV3_0nMgk8wjJZ6rNxBPR93c-UBX5jLqRwrV1gbyBjyaNZrfkbjJgNiOyVcKLu_MSH6IYGTPTxTCgUIgtmrnrULlKpHOYpT-FhqnQgxzhSuxYX_eyJ990gZa7LhtqMmH88jGLJkbbfrYIMOBqQLBA2gPG2e9RKtaQ5Xtf6I8dzAj-5SJFGKO2f87OeGFXWAHWBtwfD5B0FDRMlH917ufV0D5zjZ1tCyya-kGLXqR6-l7ytFps3MXeUXEI0anvgMCJy0EJr_Dvh0XCKgiULCAIP66U_AuYqkx-DgKtZy1-LW-LCB0zeDvM9piI7R6x2p1w2KBEjAwaxFSfG2mHYBOKr_Ymb29dpoWVVuus3EK4jROatDeYOTvCvH-Qm310XpMkzBFR-4rKVuisBu-uKZkGhHKEwq-n80XvAxXx9TVFdWrfkTKXLM53x9ughkydayQBDQxLxZvTMC35-ougtWqvIX9wgFdDmv8b3OFKNfjKi-0kSV1tGXp0mXP2Kkwg3tjmpdpdz_dqcigCsDT196AGjBBtWGjrMX_dzVoywk1TxCA-n3sRudvuzkrm7MpYT96IHitFO-l6bxsJx8Xhk9N0LLt-v3Qj0mKoJ1UJv3yc4_4uDMWSzWA_b2pma9O9wcd3ko8HcQvJnBLE_mlokRXS57fGLDtDLWprFqAIrh3yUa73NFXFS-t48MpsG9JrFp3sUiNc7JQ7s7DFZ1VAVBVFvhnqxQT9qKWnwUOZMgDr5bFkYB8/https://www.amazon.com/Gabba-Goods-Auriculares-inal%C3%A1mbricos-Bluetooth/dp/B0DGMHKDWQ/ref=sxbs_sbv_search_btf?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.3bcd40df-eebb-4483-854d-08e1b22be161%3Aamzn1.sym.3bcd40df-eebb-4483-854d-08e1b22be161&cv_ct_cx=wireless+headphones&keywords=wireless+headphones&pd_rd_i=B0DGMHKDWQ&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&pd_rd_w=mvLkR&pd_rd_wg=LpVOq&pf_rd_p=3bcd40df-eebb-4483-854d-08e1b22be161&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&qid=1779337767&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-1-73f7de28-3352-42ec-892a-2cfe411ee715
+                        - generic [ref=e1752]:
+                          - generic [ref=e1753]: CRC 13,124.64
+                          - generic [ref=e1754]:
+                            - text: CRC
+                            - generic [ref=e1755]:
+                              - text: 13,124
+                              - generic [ref=e1756]: .
+                            - text: "64"
+                    - generic [ref=e1759]:
+                      - generic [ref=e1763]: Entrega por CRC 10,666.32 el mar, 2 de jun
+                      - generic [ref=e1765]: O entrega más rápida el jue, 28 de may
+            - generic [ref=e1771]:
+              - generic "Búsquedas relacionadas en wireless headphones" [ref=e1772]:
+                - heading "Búsquedas relacionadas" [level=2] [ref=e1775]
+              - list [ref=e1777]:
+                - generic [ref=e1778]:
+                  - link "wireless earbuds" [ref=e1779] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+earbuds&ref=rsl_sug_0_0&pd_rd_w=tasQK&content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=LpVOq&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&qid=1779337767
+                    - listitem [ref=e1780]:
+                      - generic [ref=e1786]: wireless earbuds
+                  - link "wireless headset" [ref=e1787] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headset&ref=rsl_sug_0_3&pd_rd_w=tasQK&content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=LpVOq&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&qid=1779337767
+                    - listitem [ref=e1788]:
+                      - generic [ref=e1794]: wireless headset
+                - generic [ref=e1795]:
+                  - link "headphones" [ref=e1796] [cursor=pointer]:
+                    - /url: /-/es/s?k=headphones&ref=rsl_sug_0_1&pd_rd_w=tasQK&content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=LpVOq&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&qid=1779337767
+                    - listitem [ref=e1797]:
+                      - generic [ref=e1803]: headphones
+                  - link "wireless headphones with microphone" [ref=e1804] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones+with+microphone&ref=rsl_sug_0_4&pd_rd_w=tasQK&content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=LpVOq&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&qid=1779337767
+                    - listitem [ref=e1805]:
+                      - generic [ref=e1811]: wireless headphones with microphone
+                - generic [ref=e1812]:
+                  - link "wireless headphones noise cancelling" [ref=e1813] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones+noise+cancelling&ref=rsl_sug_0_2&pd_rd_w=tasQK&content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=LpVOq&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&qid=1779337767
+                    - listitem [ref=e1814]:
+                      - generic [ref=e1820]: wireless headphones noise cancelling
+                  - link "wireless headphones over ear" [ref=e1821] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones+over+ear&ref=rsl_sug_0_5&pd_rd_w=tasQK&content-id=amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871:amzn1.sym.3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_p=3be64970-3b95-4a6d-a45d-78077a3ff871&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=LpVOq&pd_rd_r=d5b80c73-26c9-4111-b170-786d207dcb39&qid=1779337767
+                    - listitem [ref=e1822]:
+                      - generic [ref=e1828]: wireless headphones over ear
+            - navigation "pagination" [ref=e1831]:
+              - list [ref=e1833]:
+                - listitem [ref=e1834]:
+                  - button "Anterior" [disabled] [ref=e1836]:
+                    - img [ref=e1837]
+                    - text: Anterior
+                - listitem [ref=e1839]:
+                  - button "Página 1" [ref=e1841]: "1"
+                - listitem [ref=e1842]:
+                  - button "Ir a la página 2" [ref=e1844] [cursor=pointer]: "2"
+                - listitem [ref=e1845]:
+                  - button "Ir a la página 3" [ref=e1847] [cursor=pointer]: "3"
+                - button [disabled] [ref=e1848]:
+                  - img [ref=e1849]: ...
+                - button "20" [disabled] [ref=e1851]
+                - listitem [ref=e1852]:
+                  - button "Ir a la página siguiente, página 2" [ref=e1854] [cursor=pointer]:
+                    - text: Siguiente
+                    - img [ref=e1855]
+            - generic [ref=e1859]:
+              - separator [ref=e1860]
+              - generic [ref=e1861]:
+                - heading "Marcas relacionadas con la búsqueda" [ref=e1862]
+                - button "Leave feedback on Sponsored ad" [ref=e1867] [cursor=pointer]: Patrocinado
+                - generic [ref=e1871]:
+                  - generic [ref=e1873]:
+                    - generic:
+                      - generic:
+                        - link:
+                          - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JHhcEB2pWKKSv6l4CXwkjN4AAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICAeKwRn/clv1c_ek-wxIHXFcbWDQHEa4vEoGk9I78aJnbJSuMlJv_i3isGFTuCtiP9OP_V6iNVbfg4yuUNqt26YsWhja_o-2n_ssQKDez3VmsV6ktljFrX0wg2SwnkHnw4fLl87voUltNwkLo7Nue6s-q4apZSa_BoZbFmuLncllb44oS7iz8aTMAaU011zl3vR9uUGIF6xkIumpjNhM8iFgjL18iVBxGQc-vytnV-B0-zEY4BtAVyZnEWg3uDxwJtoVPU0SVCBmXCuXZUExLPHPahDAAc0Y33gRD7uazwVwe1x2ynFTql2pBe4UrbUNQOR6LKsvs41KXodERqEScS8VUZ63EUoBw5UsD85hTDBzHtsoyhSqQU2vjF3te1rqygEb5Y_7r8Mbj6qRld-jan_0e2if20fbZv4J9J3N-3I9lYYXwjPJy0488BdjQbYfjkH432vftFdZdnb9BnfdFVid9IGpdiwipnt9yXQ2hCWdunDnYFvCXfvUG6FXcW1fBlRFlxmNf1chNmJgl-hcGSOOzOj_8NBqJZCjUt9MBANTAHebHa_H_7U9j_KMm66VZiw9NPPNXhkKDOkk3TsMXiyHZ2_AaJcb0k-k8klnvFN6uaKhKqB62Up0Bify3zFXBO5BChBLN_KbS_ghNIYP6NZXCj_Sycb2l7DkkoC27yqAFTLN5f2yTQyVK6PZXBUlkOvuTtKv9RUMsF2iiSz6qAznihlIC5qYZ-WLgWE10s7L77vBP_56VTNEV8lkMiy2dfJpygwOtRTtYb-NUsYVzabrDSN0GiXaH3MSCmxAgQEQZPyGk7FQD04qJiPNC4yr88lzIOUSVQBb_TVJuCQc6CgyeCPo6kKZBdkTGKnuR9jk9Z8GDDXxFG8JNbYy7l47z3H9hzjeQD86UOq0u-al5mywQCoRWXuUD2Js-onXb7UDUUYgUap0A-LHnf1fSxoEb--j5gRTI9l6gawVJHJzh8yWtVGDTXOZLN9FGLfJf8BEukExRnHbwPE3o9eRojgg1wlgBF2IcwpliWixhfcENBE-kCzD78lIsIeLdcq-Lrdmp4RsqXGePNyRytqy4PHaowncifQVnPzVUzRL-WIclS9MQFCTmtuAQESDeqL7rMnhz6ReYJ9AGN38ZCWQxr-JG-bOn1LKSa4fSF63NB0usUrCQw7zmBhdyTVL0jRFIOVuc1PVDJi4kP-xxz6Lod5wWfWkCD2NghF9Re_LerYW_czW3gnKuCCupi4sZRNp6GnEfPfPHOJQIZ7rIVYYzrTl5AK21686-GlJTBtzn0ZRFrJRk2cXddQlbgNV4i70KVCePYk2ShPIdhCqTJuGrfuriCiXk-sGqrMsodKUGIinLwU8EOPOhm4sa8yQoBJ5KsO18pRDE6ExUo3FoHkTR_1WR_r_C_jMvYt5G358tOx2DFVTH47rbZp5Pu64w1Prk3Wl1P3iyTdqKQ0Yjf18WbpLT0gZ3sWucfYRlKZmtWy33_6t4ejbHw4I-rdWO1G1KfTfW7Cvlx4TFJkRWgLVEFLtA9IPtxmjPt1Bva7GMqW598vvR9wxeztoRU2t21npWsh7JoMl6-tK9hUjgjG8SqT0Mg85u5Sstpzpamle5oGAKYYLyJsUnHN966e82e1lwOhqyewxWKWYgV0VfUS_qbivycRwDmIuqhEZCi77QgUvajVIor8TOz6dEarK7zx5vBZ_uxjEA/https://www.amazon.com/stores/page/6AAA08EA-BC91-4DB5-8D31-9D19179639EE/?_encoding=UTF8&store_ref=SB_A05184223N6WTOO9ALBTT-A09293602ZS34AFK4ANO&pd_rd_plhdr=t&aaxitk=1db0854128650fea14d6e737bed4237a&hsa_cr_id=0&lp_asins=B0GR4GKVVJ%2CB0GR43T78K%2CB0GR4GR5QH&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                        - link "soundcore" [ref=e1874] [cursor=pointer]:
+                          - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JHhcEB2pWKKSv6l4CXwkjN4AAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICAeKwRn/clv1c_ek-wxIHXFcbWDQHEa4vEoGk9I78aJnbJSuMlJv_i3isGFTuCtiP9OP_V6iNVbfg4yuUNqt26YsWhja_o-2n_ssQKDez3VmsV6ktljFrX0wg2SwnkHnw4fLl87voUltNwkLo7Nue6s-q4apZSa_BoZbFmuLncllb44oS7iz8aTMAaU011zl3vR9uUGIF6xkIumpjNhM8iFgjL18iVBxGQc-vytnV-B0-zEY4BtAVyZnEWg3uDxwJtoVPU0SVCBmXCuXZUExLPHPahDAAc0Y33gRD7uazwVwe1x2ynFTql2pBe4UrbUNQOR6LKsvs41KXodERqEScS8VUZ63EUoBw5UsD85hTDBzHtsoyhSqQU2vjF3te1rqygEb5Y_7r8Mbj6qRld-jan_0e2if20fbZv4J9J3N-3I9lYYXwjPJy0488BdjQbYfjkH432vftFdZdnb9BnfdFVid9IGpdiwipnt9yXQ2hCWdunDnYFvCXfvUG6FXcW1fBlRFlxmNf1chNmJgl-hcGSOOzOj_8NBqJZCjUt9MBANTAHebHa_H_7U9j_KMm66VZiw9NPPNXhkKDOkk3TsMXiyHZ2_AaJcb0k-k8klnvFN6uaKhKqB62Up0Bify3zFXBO5BChBLN_KbS_ghNIYP6NZXCj_Sycb2l7DkkoC27yqAFTLN5f2yTQyVK6PZXBUlkOvuTtKv9RUMsF2iiSz6qAznihlIC5qYZ-WLgWE10s7L77vBP_56VTNEV8lkMiy2dfJpygwOtRTtYb-NUsYVzabrDSN0GiXaH3MSCmxAgQEQZPyGk7FQD04qJiPNC4yr88lzIOUSVQBb_TVJuCQc6CgyeCPo6kKZBdkTGKnuR9jk9Z8GDDXxFG8JNbYy7l47z3H9hzjeQD86UOq0u-al5mywQCoRWXuUD2Js-onXb7UDUUYgUap0A-LHnf1fSxoEb--j5gRTI9l6gawVJHJzh8yWtVGDTXOZLN9FGLfJf8BEukExRnHbwPE3o9eRojgg1wlgBF2IcwpliWixhfcENBE-kCzD78lIsIeLdcq-Lrdmp4RsqXGePNyRytqy4PHaowncifQVnPzVUzRL-WIclS9MQFCTmtuAQESDeqL7rMnhz6ReYJ9AGN38ZCWQxr-JG-bOn1LKSa4fSF63NB0usUrCQw7zmBhdyTVL0jRFIOVuc1PVDJi4kP-xxz6Lod5wWfWkCD2NghF9Re_LerYW_czW3gnKuCCupi4sZRNp6GnEfPfPHOJQIZ7rIVYYzrTl5AK21686-GlJTBtzn0ZRFrJRk2cXddQlbgNV4i70KVCePYk2ShPIdhCqTJuGrfuriCiXk-sGqrMsodKUGIinLwU8EOPOhm4sa8yQoBJ5KsO18pRDE6ExUo3FoHkTR_1WR_r_C_jMvYt5G358tOx2DFVTH47rbZp5Pu64w1Prk3Wl1P3iyTdqKQ0Yjf18WbpLT0gZ3sWucfYRlKZmtWy33_6t4ejbHw4I-rdWO1G1KfTfW7Cvlx4TFJkRWgLVEFLtA9IPtxmjPt1Bva7GMqW598vvR9wxeztoRU2t21npWsh7JoMl6-tK9hUjgjG8SqT0Mg85u5Sstpzpamle5oGAKYYLyJsUnHN966e82e1lwOhqyewxWKWYgV0VfUS_qbivycRwDmIuqhEZCi77QgUvajVIor8TOz6dEarK7zx5vBZ_uxjEA/https://www.amazon.com/stores/page/6AAA08EA-BC91-4DB5-8D31-9D19179639EE/?_encoding=UTF8&store_ref=SB_A05184223N6WTOO9ALBTT-A09293602ZS34AFK4ANO&pd_rd_plhdr=t&aaxitk=1db0854128650fea14d6e737bed4237a&hsa_cr_id=0&lp_asins=B0GR4GKVVJ%2CB0GR43T78K%2CB0GR4GR5QH&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb0_ls&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                          - img "soundcore" [ref=e1875]
+                        - generic [ref=e1877]:
+                          - generic [ref=e1878]:
+                            - link [ref=e1879] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JHhcEB2pWKKSv6l4CXwkjN4AAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICAeKwRn/clv1c_ek-wxIHXFcbWDQHEa4vEoGk9I78aJnbJSuMlJv_i3isGFTuCtiP9OP_V6iNVbfg4yuUNqt26YsWhja_o-2n_ssQKDez3VmsV6ktljFrX0wg2SwnkHnw4fLl87voUltNwkLo7Nue6s-q4apZSa_BoZbFmuLncllb44oS7iz8aTMAaU011zl3vR9uUGIF6xkIumpjNhM8iFgjL18iVBxGQc-vytnV-B0-zEY4BtAVyZnEWg3uDxwJtoVPU0SVCBmXCuXZUExLPHPahDAAc0Y33gRD7uazwVwe1x2ynFTql2pBe4UrbUNQOR6LKsvs41KXodERqEScS8VUZ63EUoBw5UsD85hTDBzHtsoyhSqQU2vjF3te1rqygEb5Y_7r8Mbj6qRld-jan_0e2if20fbZv4J9J3N-3I9lYYXwjPJy0488BdjQbYfjkH432vftFdZdnb9BnfdFVid9IGpdiwipnt9yXQ2hCWdunDnYFvCXfvUG6FXcW1fBlRFlxmNf1chNmJgl-hcGSOOzOj_8NBqJZCjUt9MBANTAHebHa_H_7U9j_KMm66VZiw9NPPNXhkKDOkk3TsMXiyHZ2_AaJcb0k-k8klnvFN6uaKhKqB62Up0Bify3zFXBO5BChBLN_KbS_ghNIYP6NZXCj_Sycb2l7DkkoC27yqAFTLN5f2yTQyVK6PZXBUlkOvuTtKv9RUMsF2iiSz6qAznihlIC5qYZ-WLgWE10s7L77vBP_56VTNEV8lkMiy2dfJpygwOtRTtYb-NUsYVzabrDSN0GiXaH3MSCmxAgQEQZPyGk7FQD04qJiPNC4yr88lzIOUSVQBb_TVJuCQc6CgyeCPo6kKZBdkTGKnuR9jk9Z8GDDXxFG8JNbYy7l47z3H9hzjeQD86UOq0u-al5mywQCoRWXuUD2Js-onXb7UDUUYgUap0A-LHnf1fSxoEb--j5gRTI9l6gawVJHJzh8yWtVGDTXOZLN9FGLfJf8BEukExRnHbwPE3o9eRojgg1wlgBF2IcwpliWixhfcENBE-kCzD78lIsIeLdcq-Lrdmp4RsqXGePNyRytqy4PHaowncifQVnPzVUzRL-WIclS9MQFCTmtuAQESDeqL7rMnhz6ReYJ9AGN38ZCWQxr-JG-bOn1LKSa4fSF63NB0usUrCQw7zmBhdyTVL0jRFIOVuc1PVDJi4kP-xxz6Lod5wWfWkCD2NghF9Re_LerYW_czW3gnKuCCupi4sZRNp6GnEfPfPHOJQIZ7rIVYYzrTl5AK21686-GlJTBtzn0ZRFrJRk2cXddQlbgNV4i70KVCePYk2ShPIdhCqTJuGrfuriCiXk-sGqrMsodKUGIinLwU8EOPOhm4sa8yQoBJ5KsO18pRDE6ExUo3FoHkTR_1WR_r_C_jMvYt5G358tOx2DFVTH47rbZp5Pu64w1Prk3Wl1P3iyTdqKQ0Yjf18WbpLT0gZ3sWucfYRlKZmtWy33_6t4ejbHw4I-rdWO1G1KfTfW7Cvlx4TFJkRWgLVEFLtA9IPtxmjPt1Bva7GMqW598vvR9wxeztoRU2t21npWsh7JoMl6-tK9hUjgjG8SqT0Mg85u5Sstpzpamle5oGAKYYLyJsUnHN966e82e1lwOhqyewxWKWYgV0VfUS_qbivycRwDmIuqhEZCi77QgUvajVIor8TOz6dEarK7zx5vBZ_uxjEA/https://www.amazon.com/stores/page/6AAA08EA-BC91-4DB5-8D31-9D19179639EE/?_encoding=UTF8&store_ref=SB_A05184223N6WTOO9ALBTT-A09293602ZS34AFK4ANO&pd_rd_plhdr=t&aaxitk=1db0854128650fea14d6e737bed4237a&hsa_cr_id=0&lp_asins=B0GR4GKVVJ%2CB0GR43T78K%2CB0GR4GR5QH&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                            - link "soundcore" [ref=e1880] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JHhcEB2pWKKSv6l4CXwkjN4AAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICAeKwRn/clv1c_ek-wxIHXFcbWDQHEa4vEoGk9I78aJnbJSuMlJv_i3isGFTuCtiP9OP_V6iNVbfg4yuUNqt26YsWhja_o-2n_ssQKDez3VmsV6ktljFrX0wg2SwnkHnw4fLl87voUltNwkLo7Nue6s-q4apZSa_BoZbFmuLncllb44oS7iz8aTMAaU011zl3vR9uUGIF6xkIumpjNhM8iFgjL18iVBxGQc-vytnV-B0-zEY4BtAVyZnEWg3uDxwJtoVPU0SVCBmXCuXZUExLPHPahDAAc0Y33gRD7uazwVwe1x2ynFTql2pBe4UrbUNQOR6LKsvs41KXodERqEScS8VUZ63EUoBw5UsD85hTDBzHtsoyhSqQU2vjF3te1rqygEb5Y_7r8Mbj6qRld-jan_0e2if20fbZv4J9J3N-3I9lYYXwjPJy0488BdjQbYfjkH432vftFdZdnb9BnfdFVid9IGpdiwipnt9yXQ2hCWdunDnYFvCXfvUG6FXcW1fBlRFlxmNf1chNmJgl-hcGSOOzOj_8NBqJZCjUt9MBANTAHebHa_H_7U9j_KMm66VZiw9NPPNXhkKDOkk3TsMXiyHZ2_AaJcb0k-k8klnvFN6uaKhKqB62Up0Bify3zFXBO5BChBLN_KbS_ghNIYP6NZXCj_Sycb2l7DkkoC27yqAFTLN5f2yTQyVK6PZXBUlkOvuTtKv9RUMsF2iiSz6qAznihlIC5qYZ-WLgWE10s7L77vBP_56VTNEV8lkMiy2dfJpygwOtRTtYb-NUsYVzabrDSN0GiXaH3MSCmxAgQEQZPyGk7FQD04qJiPNC4yr88lzIOUSVQBb_TVJuCQc6CgyeCPo6kKZBdkTGKnuR9jk9Z8GDDXxFG8JNbYy7l47z3H9hzjeQD86UOq0u-al5mywQCoRWXuUD2Js-onXb7UDUUYgUap0A-LHnf1fSxoEb--j5gRTI9l6gawVJHJzh8yWtVGDTXOZLN9FGLfJf8BEukExRnHbwPE3o9eRojgg1wlgBF2IcwpliWixhfcENBE-kCzD78lIsIeLdcq-Lrdmp4RsqXGePNyRytqy4PHaowncifQVnPzVUzRL-WIclS9MQFCTmtuAQESDeqL7rMnhz6ReYJ9AGN38ZCWQxr-JG-bOn1LKSa4fSF63NB0usUrCQw7zmBhdyTVL0jRFIOVuc1PVDJi4kP-xxz6Lod5wWfWkCD2NghF9Re_LerYW_czW3gnKuCCupi4sZRNp6GnEfPfPHOJQIZ7rIVYYzrTl5AK21686-GlJTBtzn0ZRFrJRk2cXddQlbgNV4i70KVCePYk2ShPIdhCqTJuGrfuriCiXk-sGqrMsodKUGIinLwU8EOPOhm4sa8yQoBJ5KsO18pRDE6ExUo3FoHkTR_1WR_r_C_jMvYt5G358tOx2DFVTH47rbZp5Pu64w1Prk3Wl1P3iyTdqKQ0Yjf18WbpLT0gZ3sWucfYRlKZmtWy33_6t4ejbHw4I-rdWO1G1KfTfW7Cvlx4TFJkRWgLVEFLtA9IPtxmjPt1Bva7GMqW598vvR9wxeztoRU2t21npWsh7JoMl6-tK9hUjgjG8SqT0Mg85u5Sstpzpamle5oGAKYYLyJsUnHN966e82e1lwOhqyewxWKWYgV0VfUS_qbivycRwDmIuqhEZCi77QgUvajVIor8TOz6dEarK7zx5vBZ_uxjEA/https://www.amazon.com/stores/page/6AAA08EA-BC91-4DB5-8D31-9D19179639EE/?_encoding=UTF8&store_ref=SB_A05184223N6WTOO9ALBTT-A09293602ZS34AFK4ANO&pd_rd_plhdr=t&aaxitk=1db0854128650fea14d6e737bed4237a&hsa_cr_id=0&lp_asins=B0GR4GKVVJ%2CB0GR43T78K%2CB0GR4GR5QH&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb0_logo&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                              - img "soundcore" [ref=e1882]
+                          - generic [ref=e1883]:
+                            - link [ref=e1884] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JHhcEB2pWKKSv6l4CXwkjN4AAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICAeKwRn/clv1c_ek-wxIHXFcbWDQHEa4vEoGk9I78aJnbJSuMlJv_i3isGFTuCtiP9OP_V6iNVbfg4yuUNqt26YsWhja_o-2n_ssQKDez3VmsV6ktljFrX0wg2SwnkHnw4fLl87voUltNwkLo7Nue6s-q4apZSa_BoZbFmuLncllb44oS7iz8aTMAaU011zl3vR9uUGIF6xkIumpjNhM8iFgjL18iVBxGQc-vytnV-B0-zEY4BtAVyZnEWg3uDxwJtoVPU0SVCBmXCuXZUExLPHPahDAAc0Y33gRD7uazwVwe1x2ynFTql2pBe4UrbUNQOR6LKsvs41KXodERqEScS8VUZ63EUoBw5UsD85hTDBzHtsoyhSqQU2vjF3te1rqygEb5Y_7r8Mbj6qRld-jan_0e2if20fbZv4J9J3N-3I9lYYXwjPJy0488BdjQbYfjkH432vftFdZdnb9BnfdFVid9IGpdiwipnt9yXQ2hCWdunDnYFvCXfvUG6FXcW1fBlRFlxmNf1chNmJgl-hcGSOOzOj_8NBqJZCjUt9MBANTAHebHa_H_7U9j_KMm66VZiw9NPPNXhkKDOkk3TsMXiyHZ2_AaJcb0k-k8klnvFN6uaKhKqB62Up0Bify3zFXBO5BChBLN_KbS_ghNIYP6NZXCj_Sycb2l7DkkoC27yqAFTLN5f2yTQyVK6PZXBUlkOvuTtKv9RUMsF2iiSz6qAznihlIC5qYZ-WLgWE10s7L77vBP_56VTNEV8lkMiy2dfJpygwOtRTtYb-NUsYVzabrDSN0GiXaH3MSCmxAgQEQZPyGk7FQD04qJiPNC4yr88lzIOUSVQBb_TVJuCQc6CgyeCPo6kKZBdkTGKnuR9jk9Z8GDDXxFG8JNbYy7l47z3H9hzjeQD86UOq0u-al5mywQCoRWXuUD2Js-onXb7UDUUYgUap0A-LHnf1fSxoEb--j5gRTI9l6gawVJHJzh8yWtVGDTXOZLN9FGLfJf8BEukExRnHbwPE3o9eRojgg1wlgBF2IcwpliWixhfcENBE-kCzD78lIsIeLdcq-Lrdmp4RsqXGePNyRytqy4PHaowncifQVnPzVUzRL-WIclS9MQFCTmtuAQESDeqL7rMnhz6ReYJ9AGN38ZCWQxr-JG-bOn1LKSa4fSF63NB0usUrCQw7zmBhdyTVL0jRFIOVuc1PVDJi4kP-xxz6Lod5wWfWkCD2NghF9Re_LerYW_czW3gnKuCCupi4sZRNp6GnEfPfPHOJQIZ7rIVYYzrTl5AK21686-GlJTBtzn0ZRFrJRk2cXddQlbgNV4i70KVCePYk2ShPIdhCqTJuGrfuriCiXk-sGqrMsodKUGIinLwU8EOPOhm4sa8yQoBJ5KsO18pRDE6ExUo3FoHkTR_1WR_r_C_jMvYt5G358tOx2DFVTH47rbZp5Pu64w1Prk3Wl1P3iyTdqKQ0Yjf18WbpLT0gZ3sWucfYRlKZmtWy33_6t4ejbHw4I-rdWO1G1KfTfW7Cvlx4TFJkRWgLVEFLtA9IPtxmjPt1Bva7GMqW598vvR9wxeztoRU2t21npWsh7JoMl6-tK9hUjgjG8SqT0Mg85u5Sstpzpamle5oGAKYYLyJsUnHN966e82e1lwOhqyewxWKWYgV0VfUS_qbivycRwDmIuqhEZCi77QgUvajVIor8TOz6dEarK7zx5vBZ_uxjEA/https://www.amazon.com/stores/page/6AAA08EA-BC91-4DB5-8D31-9D19179639EE/?_encoding=UTF8&store_ref=SB_A05184223N6WTOO9ALBTT-A09293602ZS34AFK4ANO&pd_rd_plhdr=t&aaxitk=1db0854128650fea14d6e737bed4237a&hsa_cr_id=0&lp_asins=B0GR4GKVVJ%2CB0GR43T78K%2CB0GR4GR5QH&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                            - link "Ruido de avión silenciado. Comodidad de primera clase." [ref=e1885] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JHhcEB2pWKKSv6l4CXwkjN4AAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICAeKwRn/clv1c_ek-wxIHXFcbWDQHEa4vEoGk9I78aJnbJSuMlJv_i3isGFTuCtiP9OP_V6iNVbfg4yuUNqt26YsWhja_o-2n_ssQKDez3VmsV6ktljFrX0wg2SwnkHnw4fLl87voUltNwkLo7Nue6s-q4apZSa_BoZbFmuLncllb44oS7iz8aTMAaU011zl3vR9uUGIF6xkIumpjNhM8iFgjL18iVBxGQc-vytnV-B0-zEY4BtAVyZnEWg3uDxwJtoVPU0SVCBmXCuXZUExLPHPahDAAc0Y33gRD7uazwVwe1x2ynFTql2pBe4UrbUNQOR6LKsvs41KXodERqEScS8VUZ63EUoBw5UsD85hTDBzHtsoyhSqQU2vjF3te1rqygEb5Y_7r8Mbj6qRld-jan_0e2if20fbZv4J9J3N-3I9lYYXwjPJy0488BdjQbYfjkH432vftFdZdnb9BnfdFVid9IGpdiwipnt9yXQ2hCWdunDnYFvCXfvUG6FXcW1fBlRFlxmNf1chNmJgl-hcGSOOzOj_8NBqJZCjUt9MBANTAHebHa_H_7U9j_KMm66VZiw9NPPNXhkKDOkk3TsMXiyHZ2_AaJcb0k-k8klnvFN6uaKhKqB62Up0Bify3zFXBO5BChBLN_KbS_ghNIYP6NZXCj_Sycb2l7DkkoC27yqAFTLN5f2yTQyVK6PZXBUlkOvuTtKv9RUMsF2iiSz6qAznihlIC5qYZ-WLgWE10s7L77vBP_56VTNEV8lkMiy2dfJpygwOtRTtYb-NUsYVzabrDSN0GiXaH3MSCmxAgQEQZPyGk7FQD04qJiPNC4yr88lzIOUSVQBb_TVJuCQc6CgyeCPo6kKZBdkTGKnuR9jk9Z8GDDXxFG8JNbYy7l47z3H9hzjeQD86UOq0u-al5mywQCoRWXuUD2Js-onXb7UDUUYgUap0A-LHnf1fSxoEb--j5gRTI9l6gawVJHJzh8yWtVGDTXOZLN9FGLfJf8BEukExRnHbwPE3o9eRojgg1wlgBF2IcwpliWixhfcENBE-kCzD78lIsIeLdcq-Lrdmp4RsqXGePNyRytqy4PHaowncifQVnPzVUzRL-WIclS9MQFCTmtuAQESDeqL7rMnhz6ReYJ9AGN38ZCWQxr-JG-bOn1LKSa4fSF63NB0usUrCQw7zmBhdyTVL0jRFIOVuc1PVDJi4kP-xxz6Lod5wWfWkCD2NghF9Re_LerYW_czW3gnKuCCupi4sZRNp6GnEfPfPHOJQIZ7rIVYYzrTl5AK21686-GlJTBtzn0ZRFrJRk2cXddQlbgNV4i70KVCePYk2ShPIdhCqTJuGrfuriCiXk-sGqrMsodKUGIinLwU8EOPOhm4sa8yQoBJ5KsO18pRDE6ExUo3FoHkTR_1WR_r_C_jMvYt5G358tOx2DFVTH47rbZp5Pu64w1Prk3Wl1P3iyTdqKQ0Yjf18WbpLT0gZ3sWucfYRlKZmtWy33_6t4ejbHw4I-rdWO1G1KfTfW7Cvlx4TFJkRWgLVEFLtA9IPtxmjPt1Bva7GMqW598vvR9wxeztoRU2t21npWsh7JoMl6-tK9hUjgjG8SqT0Mg85u5Sstpzpamle5oGAKYYLyJsUnHN966e82e1lwOhqyewxWKWYgV0VfUS_qbivycRwDmIuqhEZCi77QgUvajVIor8TOz6dEarK7zx5vBZ_uxjEA/https://www.amazon.com/stores/page/6AAA08EA-BC91-4DB5-8D31-9D19179639EE/?_encoding=UTF8&store_ref=SB_A05184223N6WTOO9ALBTT-A09293602ZS34AFK4ANO&pd_rd_plhdr=t&aaxitk=1db0854128650fea14d6e737bed4237a&hsa_cr_id=0&lp_asins=B0GR4GKVVJ%2CB0GR43T78K%2CB0GR4GR5QH&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb0_hl&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                              - generic [ref=e1887]:
+                                - generic [ref=e1888]: Ruido de avión silenciado. Comodidad de primera clase.
+                                - generic [ref=e1889]: Ruido de avión silenciado. Comodidad de primera clase.
+                  - generic [ref=e1891]:
+                    - generic:
+                      - generic:
+                        - link:
+                          - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JE0QvB7v6qx1biDlO88CyKQAAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICCQUdtj/clv1c_ek-wBPHXLcTWnuOrE7vOusHhJAMnsrePokvUphzqusU30Y5wjTT6OwPV3fL3e3Mb_PuiV-fN-YGDHslG6WbOoKYEP4zjp6uYGXj36xPu_UAGSbvhDEJ71QK5ZPdcniKQ9to4tUHNAnbpTlF0cNBwTeK0qsf81lXntiT9zTMyDCQdWmhRdpH_79pZqkAGRP4rzWxDrbvuVYTG1MKpxyGQcun61O2VhMI0NmxPpnrOoqzHcwZZ6OWtqQaK4ZhkRbVXnEFz1u2wEoIPKgKvaziZPqEvfbbTYOGBJTSPZfesm0qDycUPWhBIFgXRE3jYAjA5RdVbFZHgi5sszmnY0SuXBH7Kuuq-pIDtnkbk4eizXgYfxjG8ttOxAGyEDmA4aQGVyHUm3vDp7HpBd0ZKOlW0WRMnPEiizWpVcch3Mv8hqtljlnORAd4E_TnqyPYcYOfkz1TdWArSDOjmAjLZQ_tf4gK56HnKZAYFKXLBNzTltk9gOSTz0bKTYsnh36EjP1BoBltd3qvBQOjkgcrgyxYqKJ-B6r6mHYF2y4i-nQsI6HoUDCH8wPKOJ8iZYLKhxyBwrrGSUxSRv0dbABRzn8Qr3beuBctlcwStaiYrM3ewNxwry2xJw7fjtiStRhmt0UO-29JFwfpgnuxm6Vo0ZbPWsnSZFegGOgwEXIbyuyji71yIGx4O388rnaJRtmFEkNc9EfjFgBGhkbqr6IXGlWNGyqLHjKM133PLnN8lDsIgMnViyfgMF10MU2ELStDALUOKaUVAExzSLrDpuyFFAfrMNaDeyMA-5lho_7tYcPqzGyzR5buPZI3wYVDRmk2lpc_D3CNfJSaKlga35Ktl58lY6tGFX-RtBD_QCdOl6lLeg69dcl4ulXi8RY4vSbgFogBW_Ga9abuKetkoQJs7t16jHSvwmGWDYRIYTCawdTvkkm0sNRZXNHJgzlc3se-xNMpZ_wmyHynkyyGnDDq2kKV3Q_mxay6LWfPDIU6iI05Pr4xqsyPVFrDcCkCqnxyh5U38Xs4XbeLceW6iBAEmgtdIxGnMk6sNtP4gr-ScWGiBe9yR_BEth8mYTAMVMbLUwSEa_82zz5GFB87pRuuK55dgyGzy_Q5L-U3WYY4kxH22mH0dQhG7qKAY_BsF_utb6Mk2nLyLU9VpznDpOyxiomXmRT4Y9KXLMq7wOe1ZIYxUOWPkmsnUgg-HtvR2s7KSDGq1aXzk0MPiiNxnXB72ADuqAwAUQS36RX-2WDEdvIMqMOBQmQu8kWc4HHdGsB-g_C1Sb5fstf7jxjLnOX8hNIyrPqfgphh0KZgyMWEAXix49qGydPby_IBS6Bra9zqbIxPuRGUuulFAqnecSjpkBybsp9ihnZ5Dxm7mUB50WV8iOwqkTyvd7ixd__Wf_RxifGbLObxiUc2_qEKvItve44lXq7FjPaqHjh4fNZhFRzyYZ9zYEbLSV8X5jku0hrZqtNtIfCVruOmQeP8xEAePuiKL30G-bdanEOSfuhDJyyUpCCJzKfXoMh9_WDKHWT52BQmtuUoklYsf5ImrOFuEj1gympxivT-JELCONpf2j1zNIoXwJp_AFV4kZ7XnBokLlA1h9jSnZMw3jlEOvmR9oc61eGHzMD1_dVyn2jcdI4w8gXgmHOTdAJyxILmFjUj8wQUMvV9WeAy9_9ekcJwR_UNZrbQUoVAk9s5r/https://www.amazon.com/stores/page/9F16B940-F912-43FE-888C-5BB1B86337A9/?_encoding=UTF8&store_ref=SB_A04814101HR5GB836YA6Y-A00311662QNN6QQI0O46H&pd_rd_plhdr=t&aaxitk=0c761c6b065f281cda8efeb1c31348b5&hsa_cr_id=0&lp_asins=B0DWC512JJ%2CB0DWCCV32R%2CB0DWCGF5C1&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                        - link "Skullcandy US" [ref=e1892] [cursor=pointer]:
+                          - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JE0QvB7v6qx1biDlO88CyKQAAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICCQUdtj/clv1c_ek-wBPHXLcTWnuOrE7vOusHhJAMnsrePokvUphzqusU30Y5wjTT6OwPV3fL3e3Mb_PuiV-fN-YGDHslG6WbOoKYEP4zjp6uYGXj36xPu_UAGSbvhDEJ71QK5ZPdcniKQ9to4tUHNAnbpTlF0cNBwTeK0qsf81lXntiT9zTMyDCQdWmhRdpH_79pZqkAGRP4rzWxDrbvuVYTG1MKpxyGQcun61O2VhMI0NmxPpnrOoqzHcwZZ6OWtqQaK4ZhkRbVXnEFz1u2wEoIPKgKvaziZPqEvfbbTYOGBJTSPZfesm0qDycUPWhBIFgXRE3jYAjA5RdVbFZHgi5sszmnY0SuXBH7Kuuq-pIDtnkbk4eizXgYfxjG8ttOxAGyEDmA4aQGVyHUm3vDp7HpBd0ZKOlW0WRMnPEiizWpVcch3Mv8hqtljlnORAd4E_TnqyPYcYOfkz1TdWArSDOjmAjLZQ_tf4gK56HnKZAYFKXLBNzTltk9gOSTz0bKTYsnh36EjP1BoBltd3qvBQOjkgcrgyxYqKJ-B6r6mHYF2y4i-nQsI6HoUDCH8wPKOJ8iZYLKhxyBwrrGSUxSRv0dbABRzn8Qr3beuBctlcwStaiYrM3ewNxwry2xJw7fjtiStRhmt0UO-29JFwfpgnuxm6Vo0ZbPWsnSZFegGOgwEXIbyuyji71yIGx4O388rnaJRtmFEkNc9EfjFgBGhkbqr6IXGlWNGyqLHjKM133PLnN8lDsIgMnViyfgMF10MU2ELStDALUOKaUVAExzSLrDpuyFFAfrMNaDeyMA-5lho_7tYcPqzGyzR5buPZI3wYVDRmk2lpc_D3CNfJSaKlga35Ktl58lY6tGFX-RtBD_QCdOl6lLeg69dcl4ulXi8RY4vSbgFogBW_Ga9abuKetkoQJs7t16jHSvwmGWDYRIYTCawdTvkkm0sNRZXNHJgzlc3se-xNMpZ_wmyHynkyyGnDDq2kKV3Q_mxay6LWfPDIU6iI05Pr4xqsyPVFrDcCkCqnxyh5U38Xs4XbeLceW6iBAEmgtdIxGnMk6sNtP4gr-ScWGiBe9yR_BEth8mYTAMVMbLUwSEa_82zz5GFB87pRuuK55dgyGzy_Q5L-U3WYY4kxH22mH0dQhG7qKAY_BsF_utb6Mk2nLyLU9VpznDpOyxiomXmRT4Y9KXLMq7wOe1ZIYxUOWPkmsnUgg-HtvR2s7KSDGq1aXzk0MPiiNxnXB72ADuqAwAUQS36RX-2WDEdvIMqMOBQmQu8kWc4HHdGsB-g_C1Sb5fstf7jxjLnOX8hNIyrPqfgphh0KZgyMWEAXix49qGydPby_IBS6Bra9zqbIxPuRGUuulFAqnecSjpkBybsp9ihnZ5Dxm7mUB50WV8iOwqkTyvd7ixd__Wf_RxifGbLObxiUc2_qEKvItve44lXq7FjPaqHjh4fNZhFRzyYZ9zYEbLSV8X5jku0hrZqtNtIfCVruOmQeP8xEAePuiKL30G-bdanEOSfuhDJyyUpCCJzKfXoMh9_WDKHWT52BQmtuUoklYsf5ImrOFuEj1gympxivT-JELCONpf2j1zNIoXwJp_AFV4kZ7XnBokLlA1h9jSnZMw3jlEOvmR9oc61eGHzMD1_dVyn2jcdI4w8gXgmHOTdAJyxILmFjUj8wQUMvV9WeAy9_9ekcJwR_UNZrbQUoVAk9s5r/https://www.amazon.com/stores/page/9F16B940-F912-43FE-888C-5BB1B86337A9/?_encoding=UTF8&store_ref=SB_A04814101HR5GB836YA6Y-A00311662QNN6QQI0O46H&pd_rd_plhdr=t&aaxitk=0c761c6b065f281cda8efeb1c31348b5&hsa_cr_id=0&lp_asins=B0DWC512JJ%2CB0DWCCV32R%2CB0DWCGF5C1&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb1_ls&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                          - img "Skullcandy US" [ref=e1893]
+                        - generic [ref=e1895]:
+                          - generic [ref=e1896]:
+                            - link [ref=e1897] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JE0QvB7v6qx1biDlO88CyKQAAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICCQUdtj/clv1c_ek-wBPHXLcTWnuOrE7vOusHhJAMnsrePokvUphzqusU30Y5wjTT6OwPV3fL3e3Mb_PuiV-fN-YGDHslG6WbOoKYEP4zjp6uYGXj36xPu_UAGSbvhDEJ71QK5ZPdcniKQ9to4tUHNAnbpTlF0cNBwTeK0qsf81lXntiT9zTMyDCQdWmhRdpH_79pZqkAGRP4rzWxDrbvuVYTG1MKpxyGQcun61O2VhMI0NmxPpnrOoqzHcwZZ6OWtqQaK4ZhkRbVXnEFz1u2wEoIPKgKvaziZPqEvfbbTYOGBJTSPZfesm0qDycUPWhBIFgXRE3jYAjA5RdVbFZHgi5sszmnY0SuXBH7Kuuq-pIDtnkbk4eizXgYfxjG8ttOxAGyEDmA4aQGVyHUm3vDp7HpBd0ZKOlW0WRMnPEiizWpVcch3Mv8hqtljlnORAd4E_TnqyPYcYOfkz1TdWArSDOjmAjLZQ_tf4gK56HnKZAYFKXLBNzTltk9gOSTz0bKTYsnh36EjP1BoBltd3qvBQOjkgcrgyxYqKJ-B6r6mHYF2y4i-nQsI6HoUDCH8wPKOJ8iZYLKhxyBwrrGSUxSRv0dbABRzn8Qr3beuBctlcwStaiYrM3ewNxwry2xJw7fjtiStRhmt0UO-29JFwfpgnuxm6Vo0ZbPWsnSZFegGOgwEXIbyuyji71yIGx4O388rnaJRtmFEkNc9EfjFgBGhkbqr6IXGlWNGyqLHjKM133PLnN8lDsIgMnViyfgMF10MU2ELStDALUOKaUVAExzSLrDpuyFFAfrMNaDeyMA-5lho_7tYcPqzGyzR5buPZI3wYVDRmk2lpc_D3CNfJSaKlga35Ktl58lY6tGFX-RtBD_QCdOl6lLeg69dcl4ulXi8RY4vSbgFogBW_Ga9abuKetkoQJs7t16jHSvwmGWDYRIYTCawdTvkkm0sNRZXNHJgzlc3se-xNMpZ_wmyHynkyyGnDDq2kKV3Q_mxay6LWfPDIU6iI05Pr4xqsyPVFrDcCkCqnxyh5U38Xs4XbeLceW6iBAEmgtdIxGnMk6sNtP4gr-ScWGiBe9yR_BEth8mYTAMVMbLUwSEa_82zz5GFB87pRuuK55dgyGzy_Q5L-U3WYY4kxH22mH0dQhG7qKAY_BsF_utb6Mk2nLyLU9VpznDpOyxiomXmRT4Y9KXLMq7wOe1ZIYxUOWPkmsnUgg-HtvR2s7KSDGq1aXzk0MPiiNxnXB72ADuqAwAUQS36RX-2WDEdvIMqMOBQmQu8kWc4HHdGsB-g_C1Sb5fstf7jxjLnOX8hNIyrPqfgphh0KZgyMWEAXix49qGydPby_IBS6Bra9zqbIxPuRGUuulFAqnecSjpkBybsp9ihnZ5Dxm7mUB50WV8iOwqkTyvd7ixd__Wf_RxifGbLObxiUc2_qEKvItve44lXq7FjPaqHjh4fNZhFRzyYZ9zYEbLSV8X5jku0hrZqtNtIfCVruOmQeP8xEAePuiKL30G-bdanEOSfuhDJyyUpCCJzKfXoMh9_WDKHWT52BQmtuUoklYsf5ImrOFuEj1gympxivT-JELCONpf2j1zNIoXwJp_AFV4kZ7XnBokLlA1h9jSnZMw3jlEOvmR9oc61eGHzMD1_dVyn2jcdI4w8gXgmHOTdAJyxILmFjUj8wQUMvV9WeAy9_9ekcJwR_UNZrbQUoVAk9s5r/https://www.amazon.com/stores/page/9F16B940-F912-43FE-888C-5BB1B86337A9/?_encoding=UTF8&store_ref=SB_A04814101HR5GB836YA6Y-A00311662QNN6QQI0O46H&pd_rd_plhdr=t&aaxitk=0c761c6b065f281cda8efeb1c31348b5&hsa_cr_id=0&lp_asins=B0DWC512JJ%2CB0DWCCV32R%2CB0DWCGF5C1&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                            - link "Skullcandy US" [ref=e1898] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JE0QvB7v6qx1biDlO88CyKQAAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICCQUdtj/clv1c_ek-wBPHXLcTWnuOrE7vOusHhJAMnsrePokvUphzqusU30Y5wjTT6OwPV3fL3e3Mb_PuiV-fN-YGDHslG6WbOoKYEP4zjp6uYGXj36xPu_UAGSbvhDEJ71QK5ZPdcniKQ9to4tUHNAnbpTlF0cNBwTeK0qsf81lXntiT9zTMyDCQdWmhRdpH_79pZqkAGRP4rzWxDrbvuVYTG1MKpxyGQcun61O2VhMI0NmxPpnrOoqzHcwZZ6OWtqQaK4ZhkRbVXnEFz1u2wEoIPKgKvaziZPqEvfbbTYOGBJTSPZfesm0qDycUPWhBIFgXRE3jYAjA5RdVbFZHgi5sszmnY0SuXBH7Kuuq-pIDtnkbk4eizXgYfxjG8ttOxAGyEDmA4aQGVyHUm3vDp7HpBd0ZKOlW0WRMnPEiizWpVcch3Mv8hqtljlnORAd4E_TnqyPYcYOfkz1TdWArSDOjmAjLZQ_tf4gK56HnKZAYFKXLBNzTltk9gOSTz0bKTYsnh36EjP1BoBltd3qvBQOjkgcrgyxYqKJ-B6r6mHYF2y4i-nQsI6HoUDCH8wPKOJ8iZYLKhxyBwrrGSUxSRv0dbABRzn8Qr3beuBctlcwStaiYrM3ewNxwry2xJw7fjtiStRhmt0UO-29JFwfpgnuxm6Vo0ZbPWsnSZFegGOgwEXIbyuyji71yIGx4O388rnaJRtmFEkNc9EfjFgBGhkbqr6IXGlWNGyqLHjKM133PLnN8lDsIgMnViyfgMF10MU2ELStDALUOKaUVAExzSLrDpuyFFAfrMNaDeyMA-5lho_7tYcPqzGyzR5buPZI3wYVDRmk2lpc_D3CNfJSaKlga35Ktl58lY6tGFX-RtBD_QCdOl6lLeg69dcl4ulXi8RY4vSbgFogBW_Ga9abuKetkoQJs7t16jHSvwmGWDYRIYTCawdTvkkm0sNRZXNHJgzlc3se-xNMpZ_wmyHynkyyGnDDq2kKV3Q_mxay6LWfPDIU6iI05Pr4xqsyPVFrDcCkCqnxyh5U38Xs4XbeLceW6iBAEmgtdIxGnMk6sNtP4gr-ScWGiBe9yR_BEth8mYTAMVMbLUwSEa_82zz5GFB87pRuuK55dgyGzy_Q5L-U3WYY4kxH22mH0dQhG7qKAY_BsF_utb6Mk2nLyLU9VpznDpOyxiomXmRT4Y9KXLMq7wOe1ZIYxUOWPkmsnUgg-HtvR2s7KSDGq1aXzk0MPiiNxnXB72ADuqAwAUQS36RX-2WDEdvIMqMOBQmQu8kWc4HHdGsB-g_C1Sb5fstf7jxjLnOX8hNIyrPqfgphh0KZgyMWEAXix49qGydPby_IBS6Bra9zqbIxPuRGUuulFAqnecSjpkBybsp9ihnZ5Dxm7mUB50WV8iOwqkTyvd7ixd__Wf_RxifGbLObxiUc2_qEKvItve44lXq7FjPaqHjh4fNZhFRzyYZ9zYEbLSV8X5jku0hrZqtNtIfCVruOmQeP8xEAePuiKL30G-bdanEOSfuhDJyyUpCCJzKfXoMh9_WDKHWT52BQmtuUoklYsf5ImrOFuEj1gympxivT-JELCONpf2j1zNIoXwJp_AFV4kZ7XnBokLlA1h9jSnZMw3jlEOvmR9oc61eGHzMD1_dVyn2jcdI4w8gXgmHOTdAJyxILmFjUj8wQUMvV9WeAy9_9ekcJwR_UNZrbQUoVAk9s5r/https://www.amazon.com/stores/page/9F16B940-F912-43FE-888C-5BB1B86337A9/?_encoding=UTF8&store_ref=SB_A04814101HR5GB836YA6Y-A00311662QNN6QQI0O46H&pd_rd_plhdr=t&aaxitk=0c761c6b065f281cda8efeb1c31348b5&hsa_cr_id=0&lp_asins=B0DWC512JJ%2CB0DWCCV32R%2CB0DWCGF5C1&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb1_logo&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                              - img "Skullcandy US" [ref=e1900]
+                          - generic [ref=e1901]:
+                            - link [ref=e1902] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JE0QvB7v6qx1biDlO88CyKQAAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICCQUdtj/clv1c_ek-wBPHXLcTWnuOrE7vOusHhJAMnsrePokvUphzqusU30Y5wjTT6OwPV3fL3e3Mb_PuiV-fN-YGDHslG6WbOoKYEP4zjp6uYGXj36xPu_UAGSbvhDEJ71QK5ZPdcniKQ9to4tUHNAnbpTlF0cNBwTeK0qsf81lXntiT9zTMyDCQdWmhRdpH_79pZqkAGRP4rzWxDrbvuVYTG1MKpxyGQcun61O2VhMI0NmxPpnrOoqzHcwZZ6OWtqQaK4ZhkRbVXnEFz1u2wEoIPKgKvaziZPqEvfbbTYOGBJTSPZfesm0qDycUPWhBIFgXRE3jYAjA5RdVbFZHgi5sszmnY0SuXBH7Kuuq-pIDtnkbk4eizXgYfxjG8ttOxAGyEDmA4aQGVyHUm3vDp7HpBd0ZKOlW0WRMnPEiizWpVcch3Mv8hqtljlnORAd4E_TnqyPYcYOfkz1TdWArSDOjmAjLZQ_tf4gK56HnKZAYFKXLBNzTltk9gOSTz0bKTYsnh36EjP1BoBltd3qvBQOjkgcrgyxYqKJ-B6r6mHYF2y4i-nQsI6HoUDCH8wPKOJ8iZYLKhxyBwrrGSUxSRv0dbABRzn8Qr3beuBctlcwStaiYrM3ewNxwry2xJw7fjtiStRhmt0UO-29JFwfpgnuxm6Vo0ZbPWsnSZFegGOgwEXIbyuyji71yIGx4O388rnaJRtmFEkNc9EfjFgBGhkbqr6IXGlWNGyqLHjKM133PLnN8lDsIgMnViyfgMF10MU2ELStDALUOKaUVAExzSLrDpuyFFAfrMNaDeyMA-5lho_7tYcPqzGyzR5buPZI3wYVDRmk2lpc_D3CNfJSaKlga35Ktl58lY6tGFX-RtBD_QCdOl6lLeg69dcl4ulXi8RY4vSbgFogBW_Ga9abuKetkoQJs7t16jHSvwmGWDYRIYTCawdTvkkm0sNRZXNHJgzlc3se-xNMpZ_wmyHynkyyGnDDq2kKV3Q_mxay6LWfPDIU6iI05Pr4xqsyPVFrDcCkCqnxyh5U38Xs4XbeLceW6iBAEmgtdIxGnMk6sNtP4gr-ScWGiBe9yR_BEth8mYTAMVMbLUwSEa_82zz5GFB87pRuuK55dgyGzy_Q5L-U3WYY4kxH22mH0dQhG7qKAY_BsF_utb6Mk2nLyLU9VpznDpOyxiomXmRT4Y9KXLMq7wOe1ZIYxUOWPkmsnUgg-HtvR2s7KSDGq1aXzk0MPiiNxnXB72ADuqAwAUQS36RX-2WDEdvIMqMOBQmQu8kWc4HHdGsB-g_C1Sb5fstf7jxjLnOX8hNIyrPqfgphh0KZgyMWEAXix49qGydPby_IBS6Bra9zqbIxPuRGUuulFAqnecSjpkBybsp9ihnZ5Dxm7mUB50WV8iOwqkTyvd7ixd__Wf_RxifGbLObxiUc2_qEKvItve44lXq7FjPaqHjh4fNZhFRzyYZ9zYEbLSV8X5jku0hrZqtNtIfCVruOmQeP8xEAePuiKL30G-bdanEOSfuhDJyyUpCCJzKfXoMh9_WDKHWT52BQmtuUoklYsf5ImrOFuEj1gympxivT-JELCONpf2j1zNIoXwJp_AFV4kZ7XnBokLlA1h9jSnZMw3jlEOvmR9oc61eGHzMD1_dVyn2jcdI4w8gXgmHOTdAJyxILmFjUj8wQUMvV9WeAy9_9ekcJwR_UNZrbQUoVAk9s5r/https://www.amazon.com/stores/page/9F16B940-F912-43FE-888C-5BB1B86337A9/?_encoding=UTF8&store_ref=SB_A04814101HR5GB836YA6Y-A00311662QNN6QQI0O46H&pd_rd_plhdr=t&aaxitk=0c761c6b065f281cda8efeb1c31348b5&hsa_cr_id=0&lp_asins=B0DWC512JJ%2CB0DWCCV32R%2CB0DWCGF5C1&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                            - link "Nuevo Method 360 ANC con sonido de Bose" [ref=e1903] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JE0QvB7v6qx1biDlO88CyKQAAAGeSMuqzQEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICCQUdtj/clv1c_ek-wBPHXLcTWnuOrE7vOusHhJAMnsrePokvUphzqusU30Y5wjTT6OwPV3fL3e3Mb_PuiV-fN-YGDHslG6WbOoKYEP4zjp6uYGXj36xPu_UAGSbvhDEJ71QK5ZPdcniKQ9to4tUHNAnbpTlF0cNBwTeK0qsf81lXntiT9zTMyDCQdWmhRdpH_79pZqkAGRP4rzWxDrbvuVYTG1MKpxyGQcun61O2VhMI0NmxPpnrOoqzHcwZZ6OWtqQaK4ZhkRbVXnEFz1u2wEoIPKgKvaziZPqEvfbbTYOGBJTSPZfesm0qDycUPWhBIFgXRE3jYAjA5RdVbFZHgi5sszmnY0SuXBH7Kuuq-pIDtnkbk4eizXgYfxjG8ttOxAGyEDmA4aQGVyHUm3vDp7HpBd0ZKOlW0WRMnPEiizWpVcch3Mv8hqtljlnORAd4E_TnqyPYcYOfkz1TdWArSDOjmAjLZQ_tf4gK56HnKZAYFKXLBNzTltk9gOSTz0bKTYsnh36EjP1BoBltd3qvBQOjkgcrgyxYqKJ-B6r6mHYF2y4i-nQsI6HoUDCH8wPKOJ8iZYLKhxyBwrrGSUxSRv0dbABRzn8Qr3beuBctlcwStaiYrM3ewNxwry2xJw7fjtiStRhmt0UO-29JFwfpgnuxm6Vo0ZbPWsnSZFegGOgwEXIbyuyji71yIGx4O388rnaJRtmFEkNc9EfjFgBGhkbqr6IXGlWNGyqLHjKM133PLnN8lDsIgMnViyfgMF10MU2ELStDALUOKaUVAExzSLrDpuyFFAfrMNaDeyMA-5lho_7tYcPqzGyzR5buPZI3wYVDRmk2lpc_D3CNfJSaKlga35Ktl58lY6tGFX-RtBD_QCdOl6lLeg69dcl4ulXi8RY4vSbgFogBW_Ga9abuKetkoQJs7t16jHSvwmGWDYRIYTCawdTvkkm0sNRZXNHJgzlc3se-xNMpZ_wmyHynkyyGnDDq2kKV3Q_mxay6LWfPDIU6iI05Pr4xqsyPVFrDcCkCqnxyh5U38Xs4XbeLceW6iBAEmgtdIxGnMk6sNtP4gr-ScWGiBe9yR_BEth8mYTAMVMbLUwSEa_82zz5GFB87pRuuK55dgyGzy_Q5L-U3WYY4kxH22mH0dQhG7qKAY_BsF_utb6Mk2nLyLU9VpznDpOyxiomXmRT4Y9KXLMq7wOe1ZIYxUOWPkmsnUgg-HtvR2s7KSDGq1aXzk0MPiiNxnXB72ADuqAwAUQS36RX-2WDEdvIMqMOBQmQu8kWc4HHdGsB-g_C1Sb5fstf7jxjLnOX8hNIyrPqfgphh0KZgyMWEAXix49qGydPby_IBS6Bra9zqbIxPuRGUuulFAqnecSjpkBybsp9ihnZ5Dxm7mUB50WV8iOwqkTyvd7ixd__Wf_RxifGbLObxiUc2_qEKvItve44lXq7FjPaqHjh4fNZhFRzyYZ9zYEbLSV8X5jku0hrZqtNtIfCVruOmQeP8xEAePuiKL30G-bdanEOSfuhDJyyUpCCJzKfXoMh9_WDKHWT52BQmtuUoklYsf5ImrOFuEj1gympxivT-JELCONpf2j1zNIoXwJp_AFV4kZ7XnBokLlA1h9jSnZMw3jlEOvmR9oc61eGHzMD1_dVyn2jcdI4w8gXgmHOTdAJyxILmFjUj8wQUMvV9WeAy9_9ekcJwR_UNZrbQUoVAk9s5r/https://www.amazon.com/stores/page/9F16B940-F912-43FE-888C-5BB1B86337A9/?_encoding=UTF8&store_ref=SB_A04814101HR5GB836YA6Y-A00311662QNN6QQI0O46H&pd_rd_plhdr=t&aaxitk=0c761c6b065f281cda8efeb1c31348b5&hsa_cr_id=0&lp_asins=B0DWC512JJ%2CB0DWCCV32R%2CB0DWCGF5C1&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb1_hl&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                              - generic [ref=e1905]:
+                                - generic [ref=e1906]: Nuevo Method 360 ANC con sonido de Bose
+                                - generic [ref=e1907]: Nuevo Method 360 ANC con sonido de Bose
+                  - generic [ref=e1909]:
+                    - generic:
+                      - generic:
+                        - link:
+                          - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JKq06YDjpbZH9NIV5l3XLiIAAAGeSMuqzgEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICDwvjvX/clv1c_ek-YBIHXFcbWDn2nI5drJ16WtD5jqoDmOK-1KFbmHtXJMk_vj6qfU-56W6xPcsuZpbwv9sIWVhQEFwwtAr-tpievFVSp7L9YO6NkBvdqxK2ymo2KiWZvpkqcevn3qG839Q3KkwvqhpqBlcePv7eWtzsegNyejsVqkZ6ySjetpNK_OaqbH0m93isBMqZkQoEI29_oBDgzhxcolWM2MU7M3jHOlEXPzIbylufmwBfmtIzFwnnR0wUMf5hfy357EGKjKC47E9fYqfMjzVdv1UKFaplRQZSP14cWzMUj0zm4yCMXO2sywRd2yniPIfJdGIZwlDigwQuaOCzyTycJ0-16zNC0DrIY2ucUztxsEf5VWSw9Ohep90yfAKFYuAIHCh2eLz1pyT35NCxD1mn1C09k5nw8CxeqTdfFO5GrnnqvTOieTCeVYCMR0r4jC_VOIjVAnnTO6ml7OxVUzo9pmHy5shskKqZcCmdjLQkUU1G6nIeTcIxs9xeRYYEyZIShiT9N-Xl-fMJa7kEQjhIEeNb6Aux79zq-up_OHZhjUg39Zoy_ReykAuABBcHgv9l05xpafhiQ37iPZMdgqMVWfvuGs4mEuHXmMV1Mc1pbn8pV85nYaEWD5GGETBxcy4bX0BBssBkRlU9qGRrggbs-1S1uU4hJfBdT03nWUC8eir8m8M1N9U5zUnb_Ny4_ssV6_MFVHVMH7wAO1F5T0ngkyUyeKCbFcf4jag6taORiwwu2tkElO_MEUlrAZHmYh3EnNJ4aa8l10czcXqORDDP78KGaRlTPomiNAO09_0tqzsG_Ff3frfeNcPca4upp9X8IvyqkWDZ-nac6Itbhq9nm0D4s_Db3nLuSytmjb8ZdgiIA-Y7GjheLvdcyK47nindJetRK9r9bBn_YsP0dObzz8fh7KOTwPdcT4ujsxFWYjXH0qw3ez8KctniyGAREEfvsckydEwyyA5BFt6pVSok-r5SFyJa7P0LNdpjScUUgyftq_qIB96XCpg9QzrCUB6dfWWKxDDOO8vMKsrP5NZDhFcT1VLewIMwNtp-1bGUgVLk7K_mdVaZxwDXlvM9TmmGRDY996G6VRxU2tcpvwymADn8F-gB4dijgXb40fh-EuoToXoyH9O928AXSwh-eRoL2NdMsf7KrhIr2MDKoo-o5yOzwciYeJaMX41LmQPNNfQoJBYnOu4QmzdOnVIV3PlvCYVUUelgkXG3MfTFZn_B0gkZuJp5biDncMJwpfb-kMrllgrph750U7Y0ZOO9UZJRKReWWcBrtReD7X7BMGVEaBta4t3f721Mxq7xSZv30wew251n6PFX32upwLh1uJ5u1gJOJeIbOB0t82kSZYjEdn0sB6iNduBUDLg6NzVNAUwtGtjW_UpSPUtOoHHwWkiyhRqzsiJ6eCgJG5543uEwEul3dU2Wgqe_4nmEaIqc0tFml9pQTk4ji1NAl-yQE1gXHZweL1VXI3FeWLM-jYVSTQx5ojbwcf1H2p_5HyWg3-1C4WKDzQ5OrsvUpzQAONjr_clBeTvTlP8s2xC5hDT9PfwpLAdVje2DsbEo57AxpBvX4Gx3mNYpGFoBXfOjUua6OBZnZN4M8RC0qaKkpVmFuh8CambhdcGkAEC4fiw-wCrH7prAVsOZHDy8nQvfqKw85eRY/https://www.amazon.com/stores/page/CC11BAEB-93CA-446D-AD86-DD768B42A61F/?_encoding=UTF8&store_ref=SB_A09819712IJ8BYQAO7TWS-A0959507TXQDXV6M9G5R&pd_rd_plhdr=t&aaxitk=40ef30deed2a5908858633389561807e&hsa_cr_id=0&lp_asins=B0GN4NBD2V%2CB0GN4WQNS1%2CB0GQCNJCPR&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                        - link "Turtle Beach" [ref=e1910] [cursor=pointer]:
+                          - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JKq06YDjpbZH9NIV5l3XLiIAAAGeSMuqzgEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICDwvjvX/clv1c_ek-YBIHXFcbWDn2nI5drJ16WtD5jqoDmOK-1KFbmHtXJMk_vj6qfU-56W6xPcsuZpbwv9sIWVhQEFwwtAr-tpievFVSp7L9YO6NkBvdqxK2ymo2KiWZvpkqcevn3qG839Q3KkwvqhpqBlcePv7eWtzsegNyejsVqkZ6ySjetpNK_OaqbH0m93isBMqZkQoEI29_oBDgzhxcolWM2MU7M3jHOlEXPzIbylufmwBfmtIzFwnnR0wUMf5hfy357EGKjKC47E9fYqfMjzVdv1UKFaplRQZSP14cWzMUj0zm4yCMXO2sywRd2yniPIfJdGIZwlDigwQuaOCzyTycJ0-16zNC0DrIY2ucUztxsEf5VWSw9Ohep90yfAKFYuAIHCh2eLz1pyT35NCxD1mn1C09k5nw8CxeqTdfFO5GrnnqvTOieTCeVYCMR0r4jC_VOIjVAnnTO6ml7OxVUzo9pmHy5shskKqZcCmdjLQkUU1G6nIeTcIxs9xeRYYEyZIShiT9N-Xl-fMJa7kEQjhIEeNb6Aux79zq-up_OHZhjUg39Zoy_ReykAuABBcHgv9l05xpafhiQ37iPZMdgqMVWfvuGs4mEuHXmMV1Mc1pbn8pV85nYaEWD5GGETBxcy4bX0BBssBkRlU9qGRrggbs-1S1uU4hJfBdT03nWUC8eir8m8M1N9U5zUnb_Ny4_ssV6_MFVHVMH7wAO1F5T0ngkyUyeKCbFcf4jag6taORiwwu2tkElO_MEUlrAZHmYh3EnNJ4aa8l10czcXqORDDP78KGaRlTPomiNAO09_0tqzsG_Ff3frfeNcPca4upp9X8IvyqkWDZ-nac6Itbhq9nm0D4s_Db3nLuSytmjb8ZdgiIA-Y7GjheLvdcyK47nindJetRK9r9bBn_YsP0dObzz8fh7KOTwPdcT4ujsxFWYjXH0qw3ez8KctniyGAREEfvsckydEwyyA5BFt6pVSok-r5SFyJa7P0LNdpjScUUgyftq_qIB96XCpg9QzrCUB6dfWWKxDDOO8vMKsrP5NZDhFcT1VLewIMwNtp-1bGUgVLk7K_mdVaZxwDXlvM9TmmGRDY996G6VRxU2tcpvwymADn8F-gB4dijgXb40fh-EuoToXoyH9O928AXSwh-eRoL2NdMsf7KrhIr2MDKoo-o5yOzwciYeJaMX41LmQPNNfQoJBYnOu4QmzdOnVIV3PlvCYVUUelgkXG3MfTFZn_B0gkZuJp5biDncMJwpfb-kMrllgrph750U7Y0ZOO9UZJRKReWWcBrtReD7X7BMGVEaBta4t3f721Mxq7xSZv30wew251n6PFX32upwLh1uJ5u1gJOJeIbOB0t82kSZYjEdn0sB6iNduBUDLg6NzVNAUwtGtjW_UpSPUtOoHHwWkiyhRqzsiJ6eCgJG5543uEwEul3dU2Wgqe_4nmEaIqc0tFml9pQTk4ji1NAl-yQE1gXHZweL1VXI3FeWLM-jYVSTQx5ojbwcf1H2p_5HyWg3-1C4WKDzQ5OrsvUpzQAONjr_clBeTvTlP8s2xC5hDT9PfwpLAdVje2DsbEo57AxpBvX4Gx3mNYpGFoBXfOjUua6OBZnZN4M8RC0qaKkpVmFuh8CambhdcGkAEC4fiw-wCrH7prAVsOZHDy8nQvfqKw85eRY/https://www.amazon.com/stores/page/CC11BAEB-93CA-446D-AD86-DD768B42A61F/?_encoding=UTF8&store_ref=SB_A09819712IJ8BYQAO7TWS-A0959507TXQDXV6M9G5R&pd_rd_plhdr=t&aaxitk=40ef30deed2a5908858633389561807e&hsa_cr_id=0&lp_asins=B0GN4NBD2V%2CB0GN4WQNS1%2CB0GQCNJCPR&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb2_ls&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                          - img "Turtle Beach" [ref=e1911]
+                        - generic [ref=e1913]:
+                          - generic [ref=e1914]:
+                            - link [ref=e1915] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JKq06YDjpbZH9NIV5l3XLiIAAAGeSMuqzgEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICDwvjvX/clv1c_ek-YBIHXFcbWDn2nI5drJ16WtD5jqoDmOK-1KFbmHtXJMk_vj6qfU-56W6xPcsuZpbwv9sIWVhQEFwwtAr-tpievFVSp7L9YO6NkBvdqxK2ymo2KiWZvpkqcevn3qG839Q3KkwvqhpqBlcePv7eWtzsegNyejsVqkZ6ySjetpNK_OaqbH0m93isBMqZkQoEI29_oBDgzhxcolWM2MU7M3jHOlEXPzIbylufmwBfmtIzFwnnR0wUMf5hfy357EGKjKC47E9fYqfMjzVdv1UKFaplRQZSP14cWzMUj0zm4yCMXO2sywRd2yniPIfJdGIZwlDigwQuaOCzyTycJ0-16zNC0DrIY2ucUztxsEf5VWSw9Ohep90yfAKFYuAIHCh2eLz1pyT35NCxD1mn1C09k5nw8CxeqTdfFO5GrnnqvTOieTCeVYCMR0r4jC_VOIjVAnnTO6ml7OxVUzo9pmHy5shskKqZcCmdjLQkUU1G6nIeTcIxs9xeRYYEyZIShiT9N-Xl-fMJa7kEQjhIEeNb6Aux79zq-up_OHZhjUg39Zoy_ReykAuABBcHgv9l05xpafhiQ37iPZMdgqMVWfvuGs4mEuHXmMV1Mc1pbn8pV85nYaEWD5GGETBxcy4bX0BBssBkRlU9qGRrggbs-1S1uU4hJfBdT03nWUC8eir8m8M1N9U5zUnb_Ny4_ssV6_MFVHVMH7wAO1F5T0ngkyUyeKCbFcf4jag6taORiwwu2tkElO_MEUlrAZHmYh3EnNJ4aa8l10czcXqORDDP78KGaRlTPomiNAO09_0tqzsG_Ff3frfeNcPca4upp9X8IvyqkWDZ-nac6Itbhq9nm0D4s_Db3nLuSytmjb8ZdgiIA-Y7GjheLvdcyK47nindJetRK9r9bBn_YsP0dObzz8fh7KOTwPdcT4ujsxFWYjXH0qw3ez8KctniyGAREEfvsckydEwyyA5BFt6pVSok-r5SFyJa7P0LNdpjScUUgyftq_qIB96XCpg9QzrCUB6dfWWKxDDOO8vMKsrP5NZDhFcT1VLewIMwNtp-1bGUgVLk7K_mdVaZxwDXlvM9TmmGRDY996G6VRxU2tcpvwymADn8F-gB4dijgXb40fh-EuoToXoyH9O928AXSwh-eRoL2NdMsf7KrhIr2MDKoo-o5yOzwciYeJaMX41LmQPNNfQoJBYnOu4QmzdOnVIV3PlvCYVUUelgkXG3MfTFZn_B0gkZuJp5biDncMJwpfb-kMrllgrph750U7Y0ZOO9UZJRKReWWcBrtReD7X7BMGVEaBta4t3f721Mxq7xSZv30wew251n6PFX32upwLh1uJ5u1gJOJeIbOB0t82kSZYjEdn0sB6iNduBUDLg6NzVNAUwtGtjW_UpSPUtOoHHwWkiyhRqzsiJ6eCgJG5543uEwEul3dU2Wgqe_4nmEaIqc0tFml9pQTk4ji1NAl-yQE1gXHZweL1VXI3FeWLM-jYVSTQx5ojbwcf1H2p_5HyWg3-1C4WKDzQ5OrsvUpzQAONjr_clBeTvTlP8s2xC5hDT9PfwpLAdVje2DsbEo57AxpBvX4Gx3mNYpGFoBXfOjUua6OBZnZN4M8RC0qaKkpVmFuh8CambhdcGkAEC4fiw-wCrH7prAVsOZHDy8nQvfqKw85eRY/https://www.amazon.com/stores/page/CC11BAEB-93CA-446D-AD86-DD768B42A61F/?_encoding=UTF8&store_ref=SB_A09819712IJ8BYQAO7TWS-A0959507TXQDXV6M9G5R&pd_rd_plhdr=t&aaxitk=40ef30deed2a5908858633389561807e&hsa_cr_id=0&lp_asins=B0GN4NBD2V%2CB0GN4WQNS1%2CB0GQCNJCPR&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                            - link "Turtle Beach" [ref=e1916] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JKq06YDjpbZH9NIV5l3XLiIAAAGeSMuqzgEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICDwvjvX/clv1c_ek-YBIHXFcbWDn2nI5drJ16WtD5jqoDmOK-1KFbmHtXJMk_vj6qfU-56W6xPcsuZpbwv9sIWVhQEFwwtAr-tpievFVSp7L9YO6NkBvdqxK2ymo2KiWZvpkqcevn3qG839Q3KkwvqhpqBlcePv7eWtzsegNyejsVqkZ6ySjetpNK_OaqbH0m93isBMqZkQoEI29_oBDgzhxcolWM2MU7M3jHOlEXPzIbylufmwBfmtIzFwnnR0wUMf5hfy357EGKjKC47E9fYqfMjzVdv1UKFaplRQZSP14cWzMUj0zm4yCMXO2sywRd2yniPIfJdGIZwlDigwQuaOCzyTycJ0-16zNC0DrIY2ucUztxsEf5VWSw9Ohep90yfAKFYuAIHCh2eLz1pyT35NCxD1mn1C09k5nw8CxeqTdfFO5GrnnqvTOieTCeVYCMR0r4jC_VOIjVAnnTO6ml7OxVUzo9pmHy5shskKqZcCmdjLQkUU1G6nIeTcIxs9xeRYYEyZIShiT9N-Xl-fMJa7kEQjhIEeNb6Aux79zq-up_OHZhjUg39Zoy_ReykAuABBcHgv9l05xpafhiQ37iPZMdgqMVWfvuGs4mEuHXmMV1Mc1pbn8pV85nYaEWD5GGETBxcy4bX0BBssBkRlU9qGRrggbs-1S1uU4hJfBdT03nWUC8eir8m8M1N9U5zUnb_Ny4_ssV6_MFVHVMH7wAO1F5T0ngkyUyeKCbFcf4jag6taORiwwu2tkElO_MEUlrAZHmYh3EnNJ4aa8l10czcXqORDDP78KGaRlTPomiNAO09_0tqzsG_Ff3frfeNcPca4upp9X8IvyqkWDZ-nac6Itbhq9nm0D4s_Db3nLuSytmjb8ZdgiIA-Y7GjheLvdcyK47nindJetRK9r9bBn_YsP0dObzz8fh7KOTwPdcT4ujsxFWYjXH0qw3ez8KctniyGAREEfvsckydEwyyA5BFt6pVSok-r5SFyJa7P0LNdpjScUUgyftq_qIB96XCpg9QzrCUB6dfWWKxDDOO8vMKsrP5NZDhFcT1VLewIMwNtp-1bGUgVLk7K_mdVaZxwDXlvM9TmmGRDY996G6VRxU2tcpvwymADn8F-gB4dijgXb40fh-EuoToXoyH9O928AXSwh-eRoL2NdMsf7KrhIr2MDKoo-o5yOzwciYeJaMX41LmQPNNfQoJBYnOu4QmzdOnVIV3PlvCYVUUelgkXG3MfTFZn_B0gkZuJp5biDncMJwpfb-kMrllgrph750U7Y0ZOO9UZJRKReWWcBrtReD7X7BMGVEaBta4t3f721Mxq7xSZv30wew251n6PFX32upwLh1uJ5u1gJOJeIbOB0t82kSZYjEdn0sB6iNduBUDLg6NzVNAUwtGtjW_UpSPUtOoHHwWkiyhRqzsiJ6eCgJG5543uEwEul3dU2Wgqe_4nmEaIqc0tFml9pQTk4ji1NAl-yQE1gXHZweL1VXI3FeWLM-jYVSTQx5ojbwcf1H2p_5HyWg3-1C4WKDzQ5OrsvUpzQAONjr_clBeTvTlP8s2xC5hDT9PfwpLAdVje2DsbEo57AxpBvX4Gx3mNYpGFoBXfOjUua6OBZnZN4M8RC0qaKkpVmFuh8CambhdcGkAEC4fiw-wCrH7prAVsOZHDy8nQvfqKw85eRY/https://www.amazon.com/stores/page/CC11BAEB-93CA-446D-AD86-DD768B42A61F/?_encoding=UTF8&store_ref=SB_A09819712IJ8BYQAO7TWS-A0959507TXQDXV6M9G5R&pd_rd_plhdr=t&aaxitk=40ef30deed2a5908858633389561807e&hsa_cr_id=0&lp_asins=B0GN4NBD2V%2CB0GN4WQNS1%2CB0GQCNJCPR&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb2_logo&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                              - img "Turtle Beach" [ref=e1918]
+                          - generic [ref=e1919]:
+                            - link [ref=e1920] [cursor=pointer]:
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JKq06YDjpbZH9NIV5l3XLiIAAAGeSMuqzgEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICDwvjvX/clv1c_ek-YBIHXFcbWDn2nI5drJ16WtD5jqoDmOK-1KFbmHtXJMk_vj6qfU-56W6xPcsuZpbwv9sIWVhQEFwwtAr-tpievFVSp7L9YO6NkBvdqxK2ymo2KiWZvpkqcevn3qG839Q3KkwvqhpqBlcePv7eWtzsegNyejsVqkZ6ySjetpNK_OaqbH0m93isBMqZkQoEI29_oBDgzhxcolWM2MU7M3jHOlEXPzIbylufmwBfmtIzFwnnR0wUMf5hfy357EGKjKC47E9fYqfMjzVdv1UKFaplRQZSP14cWzMUj0zm4yCMXO2sywRd2yniPIfJdGIZwlDigwQuaOCzyTycJ0-16zNC0DrIY2ucUztxsEf5VWSw9Ohep90yfAKFYuAIHCh2eLz1pyT35NCxD1mn1C09k5nw8CxeqTdfFO5GrnnqvTOieTCeVYCMR0r4jC_VOIjVAnnTO6ml7OxVUzo9pmHy5shskKqZcCmdjLQkUU1G6nIeTcIxs9xeRYYEyZIShiT9N-Xl-fMJa7kEQjhIEeNb6Aux79zq-up_OHZhjUg39Zoy_ReykAuABBcHgv9l05xpafhiQ37iPZMdgqMVWfvuGs4mEuHXmMV1Mc1pbn8pV85nYaEWD5GGETBxcy4bX0BBssBkRlU9qGRrggbs-1S1uU4hJfBdT03nWUC8eir8m8M1N9U5zUnb_Ny4_ssV6_MFVHVMH7wAO1F5T0ngkyUyeKCbFcf4jag6taORiwwu2tkElO_MEUlrAZHmYh3EnNJ4aa8l10czcXqORDDP78KGaRlTPomiNAO09_0tqzsG_Ff3frfeNcPca4upp9X8IvyqkWDZ-nac6Itbhq9nm0D4s_Db3nLuSytmjb8ZdgiIA-Y7GjheLvdcyK47nindJetRK9r9bBn_YsP0dObzz8fh7KOTwPdcT4ujsxFWYjXH0qw3ez8KctniyGAREEfvsckydEwyyA5BFt6pVSok-r5SFyJa7P0LNdpjScUUgyftq_qIB96XCpg9QzrCUB6dfWWKxDDOO8vMKsrP5NZDhFcT1VLewIMwNtp-1bGUgVLk7K_mdVaZxwDXlvM9TmmGRDY996G6VRxU2tcpvwymADn8F-gB4dijgXb40fh-EuoToXoyH9O928AXSwh-eRoL2NdMsf7KrhIr2MDKoo-o5yOzwciYeJaMX41LmQPNNfQoJBYnOu4QmzdOnVIV3PlvCYVUUelgkXG3MfTFZn_B0gkZuJp5biDncMJwpfb-kMrllgrph750U7Y0ZOO9UZJRKReWWcBrtReD7X7BMGVEaBta4t3f721Mxq7xSZv30wew251n6PFX32upwLh1uJ5u1gJOJeIbOB0t82kSZYjEdn0sB6iNduBUDLg6NzVNAUwtGtjW_UpSPUtOoHHwWkiyhRqzsiJ6eCgJG5543uEwEul3dU2Wgqe_4nmEaIqc0tFml9pQTk4ji1NAl-yQE1gXHZweL1VXI3FeWLM-jYVSTQx5ojbwcf1H2p_5HyWg3-1C4WKDzQ5OrsvUpzQAONjr_clBeTvTlP8s2xC5hDT9PfwpLAdVje2DsbEo57AxpBvX4Gx3mNYpGFoBXfOjUua6OBZnZN4M8RC0qaKkpVmFuh8CambhdcGkAEC4fiw-wCrH7prAVsOZHDy8nQvfqKw85eRY/https://www.amazon.com/stores/page/CC11BAEB-93CA-446D-AD86-DD768B42A61F/?_encoding=UTF8&store_ref=SB_A09819712IJ8BYQAO7TWS-A0959507TXQDXV6M9G5R&pd_rd_plhdr=t&aaxitk=40ef30deed2a5908858633389561807e&hsa_cr_id=0&lp_asins=B0GN4NBD2V%2CB0GN4WQNS1%2CB0GQCNJCPR&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                            - 'link "Stealth Pro II: The Ultimate Gaming Headset" [ref=e1921] [cursor=pointer]':
+                              - /url: https://aax-us-east-retail-direct.amazon.com/x/c/JKq06YDjpbZH9NIV5l3XLiIAAAGeSMuqzgEAAAH2AQBvbm9fdHhuX2JpZDYgICBvbm9fdHhuX2ltcDEgICDwvjvX/clv1c_ek-YBIHXFcbWDn2nI5drJ16WtD5jqoDmOK-1KFbmHtXJMk_vj6qfU-56W6xPcsuZpbwv9sIWVhQEFwwtAr-tpievFVSp7L9YO6NkBvdqxK2ymo2KiWZvpkqcevn3qG839Q3KkwvqhpqBlcePv7eWtzsegNyejsVqkZ6ySjetpNK_OaqbH0m93isBMqZkQoEI29_oBDgzhxcolWM2MU7M3jHOlEXPzIbylufmwBfmtIzFwnnR0wUMf5hfy357EGKjKC47E9fYqfMjzVdv1UKFaplRQZSP14cWzMUj0zm4yCMXO2sywRd2yniPIfJdGIZwlDigwQuaOCzyTycJ0-16zNC0DrIY2ucUztxsEf5VWSw9Ohep90yfAKFYuAIHCh2eLz1pyT35NCxD1mn1C09k5nw8CxeqTdfFO5GrnnqvTOieTCeVYCMR0r4jC_VOIjVAnnTO6ml7OxVUzo9pmHy5shskKqZcCmdjLQkUU1G6nIeTcIxs9xeRYYEyZIShiT9N-Xl-fMJa7kEQjhIEeNb6Aux79zq-up_OHZhjUg39Zoy_ReykAuABBcHgv9l05xpafhiQ37iPZMdgqMVWfvuGs4mEuHXmMV1Mc1pbn8pV85nYaEWD5GGETBxcy4bX0BBssBkRlU9qGRrggbs-1S1uU4hJfBdT03nWUC8eir8m8M1N9U5zUnb_Ny4_ssV6_MFVHVMH7wAO1F5T0ngkyUyeKCbFcf4jag6taORiwwu2tkElO_MEUlrAZHmYh3EnNJ4aa8l10czcXqORDDP78KGaRlTPomiNAO09_0tqzsG_Ff3frfeNcPca4upp9X8IvyqkWDZ-nac6Itbhq9nm0D4s_Db3nLuSytmjb8ZdgiIA-Y7GjheLvdcyK47nindJetRK9r9bBn_YsP0dObzz8fh7KOTwPdcT4ujsxFWYjXH0qw3ez8KctniyGAREEfvsckydEwyyA5BFt6pVSok-r5SFyJa7P0LNdpjScUUgyftq_qIB96XCpg9QzrCUB6dfWWKxDDOO8vMKsrP5NZDhFcT1VLewIMwNtp-1bGUgVLk7K_mdVaZxwDXlvM9TmmGRDY996G6VRxU2tcpvwymADn8F-gB4dijgXb40fh-EuoToXoyH9O928AXSwh-eRoL2NdMsf7KrhIr2MDKoo-o5yOzwciYeJaMX41LmQPNNfQoJBYnOu4QmzdOnVIV3PlvCYVUUelgkXG3MfTFZn_B0gkZuJp5biDncMJwpfb-kMrllgrph750U7Y0ZOO9UZJRKReWWcBrtReD7X7BMGVEaBta4t3f721Mxq7xSZv30wew251n6PFX32upwLh1uJ5u1gJOJeIbOB0t82kSZYjEdn0sB6iNduBUDLg6NzVNAUwtGtjW_UpSPUtOoHHwWkiyhRqzsiJ6eCgJG5543uEwEul3dU2Wgqe_4nmEaIqc0tFml9pQTk4ji1NAl-yQE1gXHZweL1VXI3FeWLM-jYVSTQx5ojbwcf1H2p_5HyWg3-1C4WKDzQ5OrsvUpzQAONjr_clBeTvTlP8s2xC5hDT9PfwpLAdVje2DsbEo57AxpBvX4Gx3mNYpGFoBXfOjUua6OBZnZN4M8RC0qaKkpVmFuh8CambhdcGkAEC4fiw-wCrH7prAVsOZHDy8nQvfqKw85eRY/https://www.amazon.com/stores/page/CC11BAEB-93CA-446D-AD86-DD768B42A61F/?_encoding=UTF8&store_ref=SB_A09819712IJ8BYQAO7TWS-A0959507TXQDXV6M9G5R&pd_rd_plhdr=t&aaxitk=40ef30deed2a5908858633389561807e&hsa_cr_id=0&lp_asins=B0GN4NBD2V%2CB0GN4WQNS1%2CB0GQCNJCPR&lp_query=wireless%20headphones&lp_slot=desktop-hsa-3psl&ref_=sbx_be_s_3psl_mbd_mb2_hl&pd_rd_w=K5U1D&content-id=amzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87%3Aamzn1.sym.cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=P5ZRC50KQ5F4F2XTV6SC&pd_rd_wg=EBJ9z&pd_rd_r=3a297c4b-3af7-4861-ab5a-645b1a286855
+                              - generic [ref=e1923]:
+                                - generic [ref=e1924]: "Stealth Pro II: The Ultimate Gaming Headset"
+                                - generic [ref=e1925]: "Stealth Pro II: The Ultimate Gaming Headset"
+            - generic [ref=e1931]:
+              - heading "¿Necesitas ayuda?" [level=2] [ref=e1934]
+              - generic [ref=e1935]:
+                - link "Visita la sección de ayuda" [ref=e1936] [cursor=pointer]:
+                  - /url: /-/es/gp/help/customer/display.html?nodeId=468556
+                - text: o
+                - link "contáctanos" [ref=e1937] [cursor=pointer]:
+                  - /url: /-/es/gp/help/customer/contact-us
+          - link "Volver al menú de filtrado" [ref=e1938] [cursor=pointer]:
+            - /url: "#s-skipLinkTargetForFilterOptions"
+        - generic [ref=e1940]:
+          - link "Saltar a los resultados de la búsqueda principal" [ref=e1941] [cursor=pointer]:
+            - /url: "#s-skipLinkTargetForMainSearchResults"
+          - generic [ref=e1947]:
+            - group "Envío Gratis por Amazon" [ref=e1948]:
+              - heading "Envío Gratis por Amazon" [level=2] [ref=e1949]
+              - list "Envío Gratis por Amazon" [ref=e1950]:
+                - listitem [ref=e1951]:
+                  - link "Aplicar Elegible para Envío Gratis filtro para limitar los resultados" [ref=e1953] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_is_free_shipping%3A10236242011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=10236241011&ref=sr_nr_p_n_is_free_shipping_1&ds=v1%3ABeVMMZRroQpCShFoLmrrm1kP64WrnW6lFkU5JfJ0CJs
+                    - checkbox [ref=e1956]
+                    - text: Elegible para Envío Gratis
+            - group "Reseñas de Clientes" [ref=e1958]:
+              - heading "Reseñas de Clientes" [level=2] [ref=e1959]
+              - list "Reseñas de Clientes" [ref=e1960]:
+                - listitem [ref=e1961]:
+                  - link "Aplicar 4 Estrellas o más filtro para limitar los resultados" [ref=e1964] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_72%3A1248879011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=1248877011&ref=sr_nr_p_72_1&ds=v1%3AttvLwcdUnhMxjndDRNoMDDGOq7DyYm3BsPtCnsHyUNc
+                    - generic [ref=e1966]: 4 Stars
+                    - text: o más
+            - group "Marcas" [ref=e1967]:
+              - heading "Marcas" [level=2] [ref=e1968]
+              - list "Marcas" [ref=e1969]:
+                - listitem [ref=e1970]:
+                  - link "Aplicar Sony filtro para limitar los resultados" [ref=e1972] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_123%3A237204&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=85457740011&ref=sr_nr_p_123_1&ds=v1%3AEd4uEwILKwbGPEyxGI8dnepiSvZ8DIXrPVG0Gy8UX4E
+                    - checkbox [ref=e1975]
+                    - text: Sony
+                - listitem [ref=e1977]:
+                  - link "Aplicar Beats filtro para limitar los resultados" [ref=e1979] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_123%3A325772&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=85457740011&ref=sr_nr_p_123_2&ds=v1%3A06rRT%2BVCm4N0wbRkjacGz1YAGxASpOkvP3EPgZtUD9s
+                    - checkbox [ref=e1982]
+                    - text: Beats
+                - listitem [ref=e1984]:
+                  - link "Aplicar JBL filtro para limitar los resultados" [ref=e1986] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_123%3A233043&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=85457740011&ref=sr_nr_p_123_3&ds=v1%3A1gCJ%2B9rWJLB7%2BxhlUa4FLHtlVazkJoaLMUSriNpI8xE
+                    - checkbox [ref=e1989]
+                    - text: JBL
+                - listitem [ref=e1991]:
+                  - link "Aplicar Bose filtro para limitar los resultados" [ref=e1993] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_123%3A264616&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=85457740011&ref=sr_nr_p_123_4&ds=v1%3A9SO5ylvPPJ9DWryuPVOQFYUDZyEtsW1UV%2BbwHhvxwF8
+                    - checkbox [ref=e1996]
+                    - text: Bose
+                - listitem [ref=e1998]:
+                  - link "Aplicar Apple filtro para limitar los resultados" [ref=e2000] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_123%3A110955&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=85457740011&ref=sr_nr_p_123_5&ds=v1%3AlBgfq%2FltNRRzmQifIEu5Ds%2F2tXM8WTOYXAntxgmMADs
+                    - checkbox [ref=e2003]
+                    - text: Apple
+                - listitem [ref=e2005]:
+                  - link "Aplicar Sennheiser filtro para limitar los resultados" [ref=e2007] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_123%3A213748&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=85457740011&ref=sr_nr_p_123_6&ds=v1%3AUVl9YY%2FVUbGwuhTMNVcGVp%2BL%2Fh3wY950z8aCARdK5X8
+                    - checkbox [ref=e2010]
+                    - text: Sennheiser
+                - listitem [ref=e2012]:
+                  - link "Aplicar Skullcandy filtro para limitar los resultados" [ref=e2014] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_123%3A193772&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=85457740011&ref=sr_nr_p_123_7&ds=v1%3AFS1qtxk%2B7Ad68ZnIq%2B4o1jtGdMD89dHR6V4ntFqqiAU
+                    - checkbox [ref=e2017]
+                    - text: Skullcandy
+                - listitem [ref=e2019]:
+                  - button "Ver más, Marcas" [ref=e2022] [cursor=pointer]: Ver más
+            - group "Ofertas y descuentos" [ref=e2024]:
+              - heading "Ofertas y descuentos" [level=2] [ref=e2025]
+              - list "Ofertas y descuentos" [ref=e2026]:
+                - listitem [ref=e2027]:
+                  - link "Compre Más, Ahorre Más" [ref=e2029] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_deal_type%3A210906365011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23566063011&ref=sr_nr_p_n_deal_type_1&ds=v1%3AKIB%2BJCP1Hi33fzaf7Dv4m2uXXRRiHj8%2BFaCzUPGDfIY
+                - listitem [ref=e2030]:
+                  - link "Cupones" [ref=e2032] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_deal_type%3A210906366011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23566063011&ref=sr_nr_p_n_deal_type_2&ds=v1%3AXd%2BP%2FwV3L7ScWqW4oq6KtD2ResCNcdavniVE3%2BPj5ZA
+                - listitem [ref=e2033]:
+                  - link "Oferta del día" [ref=e2035] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_deal_type%3A23566064011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23566063011&ref=sr_nr_p_n_deal_type_3&ds=v1%3APaAwvexLQtTYCw3Q8y89BMJJgkMUD8U8%2BiskoG%2BOIXE
+                - listitem [ref=e2036]:
+                  - link "Todos los descuentos" [ref=e2038] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_deal_type%3A23566065011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23566063011&ref=sr_nr_p_n_deal_type_4&ds=v1%3APlDr3GoLoBqoBvaOthEWSKP3%2FpwVda5c%2Bx1ug6WiYu4
+            - group "Tecnología inalámbrica" [ref=e2039]:
+              - heading "Tecnología inalámbrica" [level=2] [ref=e2040]
+              - list "Tecnología inalámbrica" [ref=e2041]:
+                - listitem [ref=e2042]:
+                  - link "Aplicar Bluetooth filtro para limitar los resultados" [ref=e2044] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_two_browse-bin%3A212335655011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=212335649011&ref=sr_nr_p_n_feature_two_browse-bin_1&ds=v1%3AV7a%2BKFKF8O70B%2BqNJ8xNQZLd9etOWeBr4gxXhHbULnI
+                    - checkbox [ref=e2047]
+                    - text: Bluetooth
+                - listitem [ref=e2049]:
+                  - link "Aplicar Infrarrojo filtro para limitar los resultados" [ref=e2051] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_two_browse-bin%3A212335650011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=212335649011&ref=sr_nr_p_n_feature_two_browse-bin_2&ds=v1%3AzZixvkWuoLT6YEvcR6RLJm1HqDqf8oArCIvB53SGgtE
+                    - checkbox [ref=e2054]
+                    - text: Infrarrojo
+                - listitem [ref=e2056]:
+                  - link "Aplicar Kleer filtro para limitar los resultados" [ref=e2058] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_two_browse-bin%3A212335651011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=212335649011&ref=sr_nr_p_n_feature_two_browse-bin_3&ds=v1%3AMJCw4qq9CWvQpy9xVWH0MNs2Jy3%2BDRRaBJrSjAu%2FcP0
+                    - checkbox [ref=e2061]
+                    - text: Kleer
+                - listitem [ref=e2063]:
+                  - link "Aplicar NFC filtro para limitar los resultados" [ref=e2065] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_two_browse-bin%3A212335652011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=212335649011&ref=sr_nr_p_n_feature_two_browse-bin_4&ds=v1%3ALpGfLidvujQ0NrtUxJQIU%2BVEc8yPeKHWxTWvc73fqF0
+                    - checkbox [ref=e2068]
+                    - text: NFC
+                - listitem [ref=e2070]:
+                  - link "Aplicar RF filtro para limitar los resultados" [ref=e2072] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_two_browse-bin%3A212335653011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=212335649011&ref=sr_nr_p_n_feature_two_browse-bin_5&ds=v1%3ApckQLB11GzcylZyYa87h7fG5d096O4F2Xqw0dUolNoI
+                    - checkbox [ref=e2075]
+                    - text: RF
+                - listitem [ref=e2077]:
+                  - link "Aplicar Wifi filtro para limitar los resultados" [ref=e2079] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_two_browse-bin%3A212335654011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=212335649011&ref=sr_nr_p_n_feature_two_browse-bin_6&ds=v1%3AFORnuwoxvjY9XwWbLl9ul%2FRobXoD%2F%2BYNKRvdiW0DTF4
+                    - checkbox [ref=e2082]
+                    - text: Wifi
+            - group "Control de ruidos" [ref=e2084]:
+              - heading "Control de ruidos" [level=2] [ref=e2085]
+              - list "Control de ruidos" [ref=e2086]:
+                - listitem [ref=e2087]:
+                  - link "Aplicar Cancelación Activa de Ruido filtro para limitar los resultados" [ref=e2089] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003195531111%3A23746030011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23746028011&ref=sr_nr_p_n_g-1003195531111_1&ds=v1%3AhQJmHyH5gqieKXbhZXgF4xc9v2T6GHkqHHlqniafA9g
+                    - checkbox [ref=e2092]
+                    - text: Cancelación Activa de Ruido
+                - listitem [ref=e2094]:
+                  - link "Aplicar Aislamiento Acústico filtro para limitar los resultados" [ref=e2096] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003195531111%3A23746032011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23746028011&ref=sr_nr_p_n_g-1003195531111_2&ds=v1%3AJ8cwHEPV5CHrhPmPVWTfKHaflPdEVaQ%2F8GhUl%2FpFFvs
+                    - checkbox [ref=e2099]
+                    - text: Aislamiento Acústico
+                - listitem [ref=e2101]:
+                  - link "Aplicar Ninguno filtro para limitar los resultados" [ref=e2103] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003195531111%3A23746031011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23746028011&ref=sr_nr_p_n_g-1003195531111_3&ds=v1%3Athh06J0%2BZwT0XMPq9NEQ9U2mPa52I3%2FuNQs1SPaWnas
+                    - checkbox [ref=e2106]
+                    - text: Ninguno
+                - listitem [ref=e2108]:
+                  - link "Aplicar Cancelación de ruido pasiva filtro para limitar los resultados" [ref=e2110] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003195531111%3A110686947011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23746028011&ref=sr_nr_p_n_g-1003195531111_4&ds=v1%3AGcbEgVwVfUXAQMwTL4Uxoc5cL0gj%2BBPWlOFbC3v4qsc
+                    - checkbox [ref=e2113]
+                    - text: Cancelación de ruido pasiva
+                - listitem [ref=e2115]:
+                  - link "Aplicar Cancelación de ruido adaptable filtro para limitar los resultados" [ref=e2117] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003195531111%3A110686945011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23746028011&ref=sr_nr_p_n_g-1003195531111_5&ds=v1%3AXSOe3SRsI%2FDBt0O3WewAMfc9tQB9XOnbcorPtcYPOBU
+                    - checkbox [ref=e2120]
+                    - text: Cancelación de ruido adaptable
+                - listitem [ref=e2122]:
+                  - link "Aplicar Cancelación de ruido híbrida filtro para limitar los resultados" [ref=e2124] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003195531111%3A110686943011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23746028011&ref=sr_nr_p_n_g-1003195531111_6&ds=v1%3ARtRffrLKwbN1njRC2K5Gk3RVGCDiAQ%2BS%2BEhn2DGgvVw
+                    - checkbox [ref=e2127]
+                    - text: Cancelación de ruido híbrida
+                - listitem [ref=e2129]:
+                  - link "Aplicar Cancelación activa de ruido ambiental filtro para limitar los resultados" [ref=e2131] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003195531111%3A210912314011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23746028011&ref=sr_nr_p_n_g-1003195531111_7&ds=v1%3ALlZGi%2FSP9N31%2FAHe%2B6so1Tg5%2B089dofpApQqFY9gxQY
+                    - checkbox [ref=e2134]
+                    - text: Cancelación activa de ruido ambiental
+            - group "Color" [ref=e2136]:
+              - heading "Color" [level=2] [ref=e2137]
+              - list "Color" [ref=e2138]:
+                - listitem [ref=e2139]:
+                  - generic:
+                    - link "Aplicar Negro filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376047011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_1&ds=v1%3AdS3IXwe3gfekc5kCkzg50XdePKi8CqyNF3PdpeaI7ec
+                - listitem [ref=e2141]:
+                  - generic:
+                    - link "Aplicar Gris filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376042011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_2&ds=v1%3ANf5Bz901EULE%2BfIDe3DTHyH78Zmxwgi6YdAz4E4UKLw
+                - listitem [ref=e2143]:
+                  - generic:
+                    - link "Aplicar Blanco filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376052011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_3&ds=v1%3AJnNsJrg1PL8eB76mZPEI77EaoAC41EyH1FMxD%2FGJij0
+                - listitem [ref=e2145]:
+                  - generic:
+                    - link "Aplicar Marrón filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376049011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_4&ds=v1%3AVj%2FzJzFWxDDQEdj%2FHSNlFk3198%2BqmS8DrBNbWrLYlPA
+                - listitem [ref=e2147]:
+                  - generic:
+                    - link "Aplicar Beige filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376050011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_5&ds=v1%3ANAt2tGAveMnSyLno5jSo%2BpnjkGNEq9tJ8mC4wIvGIr8
+                - listitem [ref=e2149]:
+                  - generic:
+                    - link "Aplicar Rojo filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376043011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_6&ds=v1%3AytCvyaMF1iZH4poTHV3MoDLVGCrk3Ys2Wp8zDpE37dY
+                - listitem [ref=e2151]:
+                  - generic:
+                    - link "Aplicar Rosa filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376057011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_7&ds=v1%3A%2BV9byWao15EyI3U%2BNNWzIHWd5v4B%2FtweMEkAA7ZDpbE
+                - listitem [ref=e2153]:
+                  - generic:
+                    - link "Aplicar Naranja filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376044011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_8&ds=v1%3AJkIHce6depvXzyPTU0Ej5QlKKiLtOCoDRpnvG7f0ytI
+                - listitem [ref=e2155]:
+                  - generic:
+                    - link "Aplicar Amarillo filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376055011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_9&ds=v1%3ARCc1GzCuDNudMFmRkc6jTDbfi3fdYJcFgRepiwELD4g
+                - listitem [ref=e2157]:
+                  - generic:
+                    - link "Aplicar Marfil filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376056011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_10&ds=v1%3Apo7ENrLzwfKu7e9N0WEbYDJmrScSMnNvTZryv4rHreI
+                - listitem [ref=e2159]:
+                  - generic:
+                    - link "Aplicar Verde filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376051011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_11&ds=v1%3Aa5I17MpeSrpwuMU6H6cEuzBkl1oOnafcUyyGeKaJEvs
+                - listitem [ref=e2161]:
+                  - generic:
+                    - link "Aplicar Azul filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376048011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_12&ds=v1%3ACLptrohiBdppxStcioh9CrAagiAn%2F4uMPeUyuipv4U8
+                - listitem [ref=e2163]:
+                  - generic:
+                    - link "Aplicar Morado filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376054011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_13&ds=v1%3AgBGHJDAexZ%2BCZ0JftSrHgQ%2BATJ61Er982b5ING3z%2FAg
+                - listitem [ref=e2165]:
+                  - generic:
+                    - link "Aplicar Dorada filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376041011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_14&ds=v1%3ADrNY3ESgtDHuYs9RwVX9FT9jOuNECBN5DWTjjy16M9c
+                - listitem [ref=e2167]:
+                  - generic:
+                    - link "Aplicar Plateado filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376053011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_15&ds=v1%3AuwFxJcNU%2FL90vi45NHddTEsbiGsg8AEEtRsMelMFJbo
+                - listitem [ref=e2169]:
+                  - generic:
+                    - link "Aplicar Multicolor filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376045011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_16&ds=v1%3AZ%2FICQbZ01pd6cOXRTbb4NLxZCjDQ0%2FGPmxgi4xUZRI8
+                - listitem [ref=e2171]:
+                  - generic:
+                    - link "Aplicar Transparente filtro para limitar los resultados":
+                      - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_twenty-nine_browse-bin%3A204376046011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376039011&ref=sr_nr_p_n_feature_twenty-nine_browse-bin_17&ds=v1%3Aa1NLLJuVvK3EfM%2Bu1%2FGFf3YkMV0H10VBDcEycixZNWs
+            - group "Conectividad" [ref=e2173]:
+              - heading "Conectividad" [level=2] [ref=e2174]
+              - list "Conectividad" [ref=e2175]:
+                - listitem [ref=e2176]:
+                  - link "Aplicar Alámbrico filtro para limitar los resultados" [ref=e2178] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_ten_browse-bin%3A3150267011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=3150266011&ref=sr_nr_p_n_feature_ten_browse-bin_1&ds=v1%3AFmjO26yPvaJ7dooAI9Tq0kZh1JNcwVyXmhIDoxmQBms
+                    - checkbox [ref=e2181]
+                    - text: Alámbrico
+                - listitem [ref=e2183]:
+                  - link "Aplicar Híbrido filtro para limitar los resultados" [ref=e2185] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_ten_browse-bin%3A216310548011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=3150266011&ref=sr_nr_p_n_feature_ten_browse-bin_2&ds=v1%3AlL%2F0gjD8nJVM9xoScnhTE3JMq1z9gIxjqVrdiNxbOw0
+                    - checkbox [ref=e2188]
+                    - text: Híbrido
+                - listitem [ref=e2190]:
+                  - link "Aplicar Inalámbrico filtro para limitar los resultados" [ref=e2192] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_ten_browse-bin%3A3150268011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=3150266011&ref=sr_nr_p_n_feature_ten_browse-bin_3&ds=v1%3AWbQXR1iWbLSHpNjX9bbENHEsnEe95voktUmC%2BQThzlE
+                    - checkbox [ref=e2195]
+                    - text: Inalámbrico
+            - group "Características" [ref=e2197]:
+              - heading "Características" [level=2] [ref=e2198]
+              - list "Características" [ref=e2199]:
+                - listitem [ref=e2200]:
+                  - link "Aplicar Inalámbrico filtro para limitar los resultados" [ref=e2202] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_thirteen_browse-bin%3A509316&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2266979011&ref=sr_nr_p_n_feature_thirteen_browse-bin_1&ds=v1%3A8REbW6jOmRjN78SQQnz0f0Vfz2mFQxVd1XhaTRAvpPM
+                    - checkbox [ref=e2205]
+                    - text: Inalámbrico
+                - listitem [ref=e2207]:
+                  - link "Aplicar Micrófono filtro para limitar los resultados" [ref=e2209] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_thirteen_browse-bin%3A2266981011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2266979011&ref=sr_nr_p_n_feature_thirteen_browse-bin_2&ds=v1%3AsQYTtkiZGOKMHcxTGQ0l3L6Y0VxRSMwIV7T7CdC5ogE
+                    - checkbox [ref=e2212]
+                    - text: Micrófono
+                - listitem [ref=e2214]:
+                  - link "Aplicar Liviano filtro para limitar los resultados" [ref=e2216] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_thirteen_browse-bin%3A12097488011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2266979011&ref=sr_nr_p_n_feature_thirteen_browse-bin_3&ds=v1%3Awj2s2gzG3qyMHXjbFGQ%2B3yANdcTZfms6o29xWf%2BcyWs
+                    - checkbox [ref=e2219]
+                    - text: Liviano
+                - listitem [ref=e2221]:
+                  - link "Aplicar Control de Teléfono filtro para limitar los resultados" [ref=e2223] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_thirteen_browse-bin%3A12097489011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2266979011&ref=sr_nr_p_n_feature_thirteen_browse-bin_4&ds=v1%3ArUef%2BeJVanNf%2Blm9V%2Fr10klCq7yMn%2BkuFpnz9aCNsPc
+                    - checkbox [ref=e2226]
+                    - text: Control de Teléfono
+                - listitem [ref=e2228]:
+                  - link "Aplicar Deportes y Ejercicio filtro para limitar los resultados" [ref=e2230] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_thirteen_browse-bin%3A2266980011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2266979011&ref=sr_nr_p_n_feature_thirteen_browse-bin_5&ds=v1%3AFoVWfLulRJHRkRHmWSLik75hz5WIHl1rJ5h6brAsrqI
+                    - checkbox [ref=e2233]
+                    - text: Deportes y Ejercicio
+                - listitem [ref=e2235]:
+                  - link "Aplicar Estilo DJ filtro para limitar los resultados" [ref=e2237] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_thirteen_browse-bin%3A6131842011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2266979011&ref=sr_nr_p_n_feature_thirteen_browse-bin_6&ds=v1%3Ax2IFzvr7rkTDOJK%2BleMnq56IlShJ2mFUTCAycd6W0bM
+                    - checkbox [ref=e2240]
+                    - text: Estilo DJ
+                - listitem [ref=e2242]:
+                  - link "Aplicar Para Plegar filtro para limitar los resultados" [ref=e2244] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_thirteen_browse-bin%3A12097487011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2266979011&ref=sr_nr_p_n_feature_thirteen_browse-bin_7&ds=v1%3AWgVuhOdUvsH1X7V9zCQVcJcUhtRqLx%2B5oaMrdGHxfGA
+                    - checkbox [ref=e2247]
+                    - text: Para Plegar
+            - group "Condición" [ref=e2249]:
+              - heading "Condición" [level=2] [ref=e2250]
+              - list "Condición" [ref=e2251]:
+                - listitem [ref=e2252]:
+                  - link "Aplicar Nuevo filtro para limitar los resultados" [ref=e2254] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_condition-type%3A2224371011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2224369011&ref=sr_nr_p_n_condition-type_1&ds=v1%3AlEOTOJAlHWTXGdWcK1GnIb1tSHyS2HeDZuV3C1Rze1E
+                    - checkbox [ref=e2257]
+                    - text: Nuevo
+                - listitem [ref=e2259]:
+                  - link "Aplicar Renovado filtro para limitar los resultados" [ref=e2261] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_condition-type%3A16907720011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2224369011&ref=sr_nr_p_n_condition-type_2&ds=v1%3AqdV0hlGrFQGLtW0jvyHPNhIBHYRrkM0UmLwAVgF%2Bq60
+                    - checkbox [ref=e2264]
+                    - text: Renovado
+                - listitem [ref=e2266]:
+                  - link "Aplicar Usado filtro para limitar los resultados" [ref=e2268] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_condition-type%3A2224373011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=2224369011&ref=sr_nr_p_n_condition-type_3&ds=v1%3Ar4o5d6kF2cuV%2BZH3aRTSSj3ZCq%2FBWhWvBkizJU%2FBtqs
+                    - checkbox [ref=e2271]
+                    - text: Usado
+            - group "Compatibilidad" [ref=e2273]:
+              - heading "Compatibilidad" [level=2] [ref=e2274]
+              - list "Compatibilidad" [ref=e2275]:
+                - listitem [ref=e2276]:
+                  - link "Aplicar Teléfonos Celulares filtro para limitar los resultados" [ref=e2278] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003341941111%3A24003431011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24003299011&ref=sr_nr_p_n_g-1003341941111_1&ds=v1%3AAwA9CTaA54xR9s8KvcXfPjccw1SSR%2BLSEqNzPyBL9c4
+                    - checkbox [ref=e2281]
+                    - text: Teléfonos Celulares
+                - listitem [ref=e2283]:
+                  - link "Aplicar Computadoras Portátiles filtro para limitar los resultados" [ref=e2285] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003341941111%3A24003427011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24003299011&ref=sr_nr_p_n_g-1003341941111_2&ds=v1%3AOXPuHoTKm4D0C%2Fs0HvfcW0tb4Hn3NNF94nfYDDFKLiA
+                    - checkbox [ref=e2288]
+                    - text: Computadoras Portátiles
+                - listitem [ref=e2290]:
+                  - link "Aplicar Tablets filtro para limitar los resultados" [ref=e2292] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003341941111%3A24003432011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24003299011&ref=sr_nr_p_n_g-1003341941111_3&ds=v1%3AlksxZfTSkxl7ZXrY5z2dHNZpL%2FtsjSigi6qBwN20UKM
+                    - checkbox [ref=e2295]
+                    - text: Tablets
+                - listitem [ref=e2297]:
+                  - link "Aplicar Sistemas de Audio para Automóviles filtro para limitar los resultados" [ref=e2299] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003341941111%3A24003429011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24003299011&ref=sr_nr_p_n_g-1003341941111_4&ds=v1%3ABaLLWu%2FxqcpqFY3Dd2TLh4GIcNuZPu9XKyZHHEJ1jKw
+                    - checkbox [ref=e2302]
+                    - text: Sistemas de Audio para Automóviles
+                - listitem [ref=e2304]:
+                  - link "Aplicar Computadoras de Escritorio filtro para limitar los resultados" [ref=e2306] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003341941111%3A24003434011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24003299011&ref=sr_nr_p_n_g-1003341941111_5&ds=v1%3AKDXHdFBiPWnRn3zW5cXwnbTwkTo6gjimuuGryWvKVWc
+                    - checkbox [ref=e2309]
+                    - text: Computadoras de Escritorio
+                - listitem [ref=e2311]:
+                  - link "Aplicar Consolas de Videojuegos filtro para limitar los resultados" [ref=e2313] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003341941111%3A24003430011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24003299011&ref=sr_nr_p_n_g-1003341941111_6&ds=v1%3AwYF24PNaBrqyqIjofnxJzEmP7yiVEEnfjMuXZvuNOxw
+                    - checkbox [ref=e2316]
+                    - text: Consolas de Videojuegos
+                - listitem [ref=e2318]:
+                  - link "Aplicar Equipo de Producción de Música filtro para limitar los resultados" [ref=e2320] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003341941111%3A24003433011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24003299011&ref=sr_nr_p_n_g-1003341941111_7&ds=v1%3AORp4vtJsI07POQEw52xmrMDza%2BKJjMJN2G0y4ocnA64
+                    - checkbox [ref=e2323]
+                    - text: Equipo de Producción de Música
+                - listitem [ref=e2325]:
+                  - button "Ver más, Compatibilidad" [ref=e2328] [cursor=pointer]: Ver más
+            - group "Franja de edad" [ref=e2330]:
+              - heading "Franja de edad" [level=2] [ref=e2331]
+              - list "Franja de edad" [ref=e2332]:
+                - listitem [ref=e2333]:
+                  - link "Aplicar Niño filtro para limitar los resultados" [ref=e2335] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_browse-bin%3A23549350011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23549346011&ref=sr_nr_p_n_feature_browse-bin_1&ds=v1%3A9qp%2Fpy%2BCbi5xVJXgpL5grNyhaG6vs7UG8Toph5w0nys
+                    - checkbox [ref=e2338]
+                    - text: Niño
+                - listitem [ref=e2340]:
+                  - link "Aplicar Adulto filtro para limitar los resultados" [ref=e2342] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_browse-bin%3A23549351011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23549346011&ref=sr_nr_p_n_feature_browse-bin_2&ds=v1%3AqqmraYZQmpv9qitofP%2Frp8qBfiVilYAlI43B4k2datQ
+                    - checkbox [ref=e2345]
+                    - text: Adulto
+                - listitem [ref=e2347]:
+                  - link "Aplicar Adolescente filtro para limitar los resultados" [ref=e2349] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_browse-bin%3A88212678011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23549346011&ref=sr_nr_p_n_feature_browse-bin_3&ds=v1%3AsWXv4zeFr76nbFubSyvMQAaafxdipP2zU0K5IA3XHtI
+                    - checkbox [ref=e2352]
+                    - text: Adolescente
+            - group "Las Mejores Marcas" [ref=e2354]:
+              - heading "Las Mejores Marcas" [level=2] [ref=e2355]
+              - list "Las Mejores Marcas" [ref=e2356]:
+                - listitem [ref=e2357]:
+                  - link "Aplicar Las Mejores Marcas filtro para limitar los resultados" [ref=e2359] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101014971069111%3A119653281011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=119653280011&ref=sr_nr_p_n_g-101014971069111_1&ds=v1%3AEYmMLfBJdhJgWe9EQZV8t5UAUq0SHU2TDG7otIUpuxw
+                    - checkbox [ref=e2362]
+                    - text: Las Mejores Marcas
+            - group "Nivel de resistencia al agua" [ref=e2364]:
+              - heading "Nivel de resistencia al agua" [level=2] [ref=e2365]
+              - list "Nivel de resistencia al agua" [ref=e2366]:
+                - listitem [ref=e2367]:
+                  - link "Aplicar A prueba de agua filtro para limitar los resultados" [ref=e2369] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101016670375111%3A207192563011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=207192560011&ref=sr_nr_p_n_g-101016670375111_1&ds=v1%3AmXlKQDOy1R2%2B2tb0z3p6hi6LHa1QyAE37njMypyr7Xk
+                    - checkbox [ref=e2372]
+                    - text: A prueba de agua
+                - listitem [ref=e2374]:
+                  - link "Aplicar No resistente al agua filtro para limitar los resultados" [ref=e2376] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101016670375111%3A207192564011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=207192560011&ref=sr_nr_p_n_g-101016670375111_2&ds=v1%3A4xEDMvOzG%2B4g%2FxAMJHwSxNkuKqo2LPnI3hb2SdSWO4I
+                    - checkbox [ref=e2379]
+                    - text: No resistente al agua
+                - listitem [ref=e2381]:
+                  - link "Aplicar Repelente al agua filtro para limitar los resultados" [ref=e2383] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101016670375111%3A207192561011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=207192560011&ref=sr_nr_p_n_g-101016670375111_3&ds=v1%3ASTkNgT5M8kQ8PsZ2rlPH3ij%2B39%2BiQUZbseygVj1x75Q
+                    - checkbox [ref=e2386]
+                    - text: Repelente al agua
+                - listitem [ref=e2388]:
+                  - link "Aplicar Resistente a la humedad filtro para limitar los resultados" [ref=e2390] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101016670375111%3A207192565011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=207192560011&ref=sr_nr_p_n_g-101016670375111_4&ds=v1%3A%2BdX7bgT6yDwb7nEaGE4Tazy8Dsbf6lY%2BVgoGs%2F6GdmQ
+                    - checkbox [ref=e2393]
+                    - text: Resistente a la humedad
+                - listitem [ref=e2395]:
+                  - link "Aplicar Resistente al agua filtro para limitar los resultados" [ref=e2397] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101016670375111%3A207192562011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=207192560011&ref=sr_nr_p_n_g-101016670375111_5&ds=v1%3AgRiactAoub11z5cfB5%2B3SXBAgB5YhifsavdY9tWyCLE
+                    - checkbox [ref=e2400]
+                    - text: Resistente al agua
+            - group "Característica del cable" [ref=e2402]:
+              - heading "Característica del cable" [level=2] [ref=e2403]
+              - list "Característica del cable" [ref=e2404]:
+                - listitem [ref=e2405]:
+                  - link "Aplicar Desmontable filtro para limitar los resultados" [ref=e2407] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003285868111%3A23942863011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23942843011&ref=sr_nr_p_n_g-1003285868111_1&ds=v1%3ANb5ZQTnx5Wzw5H2XxL5P%2FRHrLNYvzca%2Bcl%2B01ljhOks
+                    - checkbox [ref=e2410]
+                    - text: Desmontable
+                - listitem [ref=e2412]:
+                  - link "Aplicar Retráctil filtro para limitar los resultados" [ref=e2414] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003285868111%3A23942865011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23942843011&ref=sr_nr_p_n_g-1003285868111_2&ds=v1%3A2roylFdiP6AOdY8Rxg9JSW2ISuTmXH7j54eA7PSkPcY
+                    - checkbox [ref=e2417]
+                    - text: Retráctil
+                - listitem [ref=e2419]:
+                  - link "Aplicar Sin Cable filtro para limitar los resultados" [ref=e2421] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003285868111%3A23942866011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23942843011&ref=sr_nr_p_n_g-1003285868111_3&ds=v1%3ASu%2BR6gR2Ba6adEc%2FB3RTeamCHG6duQoNauxRwo4livY
+                    - checkbox [ref=e2424]
+                    - text: Sin Cable
+                - listitem [ref=e2426]:
+                  - link "Aplicar Sin Enredos filtro para limitar los resultados" [ref=e2428] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003285868111%3A23942864011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23942843011&ref=sr_nr_p_n_g-1003285868111_4&ds=v1%3Arqqjou0SaFds90TgOdTomNtawhn4gN8O3mfOujuu72o
+                    - checkbox [ref=e2431]
+                    - text: Sin Enredos
+            - group "Inclusiones" [ref=e2433]:
+              - heading "Inclusiones" [level=2] [ref=e2434]
+              - list "Inclusiones" [ref=e2435]:
+                - listitem [ref=e2436]:
+                  - link "Aplicar Cable filtro para limitar los resultados" [ref=e2438] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A23657292011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_1&ds=v1%3Aunmq8Dm%2BL1dSwrzgRMEQOa1TuGlayesuytIoQYKb44g
+                    - checkbox [ref=e2441]
+                    - text: Cable
+                - listitem [ref=e2443]:
+                  - link "Aplicar Manual de usuario filtro para limitar los resultados" [ref=e2445] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A76076001011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_2&ds=v1%3ACXJeDm7KVZD6f5R0yPCoPGse943rfS6D1bwY3wEoh2M
+                    - checkbox [ref=e2448]
+                    - text: Manual de usuario
+                - listitem [ref=e2450]:
+                  - link "Aplicar Almohadilla para Auriculares filtro para limitar los resultados" [ref=e2452] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A23657294011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_3&ds=v1%3A%2B1TziWwuHDQq7TJG%2FVylfdZl2WutJiTAerMtIclQTds
+                    - checkbox [ref=e2455]
+                    - text: Almohadilla para Auriculares
+                - listitem [ref=e2457]:
+                  - link "Aplicar Adaptador filtro para limitar los resultados" [ref=e2459] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A207314836011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_4&ds=v1%3AHbxhu27ETs0GZnUZ4EMi9Mylx6KPwCnNie1%2Bm4h%2Bsyk
+                    - checkbox [ref=e2462]
+                    - text: Adaptador
+                - listitem [ref=e2464]:
+                  - link "Aplicar Diadema filtro para limitar los resultados" [ref=e2466] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A23657296011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_5&ds=v1%3AaWb7LStOBeRaRk9zd91bPadPyZZ5hNbq3CXUjzlSVvA
+                    - checkbox [ref=e2469]
+                    - text: Diadema
+                - listitem [ref=e2471]:
+                  - link "Aplicar Estación de carga filtro para limitar los resultados" [ref=e2473] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A23657293011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_6&ds=v1%3ACj7QQNe8rDToJEjB6opftGezw%2F5fEFeXP8UjG8aj8kc
+                    - checkbox [ref=e2476]
+                    - text: Estación de carga
+                - listitem [ref=e2478]:
+                  - link "Aplicar Estuche de Carga Inalámbrica filtro para limitar los resultados" [ref=e2480] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A23657295011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_7&ds=v1%3APunqf1KIDP%2FtuaqHfbBKT072g5rmmNVt4j7NDgtwx9Y
+                    - checkbox [ref=e2483]
+                    - text: Estuche de Carga Inalámbrica
+                - listitem [ref=e2485]:
+                  - link "Aplicar Estuche de Protección filtro para limitar los resultados" [ref=e2487] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A23657291011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_8&ds=v1%3AdNG5d6mL1PUD3T%2BDSBmHE9ej82g9U23U0W3%2BnU6qogA
+                    - checkbox [ref=e2490]
+                    - text: Estuche de Protección
+                - listitem [ref=e2492]:
+                  - link "Aplicar Gancho para oreja filtro para limitar los resultados" [ref=e2494] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A216983648011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_9&ds=v1%3ArPoNFggXHnQYIpav5fGOjZzxrTNxpLucWzbEeKw7C0I
+                    - checkbox [ref=e2497]
+                    - text: Gancho para oreja
+                - listitem [ref=e2499]:
+                  - link "Aplicar Micrófono de brazo desmontable filtro para limitar los resultados" [ref=e2501] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A216983647011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_10&ds=v1%3AZP104qzzvGdWGcYPc4yIbrBTrTrsSxQtbkl1Oe8IX5A
+                    - checkbox [ref=e2504]
+                    - text: Micrófono de brazo desmontable
+                - listitem [ref=e2506]:
+                  - link "Aplicar Puntas de oído filtro para limitar los resultados" [ref=e2508] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A101369949011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_11&ds=v1%3AyxyzzDcVBhw83qMK2lvE4x4MythfJUBrlZMggc2n%2Big
+                    - checkbox [ref=e2511]
+                    - text: Puntas de oído
+                - listitem [ref=e2513]:
+                  - link "Aplicar Transmisor inalámbrico filtro para limitar los resultados" [ref=e2515] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989062111%3A216983641011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23657289011&ref=sr_nr_p_n_g-1002989062111_12&ds=v1%3AlJ7QmvD9c%2F%2F5P6SYCqif%2FjZLDMZwC4K%2FKNl6gPFfyT8
+                    - checkbox [ref=e2518]
+                    - text: Transmisor inalámbrico
+            - group "Forma del auricular" [ref=e2520]:
+              - heading "Forma del auricular" [level=2] [ref=e2521]
+              - list "Forma del auricular" [ref=e2522]:
+                - listitem [ref=e2523]:
+                  - link "Aplicar Tapón filtro para limitar los resultados" [ref=e2525] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101014793102111%3A118149309011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=118149305011&ref=sr_nr_p_n_g-101014793102111_1&ds=v1%3Ago%2BObYe32vFGYUPCZcdbKnQYFOwHzZtLwcupYmF%2ByyY
+                    - checkbox [ref=e2528]
+                    - text: Tapón
+                - listitem [ref=e2530]:
+                  - link "Aplicar Gancho filtro para limitar los resultados" [ref=e2532] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101014793102111%3A118149306011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=118149305011&ref=sr_nr_p_n_g-101014793102111_2&ds=v1%3ACTy41g5MrC1bZOD97BbpiK8%2FKZtRa6xD%2B0pPIqwdafI
+                    - checkbox [ref=e2535]
+                    - text: Gancho
+                - listitem [ref=e2537]:
+                  - link "Aplicar Círculo filtro para limitar los resultados" [ref=e2539] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101014793102111%3A118149311011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=118149305011&ref=sr_nr_p_n_g-101014793102111_3&ds=v1%3ANbcwY%2Fdd%2F8sI65S%2F%2FTjLUmQjcWRK1LP7GaTgKCm6SMM
+                    - checkbox [ref=e2542]
+                    - text: Círculo
+                - listitem [ref=e2544]:
+                  - link "Aplicar cuadrado filtro para limitar los resultados" [ref=e2546] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101014793102111%3A118149308011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=118149305011&ref=sr_nr_p_n_g-101014793102111_4&ds=v1%3Am3ySpOeUOWpTkGoyBE6gLQaN9Qwcp4Eg9wvqfCg240k
+                    - checkbox [ref=e2549]
+                    - text: cuadrado
+                - listitem [ref=e2551]:
+                  - link "Aplicar ovalado filtro para limitar los resultados" [ref=e2553] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101014793102111%3A118149307011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=118149305011&ref=sr_nr_p_n_g-101014793102111_5&ds=v1%3Ai9%2B2AMynE0VhIRkpmgdzRAVKAna7BoC%2BCRdBpeEM%2F%2FY
+                    - checkbox [ref=e2556]
+                    - text: ovalado
+                - listitem [ref=e2558]:
+                  - link "Aplicar palo filtro para limitar los resultados" [ref=e2560] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101014793102111%3A118149310011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=118149305011&ref=sr_nr_p_n_g-101014793102111_6&ds=v1%3AVMGWxZX24GBR5WgdyME8YQy7Jbhj4qm1SjgcOZ5HQHo
+                    - checkbox [ref=e2563]
+                    - text: palo
+            - group "Control" [ref=e2565]:
+              - heading "Control" [level=2] [ref=e2566]
+              - list "Control" [ref=e2567]:
+                - listitem [ref=e2568]:
+                  - link "Aplicar Control de Medios filtro para limitar los resultados" [ref=e2570] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A23641591011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_1&ds=v1%3AfqR9B9OA6uIrvCM5BCIya9NJZno5kYYUTx8WPIxqwGA
+                    - checkbox [ref=e2573]
+                    - text: Control de Medios
+                - listitem [ref=e2575]:
+                  - link "Aplicar Control de Volumen filtro para limitar los resultados" [ref=e2577] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A23641592011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_2&ds=v1%3A4yUHVX3HP8KohScRmdsVxpK3DpwGJO%2F1Z3f6WV7bxHw
+                    - checkbox [ref=e2580]
+                    - text: Control de Volumen
+                - listitem [ref=e2582]:
+                  - link "Aplicar Control táctil filtro para limitar los resultados" [ref=e2584] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A122131394011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_3&ds=v1%3ApoeGU7KcSXfBr%2BiOIPzwgVTFyKaBwf%2FigmYaxu9ApM4
+                    - checkbox [ref=e2587]
+                    - text: Control táctil
+                - listitem [ref=e2589]:
+                  - link "Aplicar Alexa filtro para limitar los resultados" [ref=e2591] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A24086506011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_4&ds=v1%3AiS%2B1%2F0srDOVHyN3CmiVEfhsjWo2mtZhRf%2Fu4VtMGrnY
+                    - checkbox [ref=e2594]
+                    - text: Alexa
+                - listitem [ref=e2596]:
+                  - link "Aplicar Control con pulsador filtro para limitar los resultados" [ref=e2598] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A122131395011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_5&ds=v1%3AnrEXqz4vp%2BvTB1yFMvF8Z9HLx70v5gXStCP1ctPODW4
+                    - checkbox [ref=e2601]
+                    - text: Control con pulsador
+                - listitem [ref=e2603]:
+                  - link "Aplicar Control de Llamadas filtro para limitar los resultados" [ref=e2605] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A23641589011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_6&ds=v1%3AOED216lWoHG53urmRxZ6aXw5DBhRq50F4VJwmLt1RNQ
+                    - checkbox [ref=e2608]
+                    - text: Control de Llamadas
+                - listitem [ref=e2610]:
+                  - link "Aplicar Control de Ruido filtro para limitar los resultados" [ref=e2612] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A23641590011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_7&ds=v1%3AbBgEF3ExUp4UuBUkLHwIXsMFmv%2FHjygN4R60X4GXtRg
+                    - checkbox [ref=e2615]
+                    - text: Control de Ruido
+                - listitem [ref=e2617]:
+                  - link "Aplicar Control de voz filtro para limitar los resultados" [ref=e2619] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A23641593011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_8&ds=v1%3AXuowgC2jbaP18%2FvC3F354msmbOzvVdlllzqHHePxTZI
+                    - checkbox [ref=e2622]
+                    - text: Control de voz
+                - listitem [ref=e2624]:
+                  - link "Aplicar Control por aplicación filtro para limitar los resultados" [ref=e2626] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A122131396011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_9&ds=v1%3AC0J0IHjGZYsP3b1r2ScxGwvQrL4dQp%2BQny8JTl3lUMg
+                    - checkbox [ref=e2629]
+                    - text: Control por aplicación
+                - listitem [ref=e2631]:
+                  - link "Aplicar Siri filtro para limitar los resultados" [ref=e2633] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1002989016111%3A24086507011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23641586011&ref=sr_nr_p_n_g-1002989016111_10&ds=v1%3A3LR3EHV8VrRCym2CTdlI9eAH8CAlU9qrHasN2r%2FrH7w
+                    - checkbox [ref=e2636]
+                    - text: Siri
+            - group "Tipo de conector" [ref=e2638]:
+              - heading "Tipo de conector" [level=2] [ref=e2639]
+              - list "Tipo de conector" [ref=e2640]:
+                - listitem [ref=e2641]:
+                  - link "Aplicar Enchufe de 2.5 mm filtro para limitar los resultados" [ref=e2643] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003389604111%3A24046901011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24046891011&ref=sr_nr_p_n_g-1003389604111_1&ds=v1%3Avoa0XTHyE91QGvTufKwdR%2BBF2nx9226xkqRml8ngjTk
+                    - checkbox [ref=e2646]
+                    - text: Enchufe de 2.5 mm
+                - listitem [ref=e2648]:
+                  - link "Aplicar Enchufe de 3.5 mm filtro para limitar los resultados" [ref=e2650] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003389604111%3A24046900011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24046891011&ref=sr_nr_p_n_g-1003389604111_2&ds=v1%3Ar%2BZFr%2BBLFDeC%2F2YNoXyRthZXUCMs%2FaElpaGToBF496U
+                    - checkbox [ref=e2653]
+                    - text: Enchufe de 3.5 mm
+                - listitem [ref=e2655]:
+                  - link "Aplicar Enchufe de 6.35 mm filtro para limitar los resultados" [ref=e2657] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-1003389604111%3A24046899011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=24046891011&ref=sr_nr_p_n_g-1003389604111_3&ds=v1%3Acfj0YEN8byTQlgX%2FSPfvvKOcJuO6ApXOVFcBbz7PpnI
+                    - checkbox [ref=e2660]
+                    - text: Enchufe de 6.35 mm
+            - group "Compatibilidad con hogar inteligente" [ref=e2662]:
+              - heading "Compatibilidad con hogar inteligente" [level=2] [ref=e2663]
+              - list "Compatibilidad con hogar inteligente" [ref=e2664]:
+                - listitem [ref=e2665]:
+                  - link "Aplicar Compatible con hogar digital filtro para limitar los resultados" [ref=e2667] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101017505917111%3A216905798011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=216905792011&ref=sr_nr_p_n_g-101017505917111_1&ds=v1%3Aw%2Fsdsoe%2FCtpeiWQfgDBNcAasr6L6GR%2FCHofKMLlV2YQ
+                    - checkbox [ref=e2670]
+                    - text: Compatible con hogar digital
+                - listitem [ref=e2672]:
+                  - link "Aplicar No es compatible con hogar digital filtro para limitar los resultados" [ref=e2674] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101017505917111%3A216905797011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=216905792011&ref=sr_nr_p_n_g-101017505917111_2&ds=v1%3A8uWZWQX%2FwLnuv68YgiZbES3xTBH1HBs0Gc3%2FJJqWtR4
+                    - checkbox [ref=e2677]
+                    - text: No es compatible con hogar digital
+            - group "Características de Sustentabilidad" [ref=e2679]:
+              - heading "Características de Sustentabilidad" [level=2] [ref=e2680]
+              - list "Características de Sustentabilidad" [ref=e2681]:
+                - listitem [ref=e2682]:
+                  - link "Cualquier característica" [ref=e2684] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_cpf_labels%3A121136630011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=116845681011&ref=sr_nr_p_n_cpf_labels_1&ds=v1%3A4bC5ddWtaCsWUdjvCymOYxhh9NDQ3v3XEIBHNpq1KDI
+                - listitem [ref=e2685]:
+                  - link "Huella de Carbono" [ref=e2687] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_cpf_labels%3A116845688011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=116845681011&ref=sr_nr_p_n_cpf_labels_2&ds=v1%3AuJ6tzItk2QSFbMFNvK7i2vRzDDj%2Bj0V1SYtR0zgZzHI
+                - listitem [ref=e2688]:
+                  - button "Ver más, Características de Sustentabilidad" [ref=e2691] [cursor=pointer]: Ver más
+            - group "Vendedor" [ref=e2693]:
+              - heading "Vendedor" [level=2] [ref=e2694]
+              - list "Vendedor" [ref=e2695]:
+                - listitem [ref=e2696]:
+                  - link "Aplicar Amazon.com filtro para limitar los resultados" [ref=e2698] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_6%3AATVPDKIKX0DER&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=303116011&ref=sr_nr_p_6_1&ds=v1%3A8Ov9ZvXcxt5rpe%2FX6v3uhrleYIU8HLwKXIQjpkV7Ohk
+                    - checkbox [ref=e2701]
+                    - text: Amazon.com
+                - listitem [ref=e2703]:
+                  - link "Aplicar BoxWave Corporation filtro para limitar los resultados" [ref=e2705] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_6%3AA30XRGG45X0IFD&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=303116011&ref=sr_nr_p_6_2&ds=v1%3A30f03S5EI2IS%2BgLvPVnhJ3ojkaQIn4oZoSWqxhLzlaE
+                    - checkbox [ref=e2708]
+                    - text: BoxWave Corporation
+                - listitem [ref=e2710]:
+                  - button "Ver más, Vendedor" [ref=e2713] [cursor=pointer]: Ver más
+            - group "Marcas Premium" [ref=e2715]:
+              - heading "Marcas Premium" [level=2] [ref=e2716]
+              - list "Marcas Premium" [ref=e2717]:
+                - listitem [ref=e2718]:
+                  - link "Aplicar Marcas Premium filtro para limitar los resultados" [ref=e2720] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015887018111%3A204376014011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=204376013011&ref=sr_nr_p_n_g-101015887018111_1&ds=v1%3AIns0waWslXpWpvw2ER9C%2BzrDKUAy%2Fi%2Bkf%2BvFgXVvpy0
+                    - checkbox [ref=e2723]
+                    - text: Marcas Premium
+            - group "Tiempo de carga de la pila o batería" [ref=e2725]:
+              - heading "Tiempo de carga de la pila o batería" [level=2] [ref=e2726]
+              - list "Tiempo de carga de la pila o batería" [ref=e2727]:
+                - listitem [ref=e2728]:
+                  - link "Aplicar 1 a 1.9 h filtro para limitar los resultados" [ref=e2730] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015490467111%3A122265086011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122265083011&ref=sr_nr_p_n_g-101015490467111_1&ds=v1%3AfWHMjatqlXZe9EiSfR1cWwraLe%2FSojVMuIysQj1Tgbw
+                    - checkbox [ref=e2733]
+                    - text: 1 a 1.9 h
+                - listitem [ref=e2735]:
+                  - link "Aplicar 2 a 2.9 h filtro para limitar los resultados" [ref=e2737] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015490467111%3A122265088011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122265083011&ref=sr_nr_p_n_g-101015490467111_2&ds=v1%3AK4YBpWhKMD66fl1n6sgP0pAOJpxSi07VHOwAu3gmM7g
+                    - checkbox [ref=e2740]
+                    - text: 2 a 2.9 h
+                - listitem [ref=e2742]:
+                  - link "Aplicar 3 h y más filtro para limitar los resultados" [ref=e2744] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015490467111%3A122265087011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122265083011&ref=sr_nr_p_n_g-101015490467111_3&ds=v1%3AnvHlwZRsDnrMGsc6pVhOCB4wn%2FLAim7m%2FSApiQ8lwak
+                    - checkbox [ref=e2747]
+                    - text: 3 h y más
+            - group "Duración de la batería" [ref=e2749]:
+              - heading "Duración de la batería" [level=2] [ref=e2750]
+              - list "Duración de la batería" [ref=e2751]:
+                - listitem [ref=e2752]:
+                  - link "Aplicar Hasta 9 h filtro para limitar los resultados" [ref=e2754] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499813111%3A122268319011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268187011&ref=sr_nr_p_n_g-101015499813111_1&ds=v1%3Au%2Fa06dGbO3WpiM9HMvtSNYWARggGBy1xz%2Fn4Te19ESs
+                    - checkbox [ref=e2757]
+                    - text: Hasta 9 h
+                - listitem [ref=e2759]:
+                  - link "Aplicar 10 a 14 h filtro para limitar los resultados" [ref=e2761] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499813111%3A122268321011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268187011&ref=sr_nr_p_n_g-101015499813111_2&ds=v1%3AymOPOJHu57wAkbLrNAIIo%2FF6ARX4FMUsMnik2YIp6qg
+                    - checkbox [ref=e2764]
+                    - text: 10 a 14 h
+                - listitem [ref=e2766]:
+                  - link "Aplicar 15 a 19 h filtro para limitar los resultados" [ref=e2768] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499813111%3A122268318011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268187011&ref=sr_nr_p_n_g-101015499813111_3&ds=v1%3Ar4M86ewlKjSxOu3Dp0dR2V5x2mJpNr9EhNA2dTvWbiI
+                    - checkbox [ref=e2771]
+                    - text: 15 a 19 h
+                - listitem [ref=e2773]:
+                  - link "Aplicar 20 a 24 h filtro para limitar los resultados" [ref=e2775] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499813111%3A122268320011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268187011&ref=sr_nr_p_n_g-101015499813111_4&ds=v1%3A1Ebn7vLNC8oGucAfX17aSmAthAzm6g12slVVo2ybvkk
+                    - checkbox [ref=e2778]
+                    - text: 20 a 24 h
+                - listitem [ref=e2780]:
+                  - link "Aplicar 25 h y más filtro para limitar los resultados" [ref=e2782] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499813111%3A122268317011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268187011&ref=sr_nr_p_n_g-101015499813111_5&ds=v1%3As6jR3YO8hMbtXptZ3hy0nMLP6b3homzj7xPsjIictuc
+                    - checkbox [ref=e2785]
+                    - text: 25 h y más
+            - group "Funciones de control de ruido" [ref=e2787]:
+              - heading "Funciones de control de ruido" [level=2] [ref=e2788]
+              - list "Funciones de control de ruido" [ref=e2789]:
+                - listitem [ref=e2790]:
+                  - link "Aplicar Modo de transparencia filtro para limitar los resultados" [ref=e2792] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101017149505111%3A215591642011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=215591641011&ref=sr_nr_p_n_g-101017149505111_1&ds=v1%3AZd1%2BT4U2Z7OF13n%2FvFexmAsTfjjncGbidYIGSRppWMM
+                    - checkbox [ref=e2795]
+                    - text: Modo de transparencia
+                - listitem [ref=e2797]:
+                  - link "Aplicar Niveles ajustables filtro para limitar los resultados" [ref=e2799] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101017149505111%3A215591643011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=215591641011&ref=sr_nr_p_n_g-101017149505111_2&ds=v1%3ANL%2BMZQnz1GVaRt8fK%2BAnjE4z7CjiwTaBpsdV5QVyB%2FQ
+                    - checkbox [ref=e2802]
+                    - text: Niveles ajustables
+                - listitem [ref=e2804]:
+                  - link "Aplicar Reducción de ruido del viento filtro para limitar los resultados" [ref=e2806] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101017149505111%3A215591644011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=215591641011&ref=sr_nr_p_n_g-101017149505111_3&ds=v1%3AKeTEFaroFs%2F9n9iKWwFjnlUT1dXA1iQPnWe7JlOdeo0
+                    - checkbox [ref=e2809]
+                    - text: Reducción de ruido del viento
+            - group "Latencia de audio" [ref=e2811]:
+              - heading "Latencia de audio" [level=2] [ref=e2812]
+              - list "Latencia de audio" [ref=e2813]:
+                - listitem [ref=e2814]:
+                  - link "Aplicar Hasta 19 ms filtro para limitar los resultados" [ref=e2816] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015506076111%3A122272124011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122272099011&ref=sr_nr_p_n_g-101015506076111_1&ds=v1%3AFy6ZdcH5ojjcdRHkInNbfDBT5RwKtIGw2j3UrdI6SIY
+                    - checkbox [ref=e2819]
+                    - text: Hasta 19 ms
+                - listitem [ref=e2821]:
+                  - link "Aplicar 20 a 34 ms filtro para limitar los resultados" [ref=e2823] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015506076111%3A122272125011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122272099011&ref=sr_nr_p_n_g-101015506076111_2&ds=v1%3A%2FYweD%2FlOqW6mQzb0fjrXgdlA63uOiwFmVcXT1EHo92M
+                    - checkbox [ref=e2826]
+                    - text: 20 a 34 ms
+                - listitem [ref=e2828]:
+                  - link "Aplicar De 35 a 49 ms filtro para limitar los resultados" [ref=e2830] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015506076111%3A122272123011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122272099011&ref=sr_nr_p_n_g-101015506076111_3&ds=v1%3APbFEN3HJAW%2Fnlas8yx0xAVLdmi3soDB6YAb8FJ1%2BoEo
+                    - checkbox [ref=e2833]
+                    - text: De 35 a 49 ms
+                - listitem [ref=e2835]:
+                  - link "Aplicar 50 ms y más filtro para limitar los resultados" [ref=e2837] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015506076111%3A122272122011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122272099011&ref=sr_nr_p_n_g-101015506076111_4&ds=v1%3AGQLVQjS7KimZ%2FOl8fc2iZp7X%2FEhNR4ulCkaCes68rHc
+                    - checkbox [ref=e2840]
+                    - text: 50 ms y más
+            - group "Factor de forma de auriculares" [ref=e2842]:
+              - heading "Factor de forma de auriculares" [level=2] [ref=e2843]
+              - list "Factor de forma de auriculares" [ref=e2844]:
+                - listitem [ref=e2845]:
+                  - link "Aplicar Banda para el cuello filtro para limitar los resultados" [ref=e2847] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_seventeen_browse-bin%3A207963168011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23508613011&ref=sr_nr_p_n_feature_seventeen_browse-bin_1&ds=v1%3AY4fswZwWkp%2B2iqynvdotxDgCtDrY%2Faxi4VXjQWhpHwM
+                    - checkbox [ref=e2850]
+                    - text: Banda para el cuello
+                - listitem [ref=e2852]:
+                  - link "Aplicar Intraurales filtro para limitar los resultados" [ref=e2854] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_seventeen_browse-bin%3A23508656011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23508613011&ref=sr_nr_p_n_feature_seventeen_browse-bin_2&ds=v1%3AY66ayTTijKWfq1bbTti0bfh0K%2BEeGat28ShNAyfKwgM
+                    - checkbox [ref=e2857]
+                    - text: Intraurales
+                - listitem [ref=e2859]:
+                  - link "Aplicar Por Arriba de la Oreja filtro para limitar los resultados" [ref=e2861] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_seventeen_browse-bin%3A23508658011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23508613011&ref=sr_nr_p_n_feature_seventeen_browse-bin_3&ds=v1%3AkeoGd8xSnP1Cn6D4cjpWmhCUBxvot59gFzOeZbMB0lE
+                    - checkbox [ref=e2864]
+                    - text: Por Arriba de la Oreja
+                - listitem [ref=e2866]:
+                  - link "Aplicar Sobre la Oreja filtro para limitar los resultados" [ref=e2868] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_seventeen_browse-bin%3A23508657011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23508613011&ref=sr_nr_p_n_feature_seventeen_browse-bin_4&ds=v1%3ALJ7iU3Kr94p5bPGCINz%2BpEVdqKW5ty6iOKB2w4zNzW8
+                    - checkbox [ref=e2871]
+                    - text: Sobre la Oreja
+                - listitem [ref=e2873]:
+                  - link "Aplicar Verdaderamente inalámbricos filtro para limitar los resultados" [ref=e2875] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_feature_seventeen_browse-bin%3A117806101011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=23508613011&ref=sr_nr_p_n_feature_seventeen_browse-bin_5&ds=v1%3A5XcgpuS9%2F4TYK5YLZh0dv7b1MtLYdXL19zQ2%2Bf%2FureY
+                    - checkbox [ref=e2878]
+                    - text: Verdaderamente inalámbricos
+            - group "Peso" [ref=e2880]:
+              - heading "Peso" [level=2] [ref=e2881]
+              - list "Peso" [ref=e2882]:
+                - listitem [ref=e2883]:
+                  - link "Aplicar Hasta 1 lb filtro para limitar los resultados" [ref=e2885] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015497033111%3A122268323011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268188011&ref=sr_nr_p_n_g-101015497033111_1&ds=v1%3AFLzO0XIvIch2UW80wAhppmv0GGk4GlBK95Po%2FJv4%2FXU
+                    - checkbox [ref=e2888]
+                    - text: Hasta 1 lb
+                - listitem [ref=e2890]:
+                  - link "Aplicar 1 a 1,9 lb filtro para limitar los resultados" [ref=e2892] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015497033111%3A122268322011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268188011&ref=sr_nr_p_n_g-101015497033111_2&ds=v1%3A%2Be%2FL9KUyEZoaqmYnWu%2FAV2qjP9wOeeTYI9aH%2Bvt9LCY
+                    - checkbox [ref=e2895]
+                    - text: 1 a 1,9 lb
+                - listitem [ref=e2897]:
+                  - link "Aplicar 2 a 2,9 lb filtro para limitar los resultados" [ref=e2899] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015497033111%3A122268324011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268188011&ref=sr_nr_p_n_g-101015497033111_3&ds=v1%3A5bwZ4RxQeJ%2BmHgfiWNXD3GMChyreYnfNnbV%2Bu%2BfgKX4
+                    - checkbox [ref=e2902]
+                    - text: 2 a 2,9 lb
+                - listitem [ref=e2904]:
+                  - link "Aplicar 3 lb y más filtro para limitar los resultados" [ref=e2906] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015497033111%3A122268325011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268188011&ref=sr_nr_p_n_g-101015497033111_4&ds=v1%3A3uoj0NiwSSc5GWhAPOpPcIkfFR%2B1p%2FNCHNkatlDsN2w
+                    - checkbox [ref=e2909]
+                    - text: 3 lb y más
+            - group "Tipo de controlador de audio" [ref=e2911]:
+              - heading "Tipo de controlador de audio" [level=2] [ref=e2912]
+              - list "Tipo de controlador de audio" [ref=e2913]:
+                - listitem [ref=e2914]:
+                  - link "Aplicar Controlador dinámico filtro para limitar los resultados" [ref=e2916] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A122268314011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_1&ds=v1%3AVfEh9O5QfirjetSkRv1vzak1l6wDyv9ndAiNQrsqOMQ
+                    - checkbox [ref=e2919]
+                    - text: Controlador dinámico
+                - listitem [ref=e2921]:
+                  - link "Aplicar Conductor de armadura equilibrada filtro para limitar los resultados" [ref=e2923] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A122268312011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_2&ds=v1%3A%2B6B2JDY19UoWgJ%2BFRK1iZqIteSlyRaXfH66AQByDdRE
+                    - checkbox [ref=e2926]
+                    - text: Conductor de armadura equilibrada
+                - listitem [ref=e2928]:
+                  - link "Aplicar Controlador de conducción ósea filtro para limitar los resultados" [ref=e2930] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A122268315011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_3&ds=v1%3AiXDvbV9TM2e8AG7b%2F4q8sSXP5dzYB3%2BFtL41DUq8JD4
+                    - checkbox [ref=e2933]
+                    - text: Controlador de conducción ósea
+                - listitem [ref=e2935]:
+                  - link "Aplicar Altavoz de gama media filtro para limitar los resultados" [ref=e2937] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A211954495011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_4&ds=v1%3AfA%2BMr39YPFeKwM6%2Bi%2Bkhxivx0Q9azn8DO3coktqY13Q
+                    - checkbox [ref=e2940]
+                    - text: Altavoz de gama media
+                - listitem [ref=e2942]:
+                  - link "Aplicar Altavoz de graves filtro para limitar los resultados" [ref=e2944] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A211954496011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_5&ds=v1%3AGt8GAAC33VU035WcwuxhV426Nr%2B1s%2F8Qm%2Fx6Rr9B8Uw
+                    - checkbox [ref=e2947]
+                    - text: Altavoz de graves
+                - listitem [ref=e2949]:
+                  - link "Aplicar Controlador DLC filtro para limitar los resultados" [ref=e2951] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A211954500011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_6&ds=v1%3ApXWKWKe6qLXIpzoYn3A1ZrUwaDA5Viy3UuOwOcwxzDU
+                    - checkbox [ref=e2954]
+                    - text: Controlador DLC
+                - listitem [ref=e2956]:
+                  - link "Aplicar Controlador electrostático filtro para limitar los resultados" [ref=e2958] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A122268316011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_7&ds=v1%3AtMN1JuKSAkAcVJGt%2FTECQgwf6sdvKHqAbZcdg8Z97d8
+                    - checkbox [ref=e2961]
+                    - text: Controlador electrostático
+                - listitem [ref=e2963]:
+                  - link "Aplicar Controlador híbrido filtro para limitar los resultados" [ref=e2965] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A122268313011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_8&ds=v1%3A2q5tlRT%2B%2FWN7zQAKAnIleG8D8jM8GsuNCh9%2BkgEQbtc
+                    - checkbox [ref=e2968]
+                    - text: Controlador híbrido
+                - listitem [ref=e2970]:
+                  - link "Aplicar Controlador magnético plano filtro para limitar los resultados" [ref=e2972] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A122268310011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_9&ds=v1%3AtFR%2BFPxI3nGMLVVaPt2bmdSBOHuXefUkl1fJVVlkVqw
+                    - checkbox [ref=e2975]
+                    - text: Controlador magnético plano
+                - listitem [ref=e2977]:
+                  - link "Aplicar Controlador personalizado filtro para limitar los resultados" [ref=e2979] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A211954499011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_10&ds=v1%3AP56Wi3%2BSArvIY%2FbsWaikIimw4ZElcRITkzWFkKx40XQ
+                    - checkbox [ref=e2982]
+                    - text: Controlador personalizado
+                - listitem [ref=e2984]:
+                  - link "Aplicar Controlador piezoeléctrico filtro para limitar los resultados" [ref=e2986] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015499549111%3A122268311011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268186011&ref=sr_nr_p_n_g-101015499549111_11&ds=v1%3AXF9pTd%2BDBDPg7WMBuCbUGWeHZivX%2FpEhielST%2FaOEmg
+                    - checkbox [ref=e2989]
+                    - text: Controlador piezoeléctrico
+            - group "Impedancia" [ref=e2991]:
+              - heading "Impedancia" [level=2] [ref=e2992]
+              - list "Impedancia" [ref=e2993]:
+                - listitem [ref=e2994]:
+                  - link "Aplicar Hasta 1 filtro para limitar los resultados" [ref=e2996] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015490468111%3A122265093011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122265084011&ref=sr_nr_p_n_g-101015490468111_1&ds=v1%3Asra5UO9PmrQZNleedvWLFFfxZXxlt7epS32iJuTK8YQ
+                    - checkbox [ref=e2999]
+                    - text: Hasta 1
+                - listitem [ref=e3001]:
+                  - link "Aplicar 1 a 1.9 filtro para limitar los resultados" [ref=e3003] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015490468111%3A122265090011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122265084011&ref=sr_nr_p_n_g-101015490468111_2&ds=v1%3ApjoDUcN1VmHz4tRhapGEF9S7eKEBbmp6kBDk52CaB5s
+                    - checkbox [ref=e3006]
+                    - text: 1 a 1.9
+                - listitem [ref=e3008]:
+                  - link "Aplicar 2 a 2.9 filtro para limitar los resultados" [ref=e3010] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015490468111%3A122265092011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122265084011&ref=sr_nr_p_n_g-101015490468111_3&ds=v1%3A9VrCAam%2F0RXfxqaEgOIIhFi5JlRaORRYq9%2BqqGQD8y4
+                    - checkbox [ref=e3013]
+                    - text: 2 a 2.9
+                - listitem [ref=e3015]:
+                  - link "Aplicar 3 y más filtro para limitar los resultados" [ref=e3017] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015490468111%3A122265091011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122265084011&ref=sr_nr_p_n_g-101015490468111_4&ds=v1%3AslReReK%2BtNjkYgJ%2FayQXS5wYs%2FeoAADJDWELyz9TgIU
+                    - checkbox [ref=e3020]
+                    - text: 3 y más
+            - group "Color de la funda de transporte" [ref=e3022]:
+              - heading "Color de la funda de transporte" [level=2] [ref=e3023]
+              - list "Color de la funda de transporte" [ref=e3024]:
+                - listitem [ref=e3025]:
+                  - link "Aplicar Negro filtro para limitar los resultados" [ref=e3027] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500219111%3A122269856011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269793011&ref=sr_nr_p_n_g-101015500219111_1&ds=v1%3AP9Xdxk6ouBbG3%2BL8ToF3dlq17Ii5FqdKDqscCrfIt9U
+                    - checkbox [ref=e3030]
+                    - text: Negro
+                - listitem [ref=e3032]:
+                  - link "Aplicar Blanco filtro para limitar los resultados" [ref=e3034] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500219111%3A122269858011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269793011&ref=sr_nr_p_n_g-101015500219111_2&ds=v1%3AqALksnWPZuh%2FhtfcPADQ4IeS8WwcdRpAlFOfaJQmAvs
+                    - checkbox [ref=e3037]
+                    - text: Blanco
+                - listitem [ref=e3039]:
+                  - link "Aplicar Azul filtro para limitar los resultados" [ref=e3041] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500219111%3A122269855011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269793011&ref=sr_nr_p_n_g-101015500219111_3&ds=v1%3Anitll0wfKElCdfJuY2lEXl7U4lb%2F63NJo2jYkOuZTzU
+                    - checkbox [ref=e3044]
+                    - text: Azul
+                - listitem [ref=e3046]:
+                  - link "Aplicar Amarillo filtro para limitar los resultados" [ref=e3048] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500219111%3A122269865011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269793011&ref=sr_nr_p_n_g-101015500219111_4&ds=v1%3A70BkCFHrLw47vnM%2BGtlFDSEvAQyIKaqJF2lXUqbuQD4
+                    - checkbox [ref=e3051]
+                    - text: Amarillo
+                - listitem [ref=e3053]:
+                  - link "Aplicar Beis filtro para limitar los resultados" [ref=e3055] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500219111%3A122269853011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269793011&ref=sr_nr_p_n_g-101015500219111_5&ds=v1%3AZej8VJxyBEqCpA3JMKbfHriuKx%2BV9Gh6yDA1iGLOw0w
+                    - checkbox [ref=e3058]
+                    - text: Beis
+                - listitem [ref=e3060]:
+                  - link "Aplicar Blanco roto filtro para limitar los resultados" [ref=e3062] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500219111%3A122269854011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269793011&ref=sr_nr_p_n_g-101015500219111_6&ds=v1%3AicUaFxB%2BFfKeW5%2B5Xw6lV9G%2BuZWciV3Ow9ZIAwcGXRY
+                    - checkbox [ref=e3065]
+                    - text: Blanco roto
+                - listitem [ref=e3067]:
+                  - link "Aplicar Claro filtro para limitar los resultados" [ref=e3069] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500219111%3A122269862011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269793011&ref=sr_nr_p_n_g-101015500219111_7&ds=v1%3AX%2F5%2BxJQwdFWgT%2FZAFE%2BKCYHRgg0qytiJGSEv61U0rsY
+                    - checkbox [ref=e3072]
+                    - text: Claro
+                - listitem [ref=e3074]:
+                  - button "Ver más, Color de la funda de transporte" [ref=e3077] [cursor=pointer]: Ver más
+            - group "Fecha de Lanzamiento" [ref=e3079]:
+              - heading "Fecha de Lanzamiento" [level=2] [ref=e3080]
+              - list "Fecha de Lanzamiento" [ref=e3081]:
+                - listitem [ref=e3082]:
+                  - link "Últimos 30 Días" [ref=e3084] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_date%3A1249088011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=1249087011&ref=sr_nr_p_n_date_1&ds=v1%3A2A9xbtwvbPgxTovUKKNwEIlxoUstL12CKTlIXQ12Hi8
+                - listitem [ref=e3085]:
+                  - link "Últimos 90 Días" [ref=e3087] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_date%3A1249089011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=1249087011&ref=sr_nr_p_n_date_2&ds=v1%3AYhxN5mbanwKrw5jdS%2BKMfQgJM%2FQi6mUKyKjFwrGNuOM
+                - listitem [ref=e3088]:
+                  - link "Próximamente" [ref=e3090] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_date%3A1249090011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=1249087011&ref=sr_nr_p_n_date_3&ds=v1%3AFqx5l1m1ix%2FHfVk%2B6SjUp9xSZ1VEKSqPy1Himo3S%2BXc
+            - group "Respuesta frecuencial" [ref=e3091]:
+              - heading "Respuesta frecuencial" [level=2] [ref=e3092]
+              - list "Respuesta frecuencial" [ref=e3093]:
+                - listitem [ref=e3094]:
+                  - link "Aplicar Hasta 99.999 Hz filtro para limitar los resultados" [ref=e3096] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015501853111%3A122268329011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268189011&ref=sr_nr_p_n_g-101015501853111_1&ds=v1%3AeVwPe952hWKjKxkYuRj%2FN7KuKFdf0KSh3Ly3OlgF8fo
+                    - checkbox [ref=e3099]
+                    - text: Hasta 99.999 Hz
+                - listitem [ref=e3101]:
+                  - link "Aplicar 100.000 a 199.999 Hz filtro para limitar los resultados" [ref=e3103] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015501853111%3A122268327011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268189011&ref=sr_nr_p_n_g-101015501853111_2&ds=v1%3A8vkNMt%2FjaKIXYlKmrrrQ4cOLWXPfIB3Y7uOPKhZZlvM
+                    - checkbox [ref=e3106]
+                    - text: 100.000 a 199.999 Hz
+                - listitem [ref=e3108]:
+                  - link "Aplicar 200.000 a 299.999 Hz filtro para limitar los resultados" [ref=e3110] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015501853111%3A122268326011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268189011&ref=sr_nr_p_n_g-101015501853111_3&ds=v1%3AUFTGaVM24kR%2BEEn4nTAowdTVuqXSiT725ERLzRv2j34
+                    - checkbox [ref=e3113]
+                    - text: 200.000 a 299.999 Hz
+                - listitem [ref=e3115]:
+                  - link "Aplicar 300.000 Hz y más filtro para limitar los resultados" [ref=e3117] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015501853111%3A122268328011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122268189011&ref=sr_nr_p_n_g-101015501853111_4&ds=v1%3AyaG1IPkCJoBdY8VspRwIdxJpL4mzFZqlvpZ17vjoCEw
+                    - checkbox [ref=e3120]
+                    - text: 300.000 Hz y más
+            - group "Material de la funda de transporte" [ref=e3122]:
+              - heading "Material de la funda de transporte" [level=2] [ref=e3123]
+              - list "Material de la funda de transporte" [ref=e3124]:
+                - listitem [ref=e3125]:
+                  - link "Aplicar Plástico filtro para limitar los resultados" [ref=e3127] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500290111%3A122269835011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269792011&ref=sr_nr_p_n_g-101015500290111_1&ds=v1%3AmI8dBqqwaIhDv4EnM9d2q1i8T7eFtYzKO064peCjJZI
+                    - checkbox [ref=e3130]
+                    - text: Plástico
+                - listitem [ref=e3132]:
+                  - link "Aplicar Tela filtro para limitar los resultados" [ref=e3134] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500290111%3A122269842011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269792011&ref=sr_nr_p_n_g-101015500290111_2&ds=v1%3Al3iEFbEZVFmYymnPb4ul5mYEyG%2FALD5sRD5PQIq7qpo
+                    - checkbox [ref=e3137]
+                    - text: Tela
+                - listitem [ref=e3139]:
+                  - link "Aplicar Cartón filtro para limitar los resultados" [ref=e3141] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500290111%3A122269831011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269792011&ref=sr_nr_p_n_g-101015500290111_3&ds=v1%3AQWSMVWhYcfkTMvZiTpIRXzj7Ty3BE3Tv%2F%2BvGJGUKpBo
+                    - checkbox [ref=e3144]
+                    - text: Cartón
+                - listitem [ref=e3146]:
+                  - link "Aplicar Silicona filtro para limitar los resultados" [ref=e3148] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500290111%3A122269844011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269792011&ref=sr_nr_p_n_g-101015500290111_4&ds=v1%3AjREw%2B%2Bvyum7ikw%2BF7XpMgYe53oqZ%2BIWWUZ0q8f6wHPM
+                    - checkbox [ref=e3151]
+                    - text: Silicona
+                - listitem [ref=e3153]:
+                  - link "Aplicar Aluminio filtro para limitar los resultados" [ref=e3155] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500290111%3A122269826011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269792011&ref=sr_nr_p_n_g-101015500290111_5&ds=v1%3Aw9YhPpaV4uL2FJgGOCXsYziy3IUtcX8ItLvxyPP42%2Bs
+                    - checkbox [ref=e3158]
+                    - text: Aluminio
+                - listitem [ref=e3160]:
+                  - link "Aplicar Cuero filtro para limitar los resultados" [ref=e3162] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500290111%3A122269830011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269792011&ref=sr_nr_p_n_g-101015500290111_6&ds=v1%3AyVpozmAUXNnO9gXrNKaQmIfjWAsatl%2BbQiSu5%2FNWWLg
+                    - checkbox [ref=e3165]
+                    - text: Cuero
+                - listitem [ref=e3167]:
+                  - link "Aplicar Cuero sintético filtro para limitar los resultados" [ref=e3169] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_g-101015500290111%3A122269834011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=122269792011&ref=sr_nr_p_n_g-101015500290111_7&ds=v1%3And6O17AKKZCpkfyr%2FKYQPZ5%2BDEs%2B5kDevni1iauPwd8
+                    - checkbox [ref=e3172]
+                    - text: Cuero sintético
+                - listitem [ref=e3174]:
+                  - button "Ver más, Material de la funda de transporte" [ref=e3177] [cursor=pointer]: Ver más
+            - group "Liga y Equipo" [ref=e3179]:
+              - heading "Liga y Equipo" [level=2] [ref=e3180]
+              - list "Liga y Equipo" [ref=e3181]:
+                - listitem [ref=e3182]:
+                  - link "Aplicar NFL filtro para limitar los resultados" [ref=e3184] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_theme_browse-bin%3A374273011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=374240011&ref=sr_nr_p_n_theme_browse-bin_1&ds=v1%3A8qxwvHAgNDAuQsR9H18wbT6Vkq9QCZ3HgIqjFzZEK1w
+                    - checkbox [ref=e3187]
+                    - text: NFL
+                - listitem [ref=e3189]:
+                  - link "Aplicar NBA filtro para limitar los resultados" [ref=e3191] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_theme_browse-bin%3A374306011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=374240011&ref=sr_nr_p_n_theme_browse-bin_2&ds=v1%3AUQXu2c99XbZlegX%2BuspPc1RGharYOD3oHJuSA%2B0UJ%2Fk
+                    - checkbox [ref=e3194]
+                    - text: NBA
+                - listitem [ref=e3196]:
+                  - link "Aplicar NHL filtro para limitar los resultados" [ref=e3198] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_theme_browse-bin%3A374377011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=374240011&ref=sr_nr_p_n_theme_browse-bin_3&ds=v1%3AzkmiXVtH0QGQLBiYJqGNIIZ%2B2whJCkSVnpPEfO8fl7M
+                    - checkbox [ref=e3201]
+                    - text: NHL
+                - listitem [ref=e3203]:
+                  - link "Aplicar NCAA filtro para limitar los resultados" [ref=e3205] [cursor=pointer]:
+                    - /url: /-/es/s?k=wireless+headphones&rh=p_n_theme_browse-bin%3A374337011&dc&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1779337767&rnid=374240011&ref=sr_nr_p_n_theme_browse-bin_4&ds=v1%3ATUZH7I%2BhvuopUlnBJiXHMwDV8XGMel10mwfIk7TvWYo
+                    - checkbox [ref=e3208]
+                    - text: NCAA
+    - complementary "Productos que has visto recientemente y recomendaciones destacadas"
+    - generic [ref=e3210]:
+      - button "Inicio de Página" [ref=e3211] [cursor=pointer]:
+        - generic [ref=e3212]: Inicio de Página
+      - generic [ref=e3213]:
+        - generic [ref=e3214]:
+          - heading "Conócenos" [level=6] [ref=e3215]
+          - list [ref=e3216]:
+            - listitem [ref=e3217]:
+              - link "Trabaja en Amazon" [ref=e3218] [cursor=pointer]:
+                - /url: https://www.amazon.jobs
+            - listitem [ref=e3219]:
+              - link "Blog" [ref=e3220] [cursor=pointer]:
+                - /url: https://blog.aboutamazon.com/?utm_source=gateway&utm_medium=footer
+            - listitem [ref=e3221]:
+              - link "Acerca de Amazon" [ref=e3222] [cursor=pointer]:
+                - /url: https://www.aboutamazon.com/?utm_source=gateway&utm_medium=footer
+            - listitem [ref=e3223]:
+              - link "Relaciones con los Inversionistas" [ref=e3224] [cursor=pointer]:
+                - /url: https://www.amazon.com/-/es/ir
+            - listitem [ref=e3225]:
+              - link "Dispositivos Amazon" [ref=e3226] [cursor=pointer]:
+                - /url: /-/es/gp/browse.html?node=2102313011&ref_=footer_devices
+            - listitem [ref=e3227]:
+              - link "Amazon Science" [ref=e3228] [cursor=pointer]:
+                - /url: https://www.amazon.science
+        - generic [ref=e3230]:
+          - heading "Gana Dinero con Nosotros" [level=6] [ref=e3231]
+          - list [ref=e3232]:
+            - listitem [ref=e3233]:
+              - link "Vender productos en Amazon" [ref=e3234] [cursor=pointer]:
+                - /url: https://services.amazon.com/sell.html?ld=AZFSSOA&ref_=footer_soa
+            - listitem [ref=e3235]:
+              - link "Vende en Amazon Business" [ref=e3236] [cursor=pointer]:
+                - /url: https://services.amazon.com/amazon-business.html?ld=usb2bunifooter&ref_=footer_b2b
+            - listitem [ref=e3237]:
+              - link "Vender aplicaciones en Amazon" [ref=e3238] [cursor=pointer]:
+                - /url: https://developer.amazon.com
+            - listitem [ref=e3239]:
+              - link "Programa de Afiliados" [ref=e3240] [cursor=pointer]:
+                - /url: https://affiliate-program.amazon.com/
+            - listitem [ref=e3241]:
+              - link "Anuncia tus Productos" [ref=e3242] [cursor=pointer]:
+                - /url: https://advertising.amazon.com/?ref=ext_amzn_ftr
+            - listitem [ref=e3243]:
+              - link "Publica tu Libro en Kindle" [ref=e3244] [cursor=pointer]:
+                - /url: /-/es/gp/seller-account/mm-summary-page.html?ld=AZFooterSelfPublish&topic=200260520&ref_=footer_publishing
+            - listitem [ref=e3245]:
+              - link "Habilita un Amazon Hub" [ref=e3246] [cursor=pointer]:
+                - /url: https://go.thehub-amazon.com/amazon-hub-locker
+            - listitem [ref=e3247]:
+              - text: ›
+              - link "Ver más Gana Dinero con Nosotros" [ref=e3248] [cursor=pointer]:
+                - /url: /-/es/b/?node=18190131011&ld=AZUSSOA-seemore&ref_=footer_seemore
+        - generic [ref=e3250]:
+          - heading "Productos de Pago de Amazon" [level=6] [ref=e3251]
+          - list [ref=e3252]:
+            - listitem [ref=e3253]:
+              - link "Compra con Puntos" [ref=e3254] [cursor=pointer]:
+                - /url: /-/es/gp/browse.html?node=16218619011&ref_=footer_swp
+            - listitem [ref=e3255]:
+              - link "Recarga tu Saldo" [ref=e3256] [cursor=pointer]:
+                - /url: /-/es/dp/B0CHTVMXZJ?th=1?ref_=footer_reload_us
+            - listitem [ref=e3257]:
+              - link "Conversor de divisas de Amazon" [ref=e3258] [cursor=pointer]:
+                - /url: /-/es/gp/browse.html?node=388305011&ref_=footer_tfx
+        - generic [ref=e3260]:
+          - heading "Podemos Ayudarte" [level=6] [ref=e3261]
+          - list [ref=e3262]:
+            - listitem [ref=e3263]:
+              - link "Amazon y el COVID-19" [ref=e3264] [cursor=pointer]:
+                - /url: /-/es/gp/help/customer/display.html?nodeId=GDFU3JS5AL6SYHRD&ref_=footer_covid
+            - listitem [ref=e3265]:
+              - link "Tu Cuenta" [ref=e3266] [cursor=pointer]:
+                - /url: https://www.amazon.com/-/es/gp/css/homepage.html?ref_=footer_ya
+            - listitem [ref=e3267]:
+              - link "Tus Pedidos" [ref=e3268] [cursor=pointer]:
+                - /url: https://www.amazon.com/-/es/gp/css/order-history?ref_=footer_yo
+            - listitem [ref=e3269]:
+              - link "Tarifas de Envío y Políticas" [ref=e3270] [cursor=pointer]:
+                - /url: /-/es/gp/help/customer/display.html?nodeId=468520&ref_=footer_shiprates
+            - listitem [ref=e3271]:
+              - link "Devoluciones y Reemplazos" [ref=e3272] [cursor=pointer]:
+                - /url: /-/es/gp/css/returns/homepage.html?ref_=footer_hy_f_4
+            - listitem [ref=e3273]:
+              - link "Administrar Contenido y Dispositivos" [ref=e3274] [cursor=pointer]:
+                - /url: /-/es/gp/digital/fiona/manage?ref_=footer_myk
+            - listitem [ref=e3275]:
+              - link "Ayuda" [ref=e3276] [cursor=pointer]:
+                - /url: /-/es/gp/help/customer/display.html?nodeId=508510&ref_=footer_gw_m_b_he
+      - generic [ref=e3278]:
+        - link "Amazon US Home" [ref=e3281] [cursor=pointer]:
+          - /url: /-/es/?ref_=footer_logo
+        - generic [ref=e3284]:
+          - generic [ref=e3285]:
+            - link "Elige un idioma para hacer compras. La selección actual es Español." [ref=e3286] [cursor=pointer]:
+              - /url: /-/es/customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+              - generic [ref=e3288]: Español
+            - button "Ampliar para cambiar el idioma o país" [ref=e3289] [cursor=pointer]
+          - link "CRC Colón costarricense" [ref=e3290] [cursor=pointer]:
+            - /url: /-/es/customer-preferences/edit?ie=UTF8&ref_=footer_cop&preferencesReturnUrl=%2Fs%3Fk%3Dwireless%2Bheadphones%26__mk_es_US%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26ref%3Dnb_sb_nosss%2Fref%3Dnb_sb_noss
+            - generic [ref=e3291]: CRC
+            - generic [ref=e3292]: Colón costarricense
+          - button "Selecciona un país/una región para comprar. La selección actual esEstados Unidos." [ref=e3293] [cursor=pointer]:
+            - generic [ref=e3295]: Estados Unidos
+      - navigation "Más en Amazon" [ref=e3296]:
+        - generic "Más en Amazon" [ref=e3297]:
+          - list [ref=e3298]:
+            - listitem [ref=e3299]:
+              - link "Amazon Music Reproduce millones de canciones" [ref=e3300] [cursor=pointer]:
+                - /url: https://music.amazon.com?ref=dm_aff_amz_com
+                - heading "Amazon Music" [level=5] [ref=e3301]
+                - generic [ref=e3302]:
+                  - text: Reproduce millones
+                  - text: de canciones
+            - listitem [ref=e3303]
+            - listitem [ref=e3304]:
+              - link "Amazon Advertising Encontrar, atraer y captar clientes" [ref=e3305] [cursor=pointer]:
+                - /url: https://advertising.amazon.com/?ref=footer_advtsing_amzn_com
+                - heading "Amazon Advertising" [level=5] [ref=e3306]
+                - generic [ref=e3307]:
+                  - text: Encontrar, atraer y
+                  - text: captar clientes
+            - listitem [ref=e3308]
+            - listitem [ref=e3309]:
+              - link "6pm Descubre ofertas en marcas de moda" [ref=e3310] [cursor=pointer]:
+                - /url: https://www.6pm.com
+                - heading "6pm" [level=5] [ref=e3311]
+                - generic [ref=e3312]:
+                  - text: Descubre ofertas
+                  - text: en marcas de moda
+            - listitem [ref=e3313]
+            - listitem [ref=e3314]:
+              - link "AbeBooks Libros, arte & artículos de colección" [ref=e3315] [cursor=pointer]:
+                - /url: https://www.abebooks.com
+                - heading "AbeBooks" [level=5] [ref=e3316]
+                - generic [ref=e3317]:
+                  - text: Libros, arte
+                  - text: "& artículos de colección"
+            - listitem [ref=e3318]
+            - listitem [ref=e3319]:
+              - link "ACX Editorial de Audiolibros Hecho Fácil" [ref=e3320] [cursor=pointer]:
+                - /url: https://www.acx.com/
+                - heading "ACX" [level=5] [ref=e3321]
+                - generic [ref=e3322]:
+                  - text: Editorial de Audiolibros
+                  - text: Hecho Fácil
+          - list [ref=e3323]:
+            - listitem [ref=e3324]:
+              - link "Venda en Amazon Comience una cuenta de venta" [ref=e3325] [cursor=pointer]:
+                - /url: https://sell.amazon.com/?ld=AZUSSOA-footer-aff&ref_=footer_sell
+                - heading "Venda en Amazon" [level=5] [ref=e3326]
+                - generic [ref=e3327]: Comience una cuenta de venta
+            - listitem [ref=e3328]
+            - listitem [ref=e3329]:
+              - link "Veeqo Shipping Software Inventory Management" [ref=e3330] [cursor=pointer]:
+                - /url: https://www.veeqo.com/?utm_source=amazon&utm_medium=website&utm_campaign=footer
+                - heading "Veeqo" [level=5] [ref=e3331]
+                - generic [ref=e3332]:
+                  - text: Shipping Software
+                  - text: Inventory Management
+            - listitem [ref=e3333]
+            - listitem [ref=e3334]:
+              - link "Amazon Business Todo para tu negocio" [ref=e3335] [cursor=pointer]:
+                - /url: /-/es/business?ref_=footer_retail_b2b
+                - heading "Amazon Business" [level=5] [ref=e3336]
+                - generic [ref=e3337]:
+                  - text: Todo para
+                  - text: tu negocio
+            - listitem [ref=e3338]
+            - listitem [ref=e3339]:
+              - link "AmazonGlobal Pedidos de Envío Internacional" [ref=e3340] [cursor=pointer]:
+                - /url: /-/es/gp/browse.html?node=20338496011&ref_=footer_amazonglobal
+                - heading "AmazonGlobal" [level=5] [ref=e3341]
+                - generic [ref=e3342]:
+                  - text: Pedidos de Envío
+                  - text: Internacional
+            - listitem [ref=e3343]
+            - listitem [ref=e3344]:
+              - link "Amazon Web Services Servicios de cómputo en nube escalable" [ref=e3345] [cursor=pointer]:
+                - /url: https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=amazonfooter
+                - heading "Amazon Web Services" [level=5] [ref=e3346]
+                - generic [ref=e3347]:
+                  - text: Servicios de cómputo
+                  - text: en nube escalable
+          - list [ref=e3348]:
+            - listitem [ref=e3349]:
+              - link "Audible Escucha Libros e Interpretaciones de Audio Originales" [ref=e3350] [cursor=pointer]:
+                - /url: https://www.audible.com
+                - heading "Audible" [level=5] [ref=e3351]
+                - generic [ref=e3352]:
+                  - text: Escucha Libros e Interpretaciones
+                  - text: de Audio Originales
+            - listitem [ref=e3353]
+            - listitem [ref=e3354]:
+              - link "Box Office Mojo Encuentra películas Datos de taquilla" [ref=e3355] [cursor=pointer]:
+                - /url: https://www.boxofficemojo.com/?ref_=amzn_nav_ftr
+                - heading "Box Office Mojo" [level=5] [ref=e3356]
+                - generic [ref=e3357]:
+                  - text: Encuentra películas
+                  - text: Datos de taquilla
+            - listitem [ref=e3358]
+            - listitem [ref=e3359]:
+              - link "Goodreads Análisis de libros y recomendaciones" [ref=e3360] [cursor=pointer]:
+                - /url: https://www.goodreads.com
+                - heading "Goodreads" [level=5] [ref=e3361]
+                - generic [ref=e3362]:
+                  - text: Análisis de libros
+                  - text: y recomendaciones
+            - listitem [ref=e3363]
+            - listitem [ref=e3364]:
+              - link "IMDb Películas, TV y Celebridades" [ref=e3365] [cursor=pointer]:
+                - /url: https://www.imdb.com
+                - heading "IMDb" [level=5] [ref=e3366]
+                - generic [ref=e3367]:
+                  - text: Películas, TV
+                  - text: y Celebridades
+            - listitem [ref=e3368]
+            - listitem [ref=e3369]:
+              - link "IMDbPro Obtén información de entretenimiento que los profesionales necesitan" [ref=e3370] [cursor=pointer]:
+                - /url: https://pro.imdb.com?ref_=amzn_nav_ftr
+                - heading "IMDbPro" [level=5] [ref=e3371]
+                - generic [ref=e3372]:
+                  - text: Obtén información de entretenimiento
+                  - text: que los profesionales necesitan
+          - list [ref=e3373]:
+            - listitem [ref=e3374]:
+              - link "Kindle Direct Publishing Publica tu libro en papel y digital de manera independiente" [ref=e3375] [cursor=pointer]:
+                - /url: https://kdp.amazon.com
+                - heading "Kindle Direct Publishing" [level=5] [ref=e3376]
+                - generic [ref=e3377]:
+                  - text: Publica tu libro en papel y digital
+                  - text: de manera independiente
+            - listitem [ref=e3378]
+            - listitem [ref=e3379]:
+              - link "Prime Video Direct Distribución de Video Sin Esfuerzo" [ref=e3380] [cursor=pointer]:
+                - /url: https://videodirect.amazon.com/home/landing
+                - heading "Prime Video Direct" [level=5] [ref=e3381]
+                - generic [ref=e3382]:
+                  - text: Distribución de Video
+                  - text: Sin Esfuerzo
+            - listitem [ref=e3383]
+            - listitem [ref=e3384]:
+              - link "Shopbop Diseñador Marcas de Moda" [ref=e3385] [cursor=pointer]:
+                - /url: https://www.shopbop.com
+                - heading "Shopbop" [level=5] [ref=e3386]
+                - generic [ref=e3387]:
+                  - text: Diseñador
+                  - text: Marcas de Moda
+            - listitem [ref=e3388]
+            - listitem [ref=e3389]:
+              - link "Woot! Descuentos y travesuras" [ref=e3390] [cursor=pointer]:
+                - /url: https://www.woot.com/
+                - heading "Woot!" [level=5] [ref=e3391]
+                - generic [ref=e3392]:
+                  - text: Descuentos y
+                  - text: travesuras
+            - listitem [ref=e3393]
+            - listitem [ref=e3394]:
+              - link "Zappos Zapatos y ropa" [ref=e3395] [cursor=pointer]:
+                - /url: https://www.zappos.com
+                - heading "Zappos" [level=5] [ref=e3396]
+                - generic [ref=e3397]:
+                  - text: Zapatos y
+                  - text: ropa
+          - list [ref=e3398]:
+            - listitem [ref=e3399]:
+              - link "Ring Casa Inteligente Sistemas de Seguridad" [ref=e3400] [cursor=pointer]:
+                - /url: https://ring.com
+                - heading "Ring" [level=5] [ref=e3401]
+                - generic [ref=e3402]:
+                  - text: Casa Inteligente
+                  - text: Sistemas de Seguridad
+            - listitem [ref=e3403]
+            - listitem [ref=e3404]:
+              - link "Wifi eero Video 4K en tiempo real en todas las habitaciones" [ref=e3405] [cursor=pointer]:
+                - /url: https://eero.com/
+                - heading "Wifi eero" [level=5] [ref=e3406]
+                - generic [ref=e3407]: Video 4K en tiempo real en todas las habitaciones
+            - listitem [ref=e3408]
+            - listitem [ref=e3409]:
+              - link "Blink Seguridad inteligente para todos los hogares" [ref=e3410] [cursor=pointer]:
+                - /url: https://blinkforhome.com/?ref=nav_footer
+                - heading "Blink" [level=5] [ref=e3411]
+                - generic [ref=e3412]:
+                  - text: Seguridad inteligente
+                  - text: para todos los hogares
+            - listitem [ref=e3413]
+            - listitem [ref=e3414]:
+              - link "Neighbors App Alertas de seguridad y delitos en tiempo real" [ref=e3415] [cursor=pointer]:
+                - /url: https://shop.ring.com/pages/neighbors-app
+                - heading "Neighbors App" [level=5] [ref=e3416]
+                - generic [ref=e3417]:
+                  - text: Alertas de seguridad
+                  - text: y delitos en tiempo real
+            - listitem [ref=e3418]
+            - listitem [ref=e3419]:
+              - link "PillPack Pharmacy simplificado" [ref=e3420] [cursor=pointer]:
+                - /url: https://www.pillpack.com
+                - heading "PillPack" [level=5] [ref=e3421]
+                - generic [ref=e3422]: Pharmacy simplificado
+      - generic [ref=e3423]:
+        - list [ref=e3424]:
+          - listitem [ref=e3425]:
+            - link "Condiciones de uso" [ref=e3426] [cursor=pointer]:
+              - /url: /-/es/gp/help/customer/display.html?nodeId=508088&ref_=footer_cou
+          - listitem [ref=e3427]:
+            - link "Aviso de privacidad" [ref=e3428] [cursor=pointer]:
+              - /url: /-/es/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ&ref_=footer_privacy
+          - listitem [ref=e3429]:
+            - link "Aviso de Privacidad de Datos de Salud del Consumidor" [ref=e3430] [cursor=pointer]:
+              - /url: /-/es/gp/help/customer/display.html?ie=UTF8&nodeId=TnACMrGVghHocjL8KB&ref_=footer_consumer_health_data_privacy
+          - listitem [ref=e3431]:
+            - link "Tus opciones de privacidad de los anuncios" [ref=e3432] [cursor=pointer]:
+              - /url: /-/es/privacyprefs?ref_=footer_iba
+          - listitem [ref=e3433]
+        - generic [ref=e3435]: © 1996-2026 Amazon.com, Inc. o sus afiliados
+    - iframe [ref=e3437]:
+      - iframe [ref=f4e2]:
+        - generic [active]:
+          - img [ref=f5e1]
+          - img [ref=f5e2]
+          - img [ref=f5e3]
+          - img [ref=f5e4]
+          - img [ref=f5e5]
+          - img [ref=f5e6]
+          - img [ref=f5e7]
+          - img [ref=f5e8]
+          - img [ref=f5e9]
+          - img [ref=f5e10]
+          - img [ref=f5e11]
+          - img [ref=f5e12]
+          - img [ref=f5e13]
+          - img [ref=f5e14]
+          - img [ref=f5e15]
+          - img [ref=f5e16]
+          - img [ref=f5e17]
+          - img [ref=f5e18]
+  - generic: "Test: amzn-nv-flyout-healthy-choice"
+  - generic: "Test: nav-rufus-disc-txt"
+  - generic: "Test: a-truncate-cut"
+  - generic: "Test: sp-cc-wrapper"
+  - generic: "Test: .mo-wp"
+  - generic: "Test: .a-image-container"
+  - generic: "Test: sp-cc"
+  - generic: "Test: .amzn-box-inner"
+  - generic: "Test: .js-order-card"
+  - generic: "Test: pldn-deep-link"
+  - generic: "Test: add-to-cart-btn"
+  - generic: "Test: amzn-nav-app-banner-container"
+  - generic: "Test: .sparkle-container"
+```
+
+# Test source
+
+```ts
+  27  |       // No popup, continue
+  28  |     }
+  29  |   }
+  30  | 
+  31  |   async waitForResults() {
+  32  |     await this.dismissLocationPopupIfPresent();
+  33  |     await this.results.first().waitFor({ state: "visible", timeout: 15000 });
+  34  |   }
+  35  | 
+  36  |   async getResultCount(): Promise<number> {
+  37  |     return await this.results.count();
+  38  |   }
+  39  | 
+  40  |   async filterByPriceRange(min: string, max: string) {
+  41  |     try {
+  42  |       await this.dismissLocationPopupIfPresent();
+  43  |       const minSelectors = [
+  44  |         "#low-price",
+  45  |         "input[aria-label='Precio mínimo']",
+  46  |         "input[placeholder*='min' i]",
+  47  |         "input[name='low-price']",
+  48  |       ];
+  49  |       const maxSelectors = [
+  50  |         "#high-price",
+  51  |         "input[aria-label='Precio máximo']",
+  52  |         "input[placeholder*='max' i]",
+  53  |         "input[name='high-price']",
+  54  |       ];
+  55  |       let minInput = null;
+  56  |       for (const sel of minSelectors) {
+  57  |         const el = this.page.locator(sel).first();
+  58  |         if (await el.isVisible({ timeout: 2000 })) {
+  59  |           minInput = el;
+  60  |           break;
+  61  |         }
+  62  |       }
+  63  |       if (!minInput) throw new Error("min input not found");
+  64  | 
+  65  |       let maxInput = null;
+  66  |       for (const sel of maxSelectors) {
+  67  |         const el = this.page.locator(sel).first();
+  68  |         if (await el.isVisible({ timeout: 2000 })) {
+  69  |           maxInput = el;
+  70  |           break;
+  71  |         }
+  72  |       }
+  73  |       if (!maxInput) throw new Error("max input not found");
+  74  | 
+  75  |       await minInput.fill(min);
+  76  |       await maxInput.fill(max);
+  77  |       const goBtn = this.page
+  78  |         .locator("#go-button, button[aria-label*='Ir' i], input[type='submit']")
+  79  |         .first();
+  80  |       await goBtn.click();
+  81  |       await this.page.waitForLoadState("domcontentloaded");
+  82  |     } catch {
+  83  |       throw new Error(
+  84  |         "Price filter inputs not found — Amazon may have changed the UI for this region."
+  85  |       );
+  86  |     }
+  87  |   }
+  88  | 
+  89  |   async sortBy(option: string) {
+  90  |     await this.dismissLocationPopupIfPresent();
+  91  |     await this.sortDropdown.selectOption(option);
+  92  |     await this.page.waitForLoadState("domcontentloaded");
+  93  |   }
+  94  | 
+  95  |   async clickFirstResult() {
+  96  |     await this.dismissLocationPopupIfPresent();
+  97  |     const linkSelectors = [
+  98  |       '[data-component-type="s-search-result"] h2 a',
+  99  |       '[data-component-type="s-search-result"] a.a-link-normal.s-no-outline',
+  100 |       '[data-component-type="s-search-result"] .s-product-image-container a',
+  101 |     ];
+  102 |     for (const selector of linkSelectors) {
+  103 |       const el = this.page.locator(selector).first();
+  104 |       if (await el.isVisible({ timeout: 3000 })) {
+  105 |         const href = await el.getAttribute("href");
+  106 |         if (href) {
+  107 |           const fullUrl = href.startsWith("http")
+  108 |             ? href
+  109 |             : `https://www.amazon.com${href}`;
+  110 |           await this.page.goto(fullUrl);
+  111 |           return this.page;
+  112 |         }
+  113 |       }
+  114 |     }
+  115 |     throw new Error("No clickable product link found in search results.");
+  116 |   }
+  117 |   async filterByFreeShipping() {
+  118 |   try {
+  119 |     await this.dismissLocationPopupIfPresent();
+  120 |     const checkbox = this.page.locator(
+  121 |       "text=Elegible para Envío Gratis, text=Eligible for Free Shipping"
+  122 |     ).first();
+  123 |     await checkbox.waitFor({ state: "visible", timeout: 8000 });
+  124 |     await checkbox.click();
+  125 |     await this.page.waitForLoadState("domcontentloaded");
+  126 |   } catch {
+> 127 |     throw new Error("Free shipping filter not found.");
+      |           ^ Error: Free shipping filter not found.
+  128 |   }
+  129 | }
+  130 | }
+```

@@ -24,10 +24,10 @@ export default defineConfig({
     screenshot: "only-on-failure",
     video: "retain-on-failure",
     trace: "on-first-retry",
-    locale: "en-US",
-    timezoneId: "America/New_York",
+    locale: "es-CR",
+    timezoneId: "America/Costa_Rica",
     extraHTTPHeaders: {
-      "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Language": "es-CR,es;q=0.9",
     },
   },
 

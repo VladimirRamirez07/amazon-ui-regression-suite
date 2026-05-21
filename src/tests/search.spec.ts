@@ -36,7 +36,7 @@ test.describe("Amazon Search Flow", () => {
       .first()
       .textContent();
 
-    expect(firstTitle?.toLowerCase()).toContain("laptop");
+    expect(firstTitle?.toLowerCase()).toMatch(/laptop|portátil|notebook/i);
   });
 
   test("TC03 - Should sort results by price low to high", async ({ page }) => {
