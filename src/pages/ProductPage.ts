@@ -32,14 +32,15 @@ export class ProductPage {
 
   async addToCart() {
     try {
-      await this.addToCartButton.waitFor({ state: "visible", timeout: 8000 });
+      await this.addToCartButton.waitFor({ state: "visible", timeout: 5000 });
+      await this.addToCartButton.click();
     } catch {
+      // Si el botón está hidden (producto con variantes), usar JS click
       await this.page.evaluate(() => {
-        document.querySelector("#add-to-cart-button")?.scrollIntoView();
+        const btn = document.querySelector("#add-to-cart-button") as HTMLElement;
+        if (btn) btn.click();
       });
-      await this.page.waitForTimeout(1000);
     }
-    await this.addToCartButton.click({ force: true });
     await this.page.waitForTimeout(2000);
   }
 
