@@ -199,6 +199,20 @@ Reports are uploaded as GitHub Actions artifacts and retained for 30 days.
 | Browser profile | Plugins + language spoofing |
 | Permissions API | `notifications` query patching |
 
+## ⚠️ Known CI Limitations
+
+Tests running in GitHub Actions will partially fail on flows that require
+Amazon's homepage (`#twotabsearchtextbox`), as Amazon actively blocks
+requests from known datacenter IP ranges (AWS/GitHub infrastructure).
+
+| Environment | Expected Results |
+|-------------|-----------------|
+| Local machine | ✅ All 9 tests pass |
+| GitHub Actions | ✅ TC07, TC08, TC09 pass — others blocked by Amazon bot detection |
+
+This is **intentional and documented behavior**, not a bug in the suite.
+To run the full suite locally: `npm run test:headed`
+
 > ⚠️ This suite is built for **educational and portfolio purposes only**. Always respect a website's Terms of Service and `robots.txt`.
 
 ---
