@@ -6,6 +6,7 @@
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 ![Allure](https://img.shields.io/badge/Allure_Reports-FF6B35?style=for-the-badge&logoColor=white)
 ![Amazon](https://img.shields.io/badge/Amazon-FF9900?style=for-the-badge&logo=amazon&logoColor=white)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vladimir-ramírez-303a433ba)
 ![Chrome](https://img.shields.io/badge/Chromium-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 ![Tests](https://img.shields.io/badge/Tests-9%20passing-brightgreen?style=for-the-badge)
